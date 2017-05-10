@@ -53,6 +53,7 @@ protected:
 			StPicoTrack * track = _rTrack.get( i );
 
 			LOG_F( INFO, "dedx = %f", track->dEdx() );
+			LOG_F( INFO, "phi = %f", track->pMom().phi() ); 
 		}
 
 		LOG_IF_F( INFO, DEBUG, "RunId: %d", event->runId() );
