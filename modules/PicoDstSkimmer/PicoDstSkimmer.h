@@ -64,14 +64,14 @@ protected:
 			StPicoTrack * track = _rTrack.get( i );
 
 			hDedx->Fill( track->dEdx() );
-			LOG_F( INFO, "dedx = %f", track->dEdx() );
-			LOG_F( INFO, "phi = %f", track->pMom().phi() );
+			// LOG_F( INFO, "dedx = %f", track->dEdx() );
+			// LOG_F( INFO, "phi = %f", track->pMom().phi() );
 		}
 
-		LOG_IF_F( INFO, DEBUG, "RunId: %d", event->runId() );
-		LOG_IF_F( INFO, DEBUG, "#Tracks: %u", _rTrack.N() );
-		LOG_IF_F( INFO, DEBUG, "#MtdHits: %u", _rMtdHit.N() );
-		LOG_IF_F( INFO, DEBUG, "#MtdPids: %u", _rMtdPid.N() );
+		// LOG_IF_F( INFO, DEBUG, "RunId: %d", event->runId() );
+		// LOG_IF_F( INFO, DEBUG, "#Tracks: %u", _rTrack.N() );
+		// LOG_IF_F( INFO, DEBUG, "#MtdHits: %u", _rMtdHit.N() );
+		// LOG_IF_F( INFO, DEBUG, "#MtdPids: %u", _rMtdPid.N() );
 
 
 	}
