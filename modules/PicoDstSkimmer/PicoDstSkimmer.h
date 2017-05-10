@@ -48,7 +48,13 @@ protected:
 			return;
 		}
 
-		
+		size_t nTracks =  _rTrack.N();
+		for ( size_t i = 0; i < nTracks; i++ ){
+			StPicoTrack * track = _rTrackget( i );
+
+			LOG_F( INFO, "dedx = %f", track->dEdx() );
+		}
+
 		LOG_IF_F( INFO, DEBUG, "RunId: %d", event->runId() );
 		LOG_IF_F( INFO, DEBUG, "#Tracks: %u", _rTrack.N() );
 		LOG_IF_F( INFO, DEBUG, "#MtdHits: %u", _rMtdHit.N() );
@@ -56,7 +62,7 @@ protected:
 
 
 	}
-	
+
 };
 
 
