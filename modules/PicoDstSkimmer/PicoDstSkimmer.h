@@ -31,6 +31,9 @@ public:
 		_rMtdPid.setup( this->chain, "MtdPidTraits" );
 		_rBTofPid.setup( this->chain, "BTofPidTraits" );
 
+		book->cd();
+
+		makeHistograms();
 	}
 protected:
 
@@ -39,6 +42,14 @@ protected:
 	TClonesArrayReader < StPicoTrack        > _rTrack;
 	TClonesArrayReader < StPicoMtdPidTraits > _rMtdPid;
 	TClonesArrayReader < StPicoBTofPidTraits > _rBTofPid;
+
+	TH1D *hDedx = 0;
+
+	void makeHistograms(){
+
+		hDedx = new TH1D( "name", "title", 1000, 0, 5 );
+
+	}
 
 
 	virtual void analyzeEvent() {
@@ -52,8 +63,9 @@ protected:
 		for ( size_t i = 0; i < nTracks; i++ ){
 			StPicoTrack * track = _rTrack.get( i );
 
+			hDedx->Fill( track->dEdx() );
 			LOG_F( INFO, "dedx = %f", track->dEdx() );
-			LOG_F( INFO, "phi = %f", track->pMom().phi() ); 
+			LOG_F( INFO, "phi = %f", track->pMom().phi() );
 		}
 
 		LOG_IF_F( INFO, DEBUG, "RunId: %d", event->runId() );
