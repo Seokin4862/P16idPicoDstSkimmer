@@ -50,7 +50,7 @@ protected:
 
 		size_t nTracks =  _rTrack.N();
 		for ( size_t i = 0; i < nTracks; i++ ){
-			StPicoTrack * track = _rTrackget( i );
+			StPicoTrack * track = _rTrack.get( i );
 
 			LOG_F( INFO, "dedx = %f", track->dEdx() );
 		}
