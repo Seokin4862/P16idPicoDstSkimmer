@@ -47,7 +47,7 @@ protected:
 
 	void makeHistograms(){
 
-		hDedx = new TH1D( "name", "title", 1000, 0, 5 );
+		hDedx = new TH1D( "name", "title; x-axis; y-axis", 1000, 0, 5 );
 
 	}
 
