@@ -44,12 +44,12 @@ protected:
 	TClonesArrayReader < StPicoBTofPidTraits > _rBTofPid;
 
 	TH1D *hDedx = 0;
-	TH1D *hpMom = 0;
+	TH1D *hphi = 0;
 
 	void makeHistograms(){
 
 		hDedx = new TH1D( "dEdx", "dEdx of Various Tracks; x-axis; y-axis", 1000, 0, 5 );
-		hpMom = new TH1D( "chi2", "pMom of Various Tracks; x-asox; y-axis", 1000, 0, 10 );
+		hphi = new TH1D( "phi", "phi of Various Tracks; x-asox; y-axis", 1000, 0, 10 );
 
 	}
 
@@ -66,7 +66,7 @@ protected:
 			StPicoTrack * track = _rTrack.get( i );
 
 			hDedx->Fill( track->dEdx() );
-			hpMom->Fill( track->pMom() );
+			hphi->Fill( track->pMom().phi() );
 			//LOG_F( INFO, "dedx = %f", track->dEdx() );
 			//LOG_F( INFO, "phi = %f", track->pMom().phi() );
 		}
