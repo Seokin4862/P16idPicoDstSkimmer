@@ -91,7 +91,8 @@ protected:
 
 			if( track->pMom().mag() < .3 ) continue;
 			if( track->pMom().mag() > .4 ) continue;
-			if( track->abs(nSigmaPion()) > 1) continue;
+			if( track->nSigmaPion() >  1 ) continue;
+			if( track->nSigmaPion() < -1 ) continue;
 
 			hDedx->Fill( track->dEdx() );
 			hphi->Fill( track->pMom().phi() );
