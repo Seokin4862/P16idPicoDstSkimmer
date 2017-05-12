@@ -108,6 +108,22 @@ protected:
 				}
 
 			}
+
+			if( track->charge() <0 ){
+
+				hDedxphi4->Fill( track->pMom().phi() , track->dEdx() );
+
+				if( track->pMom().pseudoRapidity() < 0){
+					hDedxphi5->Fill( track->pMom().phi() , tract->dEdx() );
+					}
+
+				if( track->pMom().pseudoRapidity() > 0){
+					hDedxphi6->Fill( track->pMom().phi() , track->dEdx() );
+				}
+
+			}
+
+			
 			//LOG_F( INFO, "dedx = %f", track->dEdx() );
 			//LOG_F( INFO, "phi = %f", track->pMom().phi() );
 		}
