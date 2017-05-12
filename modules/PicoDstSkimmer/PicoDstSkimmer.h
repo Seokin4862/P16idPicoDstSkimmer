@@ -45,15 +45,35 @@ protected:
 
 	TH1D *hDedx = 0;
 	TH1D *hphi = 0;
-	TH1D *hchi2 = 0;
-	TH2D *hDedxphi = 0;
+
+	TH2D *hDedxphi1 = 0;
+	TH2D *hDedxphi2 = 0;
+	TH2D *hDedxphi3 = 0;
+
+	TH2D *hDedxphi4 = 0;
+	TH2D *hDedxphi5 = 0;
+	TH2D *hDedxphi6 = 0;
+
+	TH2D *hDedxphi7 = 0;
+	TH2D *hDedxphi8 = 0;
+	TH2D *hDedxphi9 = 0;
 
 	void makeHistograms(){
 
-		hDedx = new TH1D( "dEdx", "dEdx of Various Tracks; x-axis; y-axis", 1000, 0, 5 );
+		hDedx = new TH1D( "dEdx", "dEdx of Various Tracks; x-axis; y-axis", 1000, 0, 30 );
 		hphi = new TH1D( "phi", "phi of Various Tracks; x-axis; y-axis", 1000, -3.2, 3.2 );
-		hchi2 = new TH1D( "chi2", "chi2 of Various Tracks; x-axis; y-axis", 1000, 0, 10);
-		hDedxphi = new TH2D( "dEdx vs phi", " dEdx and phi of Various Tracks; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 15 );
+
+		hDedxphi1 = new TH2D( "dEdxphi1", " dEdx vs phi for (+) tracks of #eta -1 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 15 );
+		hDedxphi2 = new TH2D( "dEdxphi2", " dEdx vs phi for (+) tracks of #eta -1 to 0; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 15 );
+		hDedxphi3 = new TH2D( "dEdxphi3", " dEdx vs phi for (+) tracks of #eta  0 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 15 );
+
+		hDedxphi4 = new TH2D( "dEdxphi4", " dEdx vs phi for (-) tracks of #eta -1 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 15 );
+		hDedxphi5 = new TH2D( "dEdxphi5", " dEdx vs phi for (-) tracks of #eta -1 to 0; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 15 );
+		hDedxphi6 = new TH2D( "dEdxphi6", " dEdx vs phi for (-) tracks of #eta  0 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 15 );
+
+		hDedxphi7 = new TH2D( "dEdxphi7", " dEdx vs phi for (+ and -) tracks of #eta -1 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 15 );
+		hDedxphi8 = new TH2D( "dEdxphi8", " dEdx vs phi for (+ and -) tracks of #eta -1 to 0; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 15 );
+		hDedxphi9 = new TH2D( "dEdxphi9", " dEdx vs phi for (+ and -) tracks of #eta  0 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 15 );
 
 	}
 
@@ -69,12 +89,25 @@ protected:
 		for ( size_t i = 0; i < nTracks; i++ ){
 			StPicoTrack * track = _rTrack.get( i );
 
-			if( (track->pMom().mag() < .3 ) && ( track->pMom().mag() > .4 ) ) continue;
+			if( track->pMom().mag() < .3 ) continue;
+			if( track->pMom().mag() > .4 ) continue;
 
 			hDedx->Fill( track->dEdx() );
 			hphi->Fill( track->pMom().phi() );
-			hchi2->Fill( track->chi2() );
-			hDedxphi->Fill( track->pMom().phi(), track->dEdx() );
+
+			if( track->charge() > 0 ){
+
+				hDedxphi1( track->dEdx() , track->pMom().phi() )
+
+				if( track->eta() < 0 ){
+					hDedxphi2( track->dEdx() , track->pMom().phi() )
+				}
+
+				if( track->eta() > 0 ){
+					hDedxphi3( track->dEdx() , track->pMom().phi() )
+				}
+
+			}
 			//LOG_F( INFO, "dedx = %f", track->dEdx() );
 			//LOG_F( INFO, "phi = %f", track->pMom().phi() );
 		}
