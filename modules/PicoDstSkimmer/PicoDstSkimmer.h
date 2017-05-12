@@ -50,9 +50,8 @@ protected:
 	void makeHistograms(){
 
 		hDedx = new TH1D( "dEdx", "dEdx of Various Tracks; x-axis; y-axis", 1000, 0, 5 );
-		hphi = new TH1D( "phi", "phi of Various Tracks; x-axis; y-axis", 1000, -.2, .2 );
+		hphi = new TH1D( "phi", "phi of Various Tracks; x-axis; y-axis", 1000, -3.2, 3.2 );
 		hchi2 = new TH1D( "chi2", "chi2 of Various Tracks; x-axis; y-axis", 1000, 0, 10);
-
 	}
 
 
@@ -66,6 +65,8 @@ protected:
 		size_t nTracks =  _rTrack.N();
 		for ( size_t i = 0; i < nTracks; i++ ){
 			StPicoTrack * track = _rTrack.get( i );
+
+			if(track->pMom().mag()<= .001) continue;
 
 			hDedx->Fill( track->dEdx() );
 			hphi->Fill( track->pMom().phi() );
