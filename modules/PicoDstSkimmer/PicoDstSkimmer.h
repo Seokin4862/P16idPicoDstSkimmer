@@ -97,14 +97,14 @@ protected:
 
 			if( track->charge() > 0 ){
 
-				hDedxphi1( track->dEdx() , track->pMom().phi() )
+				hDedxphi1->Fill( track->dEdx() , track->pMom().phi() )
 
 				if( track->eta() < 0 ){
-					hDedxphi2( track->dEdx() , track->pMom().phi() )
+					hDedxphi2->Fill( track->dEdx() , track->pMom().phi() )
 				}
 
 				if( track->eta() > 0 ){
-					hDedxphi3( track->dEdx() , track->pMom().phi() )
+					hDedxphi3->Fill( track->dEdx() , track->pMom().phi() )
 				}
 
 			}
