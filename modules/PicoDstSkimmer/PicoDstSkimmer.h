@@ -97,14 +97,14 @@ protected:
 
 			if( track->charge() > 0 ){
 
-				hDedxphi1->Fill( track->dEdx() , track->pMom().phi() );
+				hDedxphi1->Fill( track->pMom().phi() , track->dEdx() );
 
 				if( track->pMom().pseudoRapidity() < 0 ){
-					hDedxphi2->Fill( track->dEdx() , track->pMom().phi() );
+					hDedxphi2->Fill( track->pMom().phi() , track->dEdx() );
 				}
 
 				if( track->pMom().pseudoRapidity() > 0 ){
-					hDedxphi3->Fill( track->dEdx() , track->pMom().phi() );
+					hDedxphi3->Fill( track->pMom().phi() , track->dEdx() );
 				}
 
 			}
