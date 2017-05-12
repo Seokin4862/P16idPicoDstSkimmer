@@ -73,7 +73,7 @@ protected:
 
 		hDedxphi7 = new TH2D( "dEdxphi7", " dEdx vs phi for (+ and -) tracks of #eta -1 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 15 );
 		hDedxphi8 = new TH2D( "dEdxphi8", " dEdx vs phi for (+ and -) tracks of #eta -1 to 0; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 15 );
-		hDedxphi1 = new TH2D( "dEdxphi9", " dEdx vs phi for (+ and -) tracks of #eta  0 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 15 );
+		hDedxphi9 = new TH2D( "dEdxphi9", " dEdx vs phi for (+ and -) tracks of #eta  0 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 15 );
 
 	}
 
