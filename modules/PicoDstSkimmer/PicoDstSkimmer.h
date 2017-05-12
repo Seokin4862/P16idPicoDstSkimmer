@@ -63,7 +63,7 @@ protected:
 		for ( size_t i = 0; i < nTracks; i++ ){
 			StPicoTrack * track = _rTrack.get( i );
 
-			hDedx->Fill( track->dEdx() );
+			hDedx->Fill( track->pMom().phi() );
 			// LOG_F( INFO, "dedx = %f", track->dEdx() );
 			// LOG_F( INFO, "phi = %f", track->pMom().phi() );
 		}
