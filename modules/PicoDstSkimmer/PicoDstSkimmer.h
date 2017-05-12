@@ -114,7 +114,7 @@ protected:
 				hDedxphi4->Fill( track->pMom().phi() , track->dEdx() );
 
 				if( track->pMom().pseudoRapidity() < 0){
-					hDedxphi5->Fill( track->pMom().phi() , tract->dEdx() );
+					hDedxphi5->Fill( track->pMom().phi() , track->dEdx() );
 					}
 
 				if( track->pMom().pseudoRapidity() > 0){
@@ -123,7 +123,7 @@ protected:
 
 			}
 
-			
+
 			//LOG_F( INFO, "dedx = %f", track->dEdx() );
 			//LOG_F( INFO, "phi = %f", track->pMom().phi() );
 		}
