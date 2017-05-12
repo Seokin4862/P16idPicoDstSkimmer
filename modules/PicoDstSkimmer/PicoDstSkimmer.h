@@ -53,7 +53,7 @@ protected:
 		hDedx = new TH1D( "dEdx", "dEdx of Various Tracks; x-axis; y-axis", 1000, 0, 5 );
 		hphi = new TH1D( "phi", "phi of Various Tracks; x-axis; y-axis", 1000, -3.2, 3.2 );
 		hchi2 = new TH1D( "chi2", "chi2 of Various Tracks; x-axis; y-axis", 1000, 0, 10);
-		hDedxphi = new TH2D( "dEdx vs phi", " dEdx and phi of Various Tracks; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 10 );
+		hDedxphi = new TH2D( "dEdx vs phi", " dEdx and phi of Various Tracks; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 15 );
 
 	}
 
