@@ -99,11 +99,11 @@ protected:
 
 				hDedxphi1->Fill( track->dEdx() , track->pMom().phi() )
 
-				if( track->eta() < 0 ){
+				if( track->pMom().eta() < 0 ){
 					hDedxphi2->Fill( track->dEdx() , track->pMom().phi() )
 				}
 
-				if( track->eta() > 0 ){
+				if( track->pMom().eta() > 0 ){
 					hDedxphi3->Fill( track->dEdx() , track->pMom().phi() )
 				}
 
