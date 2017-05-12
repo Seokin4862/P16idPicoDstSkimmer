@@ -46,12 +46,15 @@ protected:
 	TH1D *hDedx = 0;
 	TH1D *hphi = 0;
 	TH1D *hchi2 = 0;
+	TH2D *hDedxphi = 0;
 
 	void makeHistograms(){
 
 		hDedx = new TH1D( "dEdx", "dEdx of Various Tracks; x-axis; y-axis", 1000, 0, 5 );
 		hphi = new TH1D( "phi", "phi of Various Tracks; x-axis; y-axis", 1000, -3.2, 3.2 );
 		hchi2 = new TH1D( "chi2", "chi2 of Various Tracks; x-axis; y-axis", 1000, 0, 10);
+		hDedxphi = new TH2D( "dEdx vs phi", " dEdx and phi of Various Tracks; dEdx; phi", 1000, 0, 5, 1000, -3.2, 3.2 );
+
 	}
 
 
@@ -71,6 +74,7 @@ protected:
 			hDedx->Fill( track->dEdx() );
 			hphi->Fill( track->pMom().phi() );
 			hchi2->Fill( track->chi2() );
+			hDedxphi->Fill( track->dEdx(), track->pMom().phi() );
 			//LOG_F( INFO, "dedx = %f", track->dEdx() );
 			//LOG_F( INFO, "phi = %f", track->pMom().phi() );
 		}
