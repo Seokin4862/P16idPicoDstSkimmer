@@ -49,7 +49,7 @@ protected:
 	void makeHistograms(){
 
 		hDedx = new TH1D( "dEdx", "dEdx of Various Tracks; x-axis; y-axis", 1000, 0, 5 );
-		hphi = new TH1D( "phi", "phi of Various Tracks; x-asox; y-axis", 1000, -3.2, 3.2 );
+		hphi = new TH1D( "phi", "phi of Various Tracks; x-asix; y-axis", 1000, -.2, .2 );
 
 	}
 
