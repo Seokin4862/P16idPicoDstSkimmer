@@ -70,6 +70,7 @@ protected:
 			StPicoTrack * track = _rTrack.get( i );
 
 			if(track->pMom().mag() < .3 ) continue;
+			if(track->pMom().mag() > .4 ) continue;
 
 			hDedx->Fill( track->dEdx() );
 			hphi->Fill( track->pMom().phi() );
