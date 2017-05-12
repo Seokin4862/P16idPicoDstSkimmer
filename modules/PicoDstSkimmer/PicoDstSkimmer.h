@@ -63,17 +63,17 @@ protected:
 		hDedx = new TH1D( "dEdx", "dEdx of Various Tracks; x-axis; y-axis", 1000, 0, 30 );
 		hphi = new TH1D( "phi", "phi of Various Tracks; x-axis; y-axis", 1000, -3.2, 3.2 );
 
-		hDedxphi1 = new TH2D( "dEdxphi1", " dEdx vs phi for (+) tracks of #eta -1 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 15 );
-		hDedxphi2 = new TH2D( "dEdxphi2", " dEdx vs phi for (+) tracks of #eta -1 to 0; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 15 );
-		hDedxphi3 = new TH2D( "dEdxphi3", " dEdx vs phi for (+) tracks of #eta  0 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 15 );
+		hDedxphi1 = new TH2D( "dEdxphi1", " dEdx vs phi for (+) tracks of #eta -1 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 6 );
+		hDedxphi2 = new TH2D( "dEdxphi2", " dEdx vs phi for (+) tracks of #eta -1 to 0; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 6 );
+		hDedxphi3 = new TH2D( "dEdxphi3", " dEdx vs phi for (+) tracks of #eta  0 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 6 );
 
-		hDedxphi4 = new TH2D( "dEdxphi4", " dEdx vs phi for (-) tracks of #eta -1 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 15 );
-		hDedxphi5 = new TH2D( "dEdxphi5", " dEdx vs phi for (-) tracks of #eta -1 to 0; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 15 );
-		hDedxphi6 = new TH2D( "dEdxphi6", " dEdx vs phi for (-) tracks of #eta  0 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 15 );
+		hDedxphi4 = new TH2D( "dEdxphi4", " dEdx vs phi for (-) tracks of #eta -1 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 6 );
+		hDedxphi5 = new TH2D( "dEdxphi5", " dEdx vs phi for (-) tracks of #eta -1 to 0; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 6 );
+		hDedxphi6 = new TH2D( "dEdxphi6", " dEdx vs phi for (-) tracks of #eta  0 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 6 );
 
-		hDedxphi7 = new TH2D( "dEdxphi7", " dEdx vs phi for (+ and -) tracks of #eta -1 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 15 );
-		hDedxphi8 = new TH2D( "dEdxphi8", " dEdx vs phi for (+ and -) tracks of #eta -1 to 0; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 15 );
-		hDedxphi9 = new TH2D( "dEdxphi9", " dEdx vs phi for (+ and -) tracks of #eta  0 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 15 );
+		hDedxphi7 = new TH2D( "dEdxphi7", " dEdx vs phi for (+ and -) tracks of #eta -1 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 6 );
+		hDedxphi8 = new TH2D( "dEdxphi8", " dEdx vs phi for (+ and -) tracks of #eta -1 to 0; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 6 );
+		hDedxphi9 = new TH2D( "dEdxphi9", " dEdx vs phi for (+ and -) tracks of #eta  0 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 6 );
 
 	}
 
