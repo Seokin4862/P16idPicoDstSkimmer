@@ -121,6 +121,16 @@ protected:
 					hDedxphi6->Fill( track->pMom().phi() , track->dEdx() );
 				}
 
+			hDedxphi7->Fill( track->pMom().phi(), track->dEdx() );
+
+			if( track->pMom().pseudoRapidity() < 0){
+				hDedxphi8->Fill( track->pMom().phi() , track->dEdx() );
+			}
+
+			if( track->pMom().pseudoRapidity() > 0){
+				hDedxphi9->Fill( track->pMom().phi(), track->dEdx() );
+			}
+
 			}
 
 
