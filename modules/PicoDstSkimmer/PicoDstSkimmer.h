@@ -69,8 +69,7 @@ protected:
 		for ( size_t i = 0; i < nTracks; i++ ){
 			StPicoTrack * track = _rTrack.get( i );
 
-			if(track->pMom().mag() < .3 ) continue;
-			if(track->pMom().mag() > .4 ) continue;
+			if( (track->pMom().mag() < .3 ) && ( track->pMom().mag() > .4 ) ) continue;
 
 			hDedx->Fill( track->dEdx() );
 			hphi->Fill( track->pMom().phi() );
