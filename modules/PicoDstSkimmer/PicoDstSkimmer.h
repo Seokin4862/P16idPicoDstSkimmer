@@ -99,11 +99,12 @@ protected:
 			hDedx->Fill( track->dEdx() );
 			hphi->Fill( track->pMom().phi() );
 
-			if( track->charge() > 0 ){
+			if( track->charge() > 0 ){b
 
 				hDedxphi1->Fill( track->pMom().phi() , track->dEdx() );
 
 				hDedxphi1->Draw("colz");
+				c1->Print("Dedxphi1.png")
 
 				if( track->pMom().pseudoRapidity() < 0 ){
 					hDedxphi2->Fill( track->pMom().phi() , track->dEdx() );
