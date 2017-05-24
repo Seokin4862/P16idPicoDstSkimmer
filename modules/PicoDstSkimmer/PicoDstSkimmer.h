@@ -58,22 +58,24 @@ protected:
 	TH2D *hDedxphi8 = 0;
 	TH2D *hDedxphi9 = 0;
 
+	TCanvas *c1 = 0;
+
 	void makeHistograms(){
 
 		hDedx = new TH1D( "dEdx", "dEdx of Various Tracks; x-axis; y-axis", 1000, 0, 30 );
 		hphi = new TH1D( "phi", "phi of Various Tracks; x-axis; y-axis", 1000, -3.2, 3.2 );
 
-		hDedxphi1 = new TH2D( "dEdxphi1", " dEdx vs phi for (+) tracks of #eta -1 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 6 );
-		hDedxphi2 = new TH2D( "dEdxphi2", " dEdx vs phi for (+) tracks of #eta -1 to 0; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 6 );
-		hDedxphi3 = new TH2D( "dEdxphi3", " dEdx vs phi for (+) tracks of #eta  0 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 6 );
+		hDedxphi1 = new TH2D( "dEdxphi1", " dEdx vs phi for (+) tracks of #eta -1 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 0, 6 );
+		hDedxphi2 = new TH2D( "dEdxphi2", " dEdx vs phi for (+) tracks of #eta -1 to 0; phi; dEdx", 1000, -3.2, 3.2, 1000, 0, 6 );
+		hDedxphi3 = new TH2D( "dEdxphi3", " dEdx vs phi for (+) tracks of #eta  0 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 0, 6 );
 
-		hDedxphi4 = new TH2D( "dEdxphi4", " dEdx vs phi for (-) tracks of #eta -1 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 6 );
-		hDedxphi5 = new TH2D( "dEdxphi5", " dEdx vs phi for (-) tracks of #eta -1 to 0; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 6 );
-		hDedxphi6 = new TH2D( "dEdxphi6", " dEdx vs phi for (-) tracks of #eta  0 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 6 );
+		hDedxphi4 = new TH2D( "dEdxphi4", " dEdx vs phi for (-) tracks of #eta -1 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 0, 6 );
+		hDedxphi5 = new TH2D( "dEdxphi5", " dEdx vs phi for (-) tracks of #eta -1 to 0; phi; dEdx", 1000, -3.2, 3.2, 1000, 0, 6 );
+		hDedxphi6 = new TH2D( "dEdxphi6", " dEdx vs phi for (-) tracks of #eta  0 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 0, 6 );
 
-		hDedxphi7 = new TH2D( "dEdxphi7", " dEdx vs phi for (+ and -) tracks of #eta -1 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 6 );
-		hDedxphi8 = new TH2D( "dEdxphi8", " dEdx vs phi for (+ and -) tracks of #eta -1 to 0; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 6 );
-		hDedxphi9 = new TH2D( "dEdxphi9", " dEdx vs phi for (+ and -) tracks of #eta  0 to 1; dEdx; phi", 1000, -3.2, 3.2, 1000, 0, 6 );
+		hDedxphi7 = new TH2D( "dEdxphi7", " dEdx vs phi for (+ and -) tracks of #eta -1 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 0, 6 );
+		hDedxphi8 = new TH2D( "dEdxphi8", " dEdx vs phi for (+ and -) tracks of #eta -1 to 0; phi; dEdx", 1000, -3.2, 3.2, 1000, 0, 6 );
+		hDedxphi9 = new TH2D( "dEdxphi9", " dEdx vs phi for (+ and -) tracks of #eta  0 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 0, 6 );
 
 	}
 
@@ -100,6 +102,8 @@ protected:
 			if( track->charge() > 0 ){
 
 				hDedxphi1->Fill( track->pMom().phi() , track->dEdx() );
+
+				hDedxphi1->Draw("colz")
 
 				if( track->pMom().pseudoRapidity() < 0 ){
 					hDedxphi2->Fill( track->pMom().phi() , track->dEdx() );
@@ -144,6 +148,7 @@ protected:
 		// LOG_IF_F( INFO, DEBUG, "#Tracks: %u", _rTrack.N() );
 		// LOG_IF_F( INFO, DEBUG, "#MtdHits: %u", _rMtdHit.N() );
 		// LOG_IF_F( INFO, DEBUG, "#MtdPids: %u", _rMtdPid.N() );
+
 
 
 	}
