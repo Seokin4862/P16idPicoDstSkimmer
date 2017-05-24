@@ -99,7 +99,7 @@ protected:
 			hDedx->Fill( track->dEdx() );
 			hphi->Fill( track->pMom().phi() );
 
-			if( track->charge() > 0 ){b
+			if( track->charge() > 0 ){
 
 				hDedxphi1->Fill( track->pMom().phi() , track->dEdx() );
 
