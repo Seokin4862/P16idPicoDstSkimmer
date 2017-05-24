@@ -58,8 +58,6 @@ protected:
 	TH2D *hDedxphi8 = 0;
 	TH2D *hDedxphi9 = 0;
 
-	TCanvas *c1 = 0;
-
 	void makeHistograms(){
 
 		hDedx = new TH1D( "dEdx", "dEdx of Various Tracks; x-axis; y-axis", 1000, 0, 30 );
@@ -102,9 +100,6 @@ protected:
 			if( track->charge() > 0 ){
 
 				hDedxphi1->Fill( track->pMom().phi() , track->dEdx() );
-
-				hDedxphi1->Draw("colz");
-				c1->Print("Dedxphi1.png");
 
 				if( track->pMom().pseudoRapidity() < 0 ){
 					hDedxphi2->Fill( track->pMom().phi() , track->dEdx() );
