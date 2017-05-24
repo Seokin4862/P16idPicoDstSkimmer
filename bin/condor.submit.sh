@@ -3,10 +3,10 @@
 ######################################################################
 
 
-InitialDir = /home/jdb12/work/PicoToFemtoDst_P16id/bin/
-Executable = /home/jdb12/work/PicoToFemtoDst_P16id/bin/femtoMaker.app
-Arguments  = /home/jdb12/work/PicoToFemtoDst_P16id/bin/config/requireMtdPid.xml --jobIndex=$(Process)
+InitialDir = /home/sy34/workspace/P16idPicoDstSkimmer/bin/
+Executable = /home/sy34/workspace/P16idPicoDstSkimmer/bin/run.sh
+Arguments  = $(Process)
 
 GetEnv     = True
 
-Queue 5182
+Queue 60
