@@ -103,7 +103,7 @@ protected:
 
 				hDedxphi1->Fill( track->pMom().phi() , track->dEdx() );
 
-				hDedxphi1->Draw("colz")
+				hDedxphi1->Draw("colz");
 
 				if( track->pMom().pseudoRapidity() < 0 ){
 					hDedxphi2->Fill( track->pMom().phi() , track->dEdx() );
