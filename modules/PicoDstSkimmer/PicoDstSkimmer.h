@@ -104,7 +104,7 @@ protected:
 				hDedxphi1->Fill( track->pMom().phi() , track->dEdx() );
 
 				hDedxphi1->Draw("colz");
-				c1->Print("Dedxphi1.png")
+				c1->Print("Dedxphi1.png");
 
 				if( track->pMom().pseudoRapidity() < 0 ){
 					hDedxphi2->Fill( track->pMom().phi() , track->dEdx() );
