@@ -66,7 +66,6 @@ protected:
 		hDedxphi1 = new TH2D( "dEdxphi1", " dEdx vs phi for (+) tracks of #eta -1 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 0, 6 );
 		hDedxphi2 = new TH2D( "dEdxphi2", " dEdx vs phi for (+) tracks of #eta -1 to 0; phi; dEdx", 1000, -3.2, 3.2, 1000, 0, 6 );
 		hDedxphi3 = new TH2D( "dEdxphi3", " dEdx vs phi for (+) tracks of #eta  0 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 0, 6 );
-
 		hDedxphi4 = new TH2D( "dEdxphi4", " dEdx vs phi for (-) tracks of #eta -1 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 0, 6 );
 		hDedxphi5 = new TH2D( "dEdxphi5", " dEdx vs phi for (-) tracks of #eta -1 to 0; phi; dEdx", 1000, -3.2, 3.2, 1000, 0, 6 );
 		hDedxphi6 = new TH2D( "dEdxphi6", " dEdx vs phi for (-) tracks of #eta  0 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 0, 6 );

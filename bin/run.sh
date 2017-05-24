@@ -1,2 +1,1 @@
-./pico.app config/PicoDstSkimmer.xml --jobIndex=0
-
+./pico.app config/PicoDstSkimmer.xml --jobIndex=$1
