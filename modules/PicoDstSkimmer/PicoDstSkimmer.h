@@ -52,42 +52,19 @@ protected:
 
 	TH2D *hMeanRunN = 0;
 
-	TH2D *hDedxphi1 = 0;
-	TH2D *hDedxphi2 = 0;
-	TH2D *hDedxphi3 = 0;
-
-	TH2D *hDedxphi4 = 0;
-	TH2D *hDedxphi5 = 0;
-	TH2D *hDedxphi6 = 0;
-
-	TH2D *hDedxphi7 = 0;
-	TH2D *hDedxphi8 = 0;
-	TH2D *hDedxphi9 = 0;
-
 	void makeHistograms(){
 
 		hDedx = new TH1D( "dEdx", "dEdx of Various Tracks; x-axis; y-axis", 1000, 0, 30 );
 		hphi = new TH1D( "phi", "phi of Various Tracks; x-axis; y-axis", 1000, -3.2, 3.2 );
 
-		hMeanRunN = new TH2D( "hMeanRunN" , " Mean of dEdx vs run number for ___; run number; Mean ", 1000, 1, 2, 1000, 0, 6 );
+		hMeanRunN = new TH2D( "hMeanRunN" , " Mean of dEdx vs run number for ___; run number; Mean ", 2751, 1, 2751, 1000, 0, 6 );
 
-		hDedxphi1 = new TH2D( "dEdxphi1", " dEdx vs phi for (+) tracks of #eta -1 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 40 );
-		hDedxphi2 = new TH2D( "dEdxphi2", " dEdx vs phi for (+) tracks of #eta -1 to 0; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 40 );
-		hDedxphi3 = new TH2D( "dEdxphi3", " dEdx vs phi for (+) tracks of #eta  0 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 40 );
-
-		hDedxphi4 = new TH2D( "dEdxphi4", " dEdx vs phi for (-) tracks of #eta -1 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 40 );
-		hDedxphi5 = new TH2D( "dEdxphi5", " dEdx vs phi for (-) tracks of #eta -1 to 0; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 40 );
-		hDedxphi6 = new TH2D( "dEdxphi6", " dEdx vs phi for (-) tracks of #eta  0 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 40 );
-
-		hDedxphi7 = new TH2D( "dEdxphi7", " dEdx vs phi for (+ and -) tracks of #eta -1 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 40 );
-		hDedxphi8 = new TH2D( "dEdxphi8", " dEdx vs phi for (+ and -) tracks of #eta -1 to 0; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 40 );
-		hDedxphi9 = new TH2D( "dEdxphi9", " dEdx vs phi for (+ and -) tracks of #eta  0 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 40 );
 
 	}
 
 
 	virtual void analyzeEvent() {
-		StPicoEvent *event = _rEvent.get( 0 );
+		StPicoEvent *x = _rEvent.get( 0 );
 
 		if ( nullptr == event ){
 			return;
@@ -101,47 +78,13 @@ protected:
 
 			if( track->pMom().mag() < .3 ) continue;
 			if( track->pMom().mag() > .4 ) continue;
-			if( track->nSigmaPion() >  1 ) continue;
-			if( track->nSigmaPion() < -1 ) continue;
 
 			hDedx->Fill( track->dEdx() );
 			hphi->Fill( track->pMom().phi() );
 
-			if( track->charge() > 0 ){
+			hMeanRunN->Fill( rmf.indexForRun( _rEvent.mRunId ), tracks->dEdx() );
 
-				hDedxphi1->Fill( track->pMom().phi() , track->dEdx() );
-
-				if( track->pMom().pseudoRapidity() < 0 ){
-					hDedxphi2->Fill( track->pMom().phi() , track->dEdx() );
-				}
-
-				if( track->pMom().pseudoRapidity() > 0 ){
-					hDedxphi3->Fill( track->pMom().phi() , track->dEdx() );
-				}
-
-			}
-
-			if( track->charge() <0 ){
-
-				hDedxphi4->Fill( track->pMom().phi() , track->dEdx() );
-
-				if( track->pMom().pseudoRapidity() < 0){
-					hDedxphi5->Fill( track->pMom().phi() , track->dEdx() );
-					}
-
-				if( track->pMom().pseudoRapidity() > 0){
-					hDedxphi6->Fill( track->pMom().phi() , track->dEdx() );
-				}
-
-			hDedxphi7->Fill( track->pMom().phi(), track->dEdx() );
-
-			if( track->pMom().pseudoRapidity() < 0){
-				hDedxphi8->Fill( track->pMom().phi() , track->dEdx() );
-			}
-
-			if( track->pMom().pseudoRapidity() > 0){
-				hDedxphi9->Fill( track->pMom().phi(), track->dEdx() );
-			}
+				//hDedxphi1->Fill( track->pMom().phi() , track->dEdx() );
 
 			}
 
