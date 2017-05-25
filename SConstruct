@@ -37,4 +37,4 @@ env[ "_LIBFLAGS" ] = env[ "_LIBFLAGS" ] + " " + ROOTLIBS + " "
 if "Darwin" in platform.platform() :
 	env[ "LINKFLAGS" ].remove( "-pthread" )
 
-env.Program( target="bin/pico.app", source=[ Glob("modules/StarClassLibrary/*.o"), "modules/PicoDstP16id/DictionaryPicoDstP16id.o", "Engine.cpp", "modules/ProductionUtils/RunMapFactory.h"] )
+env.Program( target="bin/pico.app", source=[ Glob("modules/StarClassLibrary/*.o"), "modules/PicoDstP16id/DictionaryPicoDstP16id.o", "Engine.cpp", "modules/ProductionUtils/RunMapFactory.cpp"] )
