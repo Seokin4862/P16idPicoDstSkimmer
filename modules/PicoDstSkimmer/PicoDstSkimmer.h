@@ -84,7 +84,7 @@ protected:
 			hDedx->Fill( track->dEdx() );
 			hphi->Fill( track->pMom().phi() );
 
-			hMeanRunN->Fill( rmf.indexForRun( _rEvent.mRunId ), track->dEdx() );
+			hMeanRunN->Fill( rmf.indexForRun( _rEvent.RunId ), track->dEdx() );
 
 				//hDedxphi1->Fill( track->pMom().phi() , track->dEdx() );
 
