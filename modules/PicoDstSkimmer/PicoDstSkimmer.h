@@ -50,14 +50,16 @@ protected:
 	TH1D *hDedx = 0;
 	TH1D *hphi = 0;
 
-	TH2D *hMeanRunN = 0;
+	TH2D *hMeanRunN1 = 0;
+	TH2D *hMeanRunN2 = 0;
 
 	void makeHistograms(){
 
 		hDedx = new TH1D( "dEdx", "dEdx of Various Tracks; x-axis; y-axis", 1000, 0, 30 );
 		hphi = new TH1D( "phi", "phi of Various Tracks; x-axis; y-axis", 1000, -3.2, 3.2 );
 
-		hMeanRunN = new TH2D( "hMeanRunN" , " Mean of dEdx vs run number for ___; run number; Mean ", 2751, 1, 2751, 1000, 0, 6 );
+		hMeanRunN1 = new TH2D( "hMeanRunN1" , " dEdx vs run number for Momentum between .3 and .4, phi between 2.56 and 2.60 ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 6 );
+		hMeanRunN2 = new TH2D( "hMeanRunN2" , " dEdx vs run number for Momentum between .3 and .4, phi between 2.56 and 2.60 ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 )
 
 
 	}
@@ -74,8 +76,6 @@ protected:
 		for ( size_t i = 0; i < nTracks; i++ ){
 			StPicoTrack * track = _rTrack.get( i );
 
-
-
 			if( track->pMom().mag() < .3 ) continue;
 			if( track->pMom().mag() > .4 ) continue;
 			if( track->pMom().phi() < 2.56 ) continue;
@@ -84,7 +84,7 @@ protected:
 			hDedx->Fill( track->dEdx() );
 			hphi->Fill( track->pMom().phi() );
 
-			hMeanRunN->Fill( rmf.indexForRun( event->runId() ) , track->dEdx() );
+			hMeanRunN1->Fill( rmf.indexForRun( event->runId() ) , track->dEdx() );
 
 				//hDedxphi1->Fill( track->pMom().phi() , track->dEdx() );
 
