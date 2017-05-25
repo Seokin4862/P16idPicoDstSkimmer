@@ -66,6 +66,9 @@ protected:
 	virtual void analyzeEvent() {
 		StPicoEvent *event = _rEvent.get( 0 );
 
+		_event.mRunId    = event->runId();
+		_event.mRunIndex = rmf.indexForRun( _event.mRunId );
+
 		if ( nullptr == event ){
 			return;
 		}
@@ -84,7 +87,7 @@ protected:
 			hDedx->Fill( track->dEdx() );
 			hphi->Fill( track->pMom().phi() );
 
-			hMeanRunN->Fill( rmf.indexForRun( _event.runId ), track->dEdx() );
+			hMeanRunN->Fill( _event.mRunIndex , track->dEdx() );
 
 				//hDedxphi1->Fill( track->pMom().phi() , track->dEdx() );
 
