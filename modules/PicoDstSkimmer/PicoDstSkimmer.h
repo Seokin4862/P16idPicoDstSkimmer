@@ -69,7 +69,7 @@ protected:
 		hDedx = new TH1D( "dEdx", "dEdx of Various Tracks; x-axis; y-axis", 1000, 0, 30 );
 		hphi = new TH1D( "phi", "phi of Various Tracks; x-axis; y-axis", 1000, -3.2, 3.2 );
 
-		hMeanRunN = new TH2D( "hMeanRunN" , " Mean of dEdx vs run number for ___; run number; Mean ", 1000, 1, , 1000, 0, 6 );
+		hMeanRunN = new TH2D( "hMeanRunN" , " Mean of dEdx vs run number for ___; run number; Mean ", 1000, 1, 2, 1000, 0, 6 );
 
 		hDedxphi1 = new TH2D( "dEdxphi1", " dEdx vs phi for (+) tracks of #eta -1 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 40 );
 		hDedxphi2 = new TH2D( "dEdxphi2", " dEdx vs phi for (+) tracks of #eta -1 to 0; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 40 );
