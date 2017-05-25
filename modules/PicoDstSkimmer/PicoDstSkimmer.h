@@ -59,7 +59,7 @@ protected:
 		hphi = new TH1D( "phi", "phi of Various Tracks; x-axis; y-axis", 1000, -3.2, 3.2 );
 
 		hMeanRunN1 = new TH2D( "hMeanRunN1" , " dEdx vs run number for Momentum between .3 and .4, phi between 2.56 and 2.60 ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 6 );
-		hMeanRunN2 = new TH2D( "hMeanRunN2" , " dEdx vs run number for Momentum between .3 and .4, phi between 2.56 and 2.60 ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 )
+		hMeanRunN2 = new TH2D( "hMeanRunN2" , " dEdx vs run number for Momentum between .3 and .4, phi between 2.56 and 2.60 ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
 
 
 	}
@@ -85,6 +85,8 @@ protected:
 			hphi->Fill( track->pMom().phi() );
 
 			hMeanRunN1->Fill( rmf.indexForRun( event->runId() ) , track->dEdx() );
+
+
 
 				//hDedxphi1->Fill( track->pMom().phi() , track->dEdx() );
 
