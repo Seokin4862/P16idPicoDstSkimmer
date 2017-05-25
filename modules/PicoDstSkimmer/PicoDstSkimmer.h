@@ -64,7 +64,7 @@ protected:
 
 
 	virtual void analyzeEvent() {
-		StPicoEvent *x = _rEvent.get( 0 );
+		StPicoEvent *event = _rEvent.get( 0 );
 
 		if ( nullptr == event ){
 			return;
@@ -78,11 +78,13 @@ protected:
 
 			if( track->pMom().mag() < .3 ) continue;
 			if( track->pMom().mag() > .4 ) continue;
+			if( track->pMom().phi() < 2.56 ) continue;
+			if( track->pMom().phi() > 2.60 ) continue;
 
 			hDedx->Fill( track->dEdx() );
 			hphi->Fill( track->pMom().phi() );
 
-			hMeanRunN->Fill( rmf.indexForRun( _rEvent.mRunId ), tracks->dEdx() );
+			hMeanRunN->Fill( rmf.indexForRun( _rEvent.mRunId ), track->dEdx() );
 
 				//hDedxphi1->Fill( track->pMom().phi() , track->dEdx() );
 
@@ -97,10 +99,6 @@ protected:
 		// LOG_IF_F( INFO, DEBUG, "#Tracks: %u", _rTrack.N() );
 		// LOG_IF_F( INFO, DEBUG, "#MtdHits: %u", _rMtdHit.N() );
 		// LOG_IF_F( INFO, DEBUG, "#MtdPids: %u", _rMtdPid.N() );
-
-
-
-	}
 
 };
 
