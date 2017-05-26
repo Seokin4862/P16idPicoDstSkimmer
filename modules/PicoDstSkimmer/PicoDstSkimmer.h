@@ -114,15 +114,15 @@ protected:
 
 		hMeanRunN01 = new TH2D( "hMeanRunN01" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge + eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
 		hMeanRunN02 = new TH2D( "hMeanRunN02" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge + eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-		hMeanRunN03 = new TH2d( "hMeanRunN03" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge + eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN03 = new TH2D( "hMeanRunN03" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge + eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
 
 		hMeanRunN04 = new TH2D( "hMeanRunN04" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge - eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
 		hMeanRunN05 = new TH2D( "hMeanRunN05" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge - eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-		hMeanRunN06 = new TH2d( "hMeanRunN06" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge - eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN06 = new TH2D( "hMeanRunN06" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge - eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
 
 		hMeanRunN07 = new TH2D( "hMeanRunN07" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge = eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
 		hMeanRunN08 = new TH2D( "hMeanRunN08" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge = eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-		hMeanRunN09 = new TH2d( "hMeanRunN09" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge = eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN09 = new TH2D( "hMeanRunN09" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge = eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
 
 
 
