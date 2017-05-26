@@ -112,19 +112,56 @@ protected:
 
 		//add stuff here. like, a lot of stuff
 
-		hMeanRunN01 = new TH2D( "hMeanRunN01" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge + eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-		hMeanRunN02 = new TH2D( "hMeanRunN02" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge + eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-		hMeanRunN03 = new TH2D( "hMeanRunN03" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge + eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN01 = new TH2D( "hMeanRunN01" , " dEdx vs run number, Mom .3 to .4, phi 2.55 to 2.60, charge + eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN02 = new TH2D( "hMeanRunN02" , " dEdx vs run number, Mom .3 to .4, phi 2.55 to 2.60, charge + eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN03 = new TH2D( "hMeanRunN03" , " dEdx vs run number, Mom .3 to .4, phi 2.55 to 2.60, charge + eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
 
-		hMeanRunN04 = new TH2D( "hMeanRunN04" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge - eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-		hMeanRunN05 = new TH2D( "hMeanRunN05" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge - eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-		hMeanRunN06 = new TH2D( "hMeanRunN06" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge - eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN04 = new TH2D( "hMeanRunN04" , " dEdx vs run number, Mom .3 to .4, phi 2.55 to 2.60, charge - eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN05 = new TH2D( "hMeanRunN05" , " dEdx vs run number, Mom .3 to .4, phi 2.55 to 2.60, charge - eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN06 = new TH2D( "hMeanRunN06" , " dEdx vs run number, Mom .3 to .4, phi 2.55 to 2.60, charge - eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
 
-		hMeanRunN07 = new TH2D( "hMeanRunN07" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge = eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-		hMeanRunN08 = new TH2D( "hMeanRunN08" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge = eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-		hMeanRunN09 = new TH2D( "hMeanRunN09" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge = eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN07 = new TH2D( "hMeanRunN07" , " dEdx vs run number, Mom .3 to .4, phi 2.55 to 2.60, charge = eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN08 = new TH2D( "hMeanRunN08" , " dEdx vs run number, Mom .3 to .4, phi 2.55 to 2.60, charge = eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN09 = new TH2D( "hMeanRunN09" , " dEdx vs run number, Mom .3 to .4, phi 2.55 to 2.60, charge = eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
 
 
+		hMeanRunN11 = new TH2D( "hMeanRunN11" , " dEdx vs run number, Mom .3 to .4, phi 1.55 to 1.60, charge + eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN12 = new TH2D( "hMeanRunN12" , " dEdx vs run number, Mom .3 to .4, phi 1.55 to 1.60, charge + eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN13 = new TH2D( "hMeanRunN13" , " dEdx vs run number, Mom .3 to .4, phi 1.55 to 1.60, charge + eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+
+		hMeanRunN14 = new TH2D( "hMeanRunN14" , " dEdx vs run number, Mom .3 to .4, phi 1.55 to 1.60, charge - eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN15 = new TH2D( "hMeanRunN15" , " dEdx vs run number, Mom .3 to .4, phi 1.55 to 1.60, charge - eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN16 = new TH2D( "hMeanRunN16" , " dEdx vs run number, Mom .3 to .4, phi 1.55 to 1.60, charge - eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+
+		hMeanRunN17 = new TH2D( "hMeanRunN17" , " dEdx vs run number, Mom .3 to .4, phi 1.55 to 1.60, charge = eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN18 = new TH2D( "hMeanRunN18" , " dEdx vs run number, Mom .3 to .4, phi 1.55 to 1.60, charge = eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN19 = new TH2D( "hMeanRunN19" , " dEdx vs run number, Mom .3 to .4, phi 1.55 to 1.60, charge = eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+
+
+		hMeanRunN21 = new TH2D( "hMeanRunN21" , " dEdx vs run number, Mom .3 to .4, phi -1.90 to -1.85, charge + eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN22 = new TH2D( "hMeanRunN22" , " dEdx vs run number, Mom .3 to .4, phi -1.90 to -1.85, charge + eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN23 = new TH2D( "hMeanRunN23" , " dEdx vs run number, Mom .3 to .4, phi -1.90 to -1.85, charge + eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+
+		hMeanRunN24 = new TH2D( "hMeanRunN24" , " dEdx vs run number, Mom .3 to .4, phi -1.90 to -1.85, charge - eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN25 = new TH2D( "hMeanRunN25" , " dEdx vs run number, Mom .3 to .4, phi -1.90 to -1.85, charge - eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN26 = new TH2D( "hMeanRunN26" , " dEdx vs run number, Mom .3 to .4, phi -1.90 to -1.85, charge - eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+
+		hMeanRunN27 = new TH2D( "hMeanRunN27" , " dEdx vs run number, Mom .3 to .4, phi -1.90 to -1.85, charge = eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN28 = new TH2D( "hMeanRunN28" , " dEdx vs run number, Mom .3 to .4, phi -1.90 to -1.85, charge = eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN29 = new TH2D( "hMeanRunN29" , " dEdx vs run number, Mom .3 to .4, phi -1.90 to -1.85, charge = eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+
+
+		hMeanRunN31 = new TH2D( "hMeanRunN31" , " dEdx vs run number, Mom .3 to .4, phi -3.00 to -2.95, charge + eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN32 = new TH2D( "hMeanRunN32" , " dEdx vs run number, Mom .3 to .4, phi -3.00 to -2.95, charge + eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN33 = new TH2D( "hMeanRunN33" , " dEdx vs run number, Mom .3 to .4, phi -3.00 to -2.95, charge + eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+
+		hMeanRunN34 = new TH2D( "hMeanRunN34" , " dEdx vs run number, Mom .3 to .4, phi -3.00 to -2.95, charge - eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN35 = new TH2D( "hMeanRunN35" , " dEdx vs run number, Mom .3 to .4, phi -3.00 to -2.95, charge - eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN36 = new TH2D( "hMeanRunN36" , " dEdx vs run number, Mom .3 to .4, phi -3.00 to -2.95, charge - eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+
+		hMeanRunN37 = new TH2D( "hMeanRunN37" , " dEdx vs run number, Mom .3 to .4, phi -3.00 to -2.95, charge = eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN38 = new TH2D( "hMeanRunN38" , " dEdx vs run number, Mom .3 to .4, phi -3.00 to -2.95, charge = eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN39 = new TH2D( "hMeanRunN39" , " dEdx vs run number, Mom .3 to .4, phi -3.00 to -2.95, charge = eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
 
 	}
 
@@ -175,14 +212,97 @@ protected:
 					if( track->pMom().pseudoRapidity() > 1 ){
 						hMeanRunN09->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
 					};
-
 		};
+
+		if( track->pMom().phi() > 1.15 && track->pMom().phi() < 1.20 ){
+
+			if( track->charge() > 0 ){
+				hMeanRunN11->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+				if( track->pMom().pseudoRapidity() < 1 ){
+				hMeanRunN12->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+				};
+				if( track->pMom().pseudoRapidity() > 1 ){
+				hMeanRunN13->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+				};
+			};
+			if( track->charge() < 0 ){
+				hMeanRunN14->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+				if( track->pMom().pseudoRapidity() < 1 ){
+				hMeanRunN15->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+				};
+				if( track->pMom().pseudoRapidity() > 1 ){
+				hMeanRunN16->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+				};
+			};
+					hMeanRunN17->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+				if( track->pMom().pseudoRapidity() < 1 ){
+					hMeanRunN18->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+				};
+				if( track->pMom().pseudoRapidity() > 1 ){
+					hMeanRunN19->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+				};
+	};
+
+		if( track->pMom().phi() > -1.90 && track->pMom().phi() < -1.85 ){
+
+			if( track->charge() > 0 ){
+				hMeanRunN21->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+				if( track->pMom().pseudoRapidity() < 1 ){
+				hMeanRunN22->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+				};
+				if( track->pMom().pseudoRapidity() > 1 ){
+				hMeanRunN23->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+				};
+			};
+			if( track->charge() < 0 ){
+				hMeanRunN24->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+				if( track->pMom().pseudoRapidity() < 1 ){
+				hMeanRunN25->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+				};
+				if( track->pMom().pseudoRapidity() > 1 ){
+				hMeanRunN26->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+				};
+			};
+					hMeanRunN27->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+				if( track->pMom().pseudoRapidity() < 1 ){
+					hMeanRunN28->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+				};
+				if( track->pMom().pseudoRapidity() > 1 ){
+					hMeanRunN29->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+				};
+	};
+
+	if( track->pMom().phi() > -3.00 && track->pMom().phi() < -2.95 ){
+
+		if( track->charge() > 0 ){
+			hMeanRunN31->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+			if( track->pMom().pseudoRapidity() < 1 ){
+			hMeanRunN32->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+			};
+			if( track->pMom().pseudoRapidity() > 1 ){
+			hMeanRunN33->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+			};
+		};
+		if( track->charge() < 0 ){
+			hMeanRunN34->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+			if( track->pMom().pseudoRapidity() < 1 ){
+			hMeanRunN35->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+			};
+			if( track->pMom().pseudoRapidity() > 1 ){
+			hMeanRunN36->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+			};
+		};
+				hMeanRunN37->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+			if( track->pMom().pseudoRapidity() < 1 ){
+				hMeanRunN38->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+			};
+			if( track->pMom().pseudoRapidity() > 1 ){
+				hMeanRunN39->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+			};
+};
 
 	//		hMeanRunN1->Fill( rmf.indexForRun( event->runId() ) , track->dEdx() );
 	//		hMeanRunN2->Fill( rmf.indexForRun( event->runId() ) , track->dEdx() );
-
-
-
 				//hDedxphi1->Fill( track->pMom().phi() , track->dEdx() );
 
 			}
