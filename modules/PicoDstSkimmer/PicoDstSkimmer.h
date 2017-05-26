@@ -86,8 +86,8 @@ protected:
 
 		//add stuff here. like, a lot of stuff
 
-		hMeanRunN1 = new TH2D( "hMeanRunN1" , " dEdx vs run number for Momentum between .3 and .4, phi between 2.56 and 2.60 ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 6 );
-		hMeanRunN2 = new TH2D( "hMeanRunN2" , " dEdx vs run number for Momentum between .3 and .4, phi between 2.56 and 2.60 ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN01 = new TH2D( "hMeanRunN1" , " dEdx vs run number for Momentum between .3 and .4, phi between 2.56 and 2.60 ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 6 );
+		hMeanRunN02 = new TH2D( "hMeanRunN2" , " dEdx vs run number for Momentum between .3 and .4, phi between 2.56 and 2.60 ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
 
 
 	}
