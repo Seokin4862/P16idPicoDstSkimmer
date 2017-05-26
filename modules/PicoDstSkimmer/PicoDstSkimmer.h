@@ -77,6 +77,32 @@ protected:
 	TH2D *hMeanRunN18 = 0;
 	TH2D *hMeanRunN19 = 0;
 
+
+	TH2D *hMeanRunN21 = 0;
+	TH2D *hMeanRunN22 = 0;
+	TH2D *hMeanRunN23 = 0;
+
+	TH2D *hMeanRunN24 = 0;
+	TH2D *hMeanRunN25 = 0;
+	TH2D *hMeanRunN26 = 0;
+
+	TH2D *hMeanRunN27 = 0;
+	TH2D *hMeanRunN28 = 0;
+	TH2D *hMeanRunN29 = 0;
+
+
+	TH2D *hMeanRunN31 = 0;
+	TH2D *hMeanRunN32 = 0;
+	TH2D *hMeanRunN33 = 0;
+
+	TH2D *hMeanRunN34 = 0;
+	TH2D *hMeanRunN35 = 0;
+	TH2D *hMeanRunN36 = 0;
+
+	TH2D *hMeanRunN37 = 0;
+	TH2D *hMeanRunN38 = 0;
+	TH2D *hMeanRunN39 = 0;
+
 	void makeHistograms(){
 
 		hDedx = new TH1D( "dEdx", "dEdx of Various Tracks; x-axis; y-axis", 1000, 0, 30 );
@@ -86,8 +112,18 @@ protected:
 
 		//add stuff here. like, a lot of stuff
 
-		hMeanRunN01 = new TH2D( "hMeanRunN1" , " dEdx vs run number for Momentum between .3 and .4, phi between 2.56 and 2.60 ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 6 );
-		hMeanRunN02 = new TH2D( "hMeanRunN2" , " dEdx vs run number for Momentum between .3 and .4, phi between 2.56 and 2.60 ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN01 = new TH2D( "hMeanRunN01" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge + eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN02 = new TH2D( "hMeanRunN02" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge + eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN03 = new TH2d( "hMeanRunN03" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge + eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+
+		hMeanRunN04 = new TH2D( "hMeanRunN04" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge - eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN05 = new TH2D( "hMeanRunN05" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge - eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN06 = new TH2d( "hMeanRunN06" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge - eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+
+		hMeanRunN07 = new TH2D( "hMeanRunN07" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge = eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN08 = new TH2D( "hMeanRunN08" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge = eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hMeanRunN09 = new TH2d( "hMeanRunN09" , " dEdx vs run number, Mom .3-.4, phi 2.56-2.60, charge = eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+
 
 
 	}
@@ -112,13 +148,35 @@ protected:
 			hphi->Fill( track->pMom().phi() );
 			hRunN->Fill( rmf.indexForRun( event->runId() ) );
 
-			if( track->pMom().phi() > 2.56 && track->pMom().phi() < 2.60 ){
+			if( track->pMom().phi() > 2.55 && track->pMom().phi() < 2.60 ){
 
-				hphicheck->Fill( track->pMom().phi() );
+				if( track->charge() > 0 ){
+					hMeaRunN01->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+					if( track->pMom().pseudoRapidity() < 1 ){
+					hMeaRunN02->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+					};
+					if( track->pMom().pseudoRapidity() > 1 ){
+					hMeaRunN03->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+					};
+				};
+				if( track->charge() < 0 ){
+					hMeaRunN04->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+					if( track->pMom().pseudoRapidity() < 1 ){
+					hMeaRunN05->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+					};
+					if( track->pMom().pseudoRapidity() > 1 ){
+					hMeaRunN06->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+					};
+				};
+						hMeaRunN07->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+					if( track->pMom().pseudoRapidity() < 1 ){
+						hMeaRunN08->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+					};
+					if( track->pMom().pseudoRapidity() > 1 ){
+						hMeaRunN09->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+					};
 
-
-
-			}
+		};
 
 	//		hMeanRunN1->Fill( rmf.indexForRun( event->runId() ) , track->dEdx() );
 	//		hMeanRunN2->Fill( rmf.indexForRun( event->runId() ) , track->dEdx() );
