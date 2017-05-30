@@ -43,7 +43,7 @@ protected:
 	TClonesArrayReader < StPicoMtdPidTraits > _rMtdPid;
 	TClonesArrayReader < StPicoBTofPidTraits > _rBTofPid;
 
-	TH1D *hDedx = 0;
+	TH1D *hdEdx = 0;
 	TH1D *hphi = 0;
 
 	TH1D
