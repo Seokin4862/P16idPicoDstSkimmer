@@ -188,8 +188,8 @@ protected:
 			hDedx->Fill( track->dEdx() );
 			hphi->Fill( track->pMom().phi() );
 			hRunN->Fill( rmf.indexForRun( event->runId() ) );
-			heta->Fill( track->eta() );
-			hetaphi->Fill( track->phi(), track->eta() )
+			heta->Fill( track->pMom().pseudoRapidity() );
+			hetaphi->Fill( track->phi(), track->pMom().pseudoRapidity() );
 
 			if( track->pMom().phi() > 2.55 && track->pMom().phi() < 2.60 ){
 
