@@ -53,7 +53,7 @@ protected:
 		hdEdx = new TH1D( "dEdx", "dE/dx of Various Tracks; dE/dx; counts", 1000, 0, 30 );
 		hphi = new TH1D( "phi", "phi of Various Tracks; x-axis; y-axis", 1000, -3.2, 3.2 );
 
-		hdEdxvsMom = new TH2D( "dEdxvsMom", "dE/dx vs Total Momentum of Various Tracks; Total Momentum; dE/dx", 1000, -10, 10, 1000, 0, 100 );
+		hdEdxvsMom = new TH2D( "dEdxvsMom", "dE/dx vs Total Momentum of Various Tracks; Total Momentum; dE/dx", 1000, -100, 100, 1000, 0, 100 );
 	};
 
 
@@ -67,9 +67,7 @@ protected:
 		size_t nTracks =  _rTrack.N();
 		for ( size_t i = 0; i < nTracks; i++ ){
 			StPicoTrack * track = _rTrack.get( i );
-
-			if( track->pMom().mag() < .3 ) continue;
-			if( track->pMom().mag() > .4 ) continue;
+	
 
 			hdEdx->Fill( track->dEdx() );
 			hphi->Fill( track->pMom().phi() );
