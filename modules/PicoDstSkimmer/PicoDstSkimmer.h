@@ -54,8 +54,7 @@ protected:
 		hphi = new TH1D( "phi", "phi of Various Tracks; x-axis; y-axis", 1000, -3.2, 3.2 );
 
 		hdEdxvsMom = new TH2D( "dE/dx vs Total Momentum of Various Tracks; Total Momentum; dE/dx", 1000, -100, 100, 1000, 0, 100 )
-
-	}
+	};
 
 
 	virtual void analyzeEvent() {
