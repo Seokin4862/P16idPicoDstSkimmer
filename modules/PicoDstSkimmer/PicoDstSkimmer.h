@@ -142,17 +142,17 @@ protected:
 		hDedxphi29 = new TH2D( "nSKa29", " dEdx vs phi for |nSigmaKaon| < 2, total momentum .3 to .4, #pm charge, #eta 0 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 2, 10 );
 
 
-		hDedxphi31 = new TH2D( "nSPi31", " dEdx vs phi for |nSigmaProton| < 2, total momentum .3 to .4, + charge, #eta -1 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 30 );
-		hDedxphi32 = new TH2D( "nSPi32", " dEdx vs phi for |nSigmaProton| < 2, total momentum .3 to .4, + charge, #eta -1 to 0; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 30 );
-		hDedxphi33 = new TH2D( "nSPi33", " dEdx vs phi for |nSigmaProton| < 2, total momentum .3 to .4, + charge, #eta 0 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 30 );
+		hDedxphi31 = new TH2D( "nSPr31", " dEdx vs phi for |nSigmaProton| < 2, total momentum .3 to .4, + charge, #eta -1 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 30 );
+		hDedxphi32 = new TH2D( "nSPr32", " dEdx vs phi for |nSigmaProton| < 2, total momentum .3 to .4, + charge, #eta -1 to 0; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 30 );
+		hDedxphi33 = new TH2D( "nSPr33", " dEdx vs phi for |nSigmaProton| < 2, total momentum .3 to .4, + charge, #eta 0 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 30 );
 
-		hDedxphi34 = new TH2D( "nSPi34", " dEdx vs phi for |nSigmaProton| < 2, total momentum .3 to .4, - charge, #eta -1 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 30 );
-		hDedxphi35 = new TH2D( "nSPi35", " dEdx vs phi for |nSigmaProton| < 2, total momentum .3 to .4, - charge, #eta -1 to 0; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 30 );
-		hDedxphi36 = new TH2D( "nSPi36", " dEdx vs phi for |nSigmaProton| < 2, total momentum .3 to .4, - charge, #eta 0 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 30 );
+		hDedxphi34 = new TH2D( "nSPr34", " dEdx vs phi for |nSigmaProton| < 2, total momentum .3 to .4, - charge, #eta -1 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 30 );
+		hDedxphi35 = new TH2D( "nSPr35", " dEdx vs phi for |nSigmaProton| < 2, total momentum .3 to .4, - charge, #eta -1 to 0; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 30 );
+		hDedxphi36 = new TH2D( "nSPr36", " dEdx vs phi for |nSigmaProton| < 2, total momentum .3 to .4, - charge, #eta 0 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 30 );
 
-		hDedxphi37 = new TH2D( "nSPi37", " dEdx vs phi for |nSigmaProton| < 2, total momentum .3 to .4, #pm charge, #eta -1 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 30 );
-		hDedxphi38 = new TH2D( "nSPi38", " dEdx vs phi for |nSigmaProton| < 2, total momentum .3 to .4, #pm charge, #eta -1 to 0; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 30 );
-		hDedxphi39 = new TH2D( "nSPi39", " dEdx vs phi for |nSigmaProton| < 2, total momentum .3 to .4, #pm charge, #eta 0 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 30 );
+		hDedxphi37 = new TH2D( "nSPr37", " dEdx vs phi for |nSigmaProton| < 2, total momentum .3 to .4, #pm charge, #eta -1 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 30 );
+		hDedxphi38 = new TH2D( "nSPr38", " dEdx vs phi for |nSigmaProton| < 2, total momentum .3 to .4, #pm charge, #eta -1 to 0; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 30 );
+		hDedxphi39 = new TH2D( "nSPr39", " dEdx vs phi for |nSigmaProton| < 2, total momentum .3 to .4, #pm charge, #eta 0 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 30 );
 
 	}
 
