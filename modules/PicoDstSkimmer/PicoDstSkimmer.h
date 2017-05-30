@@ -74,7 +74,7 @@ protected:
 			hdEdx->Fill( track->dEdx() );
 			hphi->Fill( track->pMom().phi() );
 
-			hdEdxvsMom->Fill( track->pMom(), track->dEdx() );
+			hdEdxvsMom->Fill( track->pMom().mag(), track->dEdx() );
 
 			//if( track->charge() > 0 ){
 				//hDedxphi01->Fill( track->pMom().phi() , track->dEdx() );
