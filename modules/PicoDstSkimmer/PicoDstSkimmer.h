@@ -110,7 +110,7 @@ protected:
 		hRunN = new TH1D( "RunN", "Run Numbers", 2751, 1, 2751 );
 		hphicheck = new TH1D( "phi check", "phi of Various Tracks; x-axis, y-axis", 1000, -3.2, 3.2 );
 
-		//add stuff here. like, a lot of stuff
+		//this is all rather brute forced, it feelsto me.
 
 		hMeanRunN01 = new TH2D( "hMeanRunN01" , " dEdx vs run number, Mom .3 to .4, phi 2.55 to 2.60, charge + eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
 		hMeanRunN02 = new TH2D( "hMeanRunN02" , " dEdx vs run number, Mom .3 to .4, phi 2.55 to 2.60, charge + eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
