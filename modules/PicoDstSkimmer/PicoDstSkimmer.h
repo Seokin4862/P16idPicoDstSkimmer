@@ -51,6 +51,9 @@ protected:
 	TH1D *hphi = 0;
 	TH1D *hRunN = 0;
 	TH1D *hphicheck = 0;
+	TH1D *heta = 0;
+	TH2D *hetaphi = 0;
+
 
 	TH2D *hMeanRunN01 = 0;
 	TH2D *hMeanRunN02 = 0;
@@ -109,7 +112,8 @@ protected:
 		hphi = new TH1D( "phi", "phi of Various Tracks; x-axis; y-axis", 1000, -3.2, 3.2 );
 		hRunN = new TH1D( "RunN", "Run Numbers", 2751, 1, 2751 );
 		hphicheck = new TH1D( "phi check", "phi of Various Tracks; x-axis, y-axis", 1000, -3.2, 3.2 );
-
+		heta = new TH1D( "eta", "eta of Various Tracks; x-axis; y-axis", 1000, -1.5, 1.5 );
+		hetaphi = new TH2D( "etavsphi", "eta vs phi; phi; eta", 1000, -3.2, 3.2, 1000, -1.5, 1.5 );
 		//this is all rather brute forced, it feelsto me.
 
 		hMeanRunN01 = new TH2D( "hMeanRunN01" , " dEdx vs run number, Mom .3 to .4, phi 2.55 to 2.60, charge + eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
@@ -184,6 +188,8 @@ protected:
 			hDedx->Fill( track->dEdx() );
 			hphi->Fill( track->pMom().phi() );
 			hRunN->Fill( rmf.indexForRun( event->runId() ) );
+			heta->Fill( track->eta() );
+			hetaphi->Fill( track->phi(), track->eta() )
 
 			if( track->pMom().phi() > 2.55 && track->pMom().phi() < 2.60 ){
 
