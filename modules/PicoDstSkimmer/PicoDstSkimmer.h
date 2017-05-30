@@ -98,6 +98,19 @@ protected:
 	TH2D *hDedxphi39 = 0;
 
 
+	TH2D *hDedxphi41 = 0;
+	TH2D *hDedxphi42 = 0;
+	TH2D *hDedxphi43 = 0;
+
+	TH2D *hDedxphi44 = 0;
+	TH2D *hDedxphi45 = 0;
+	TH2D *hDedxphi46 = 0;
+
+	TH2D *hDedxphi47 = 0;
+	TH2D *hDedxphi48 = 0;
+	TH2D *hDedxphi49 = 0;
+
+
 	void makeHistograms(){
 
 		hDedx = new TH1D( "dEdx", "dEdx of Various Tracks; x-axis; y-axis", 1000, 0, 30 );
@@ -153,6 +166,19 @@ protected:
 		hDedxphi37 = new TH2D( "nSPr37", " dEdx vs phi for |nSigmaProton| < 2, total momentum .3 to .4, #pm charge, #eta -1 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 30 );
 		hDedxphi38 = new TH2D( "nSPr38", " dEdx vs phi for |nSigmaProton| < 2, total momentum .3 to .4, #pm charge, #eta -1 to 0; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 30 );
 		hDedxphi39 = new TH2D( "nSPr39", " dEdx vs phi for |nSigmaProton| < 2, total momentum .3 to .4, #pm charge, #eta 0 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 10, 30 );
+
+
+		hDedxphi41 = new TH2D( "nSEl41", " dEdx vs phi for |nSigmaElectron| < 2, total momentum .3 to .4, + charge, #eta -1 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 0, 6 );
+		hDedxphi42 = new TH2D( "nSEl42", " dEdx vs phi for |nSigmaElectron| < 2, total momentum .3 to .4, + charge, #eta -1 to 0; phi; dEdx", 1000, -3.2, 3.2, 1000, 0, 6 );
+		hDedxphi43 = new TH2D( "nSEl43", " dEdx vs phi for |nSigmaelectron| < 2, total momentum .3 to .4, + charge, #eta 0 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 0, 6 );
+
+		hDedxphi44 = new TH2D( "nSEl44", " dEdx vs phi for |nSigmaElectron| < 2, total momentum .3 to .4, - charge, #eta -1 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 0, 6 );
+		hDedxphi45 = new TH2D( "nSEl45", " dEdx vs phi for |nSigmaElectron| < 2, total momentum .3 to .4, - charge, #eta -1 to 0; phi; dEdx", 1000, -3.2, 3.2, 1000, 0, 6 );
+		hDedxphi46 = new TH2D( "nSEl46", " dEdx vs phi for |nSigmaElectron| < 2, total momentum .3 to .4, - charge, #eta 0 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 0, 6 );
+
+		hDedxphi47 = new TH2D( "nSEl47", " dEdx vs phi for |nSigmaElectron| < 2, total momentum .3 to .4, #pm charge, #eta -1 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 0, 6 );
+		hDedxphi48 = new TH2D( "nSEl48", " dEdx vs phi for |nSigmaElectron| < 2, total momentum .3 to .4, #pm charge, #eta -1 to 0; phi; dEdx", 1000, -3.2, 3.2, 1000, 0, 6 );
+		hDedxphi49 = new TH2D( "nSEl49", " dEdx vs phi for |nSigmaElectron| < 2, total momentum .3 to .4, #pm charge, #eta 0 to 1; phi; dEdx", 1000, -3.2, 3.2, 1000, 0, 6 );
 
 	}
 
@@ -258,6 +284,34 @@ protected:
 			}
 
 			if( track->nSigmaProton() > -2 && track->nSigmaProton() < 2){
+				if( track->charge() > 0 ){
+					hDedxphi31->Fill( track->pMom().phi() , track->dEdx() );
+					if( track->pMom().pseudoRapidity() < 0 ){
+						hDedxphi32->Fill( track->pMom().phi() , track->dEdx() );
+					}
+					if( track->pMom().pseudoRapidity() > 0 ){
+						hDedxphi33->Fill( track->pMom().phi() , track->dEdx() );
+					}
+				}
+				if( track->charge() < 0 ){
+					hDedxphi34->Fill( track->pMom().phi() , track->dEdx() );
+					if( track->pMom().pseudoRapidity() < 0){
+						hDedxphi35->Fill( track->pMom().phi() , track->dEdx() );
+						}
+					if( track->pMom().pseudoRapidity() > 0){
+						hDedxphi36->Fill( track->pMom().phi() , track->dEdx() );
+					}
+				}
+				hDedxphi37->Fill( track->pMom().phi(), track->dEdx() );
+				if( track->pMom().pseudoRapidity() < 0){
+					hDedxphi38->Fill( track->pMom().phi() , track->dEdx() );
+				}
+				if( track->pMom().pseudoRapidity() > 0){
+					hDedxphi39->Fill( track->pMom().phi(), track->dEdx() );
+				}
+			}
+
+			if( track->nSigmaElectron() > -2 && track->nSigmaElectron() < 2){
 				if( track->charge() > 0 ){
 					hDedxphi31->Fill( track->pMom().phi() , track->dEdx() );
 					if( track->pMom().pseudoRapidity() < 0 ){
