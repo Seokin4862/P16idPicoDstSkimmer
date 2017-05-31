@@ -9,7 +9,7 @@ void png_maker( ) {
   for ( int i = 0; i < 10; i++ ){
       stringstream sstr;
       sstr << name << i;
-      cout << "name of histo: " << sstr << endl;
+      cout << "name of histo: " << sstr.str() << endl;
   }
 
 
