@@ -18,7 +18,8 @@ void png_maker( ) {
 
       // this ould empty out the sstr
       // sstr.str( "" );
-      string cn = h->Class_Name();
+      string cn = h->ClassName();
+      cout << "Class:" << cn << endl;
       if ( "TH2D" == cn ){
         cout << "I am 2D" << endl;
       }
