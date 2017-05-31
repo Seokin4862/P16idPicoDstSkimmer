@@ -23,7 +23,7 @@ void png_maker( ) {
         cout << "I am 2D" << endl;
       }
       sstr << ".png";
-      c->Print( sstr.str().c_str() );
+      // c->Print( sstr.str().c_str() );
 
   }
 
