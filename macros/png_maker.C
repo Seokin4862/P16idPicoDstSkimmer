@@ -11,7 +11,7 @@ void png_maker( ) {
       sstr << name << i;
       cout << "name of histo: " << sstr.str() << endl;
 
-      TH1 * h = (TH11*)f->Get( sstr.str().c_str() );
+      TH1 * h = (TH1*)f->Get( sstr.str().c_str() );
 
       cout << "i am a histogram : " << h->GetName() <<endl;
 
