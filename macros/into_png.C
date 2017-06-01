@@ -17,7 +17,7 @@ if( 0 == h ) continue;
 h->Draw("colz");
 stringstream name;
 name << refer.str() << ".png";
-c->print( name.str() );
+c->Print( name.str() );
 
 }
 
