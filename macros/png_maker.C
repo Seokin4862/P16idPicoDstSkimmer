@@ -40,7 +40,7 @@ void png_maker( string data_file, string histo_name, int nHistos ) {
 
       TH2 * h = (TH2*)f->Get( sstr.str().c_str() );
       if ( 0 == h ) continue;
-      process_histo( h, sstr.str() );
+      process_histo( h, sstr.str() ); 
 
 
       // cout << "i am a histogram : " << h->GetName() <<endl;
