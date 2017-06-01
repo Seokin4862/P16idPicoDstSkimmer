@@ -20,7 +20,7 @@ stringstream name;
 name << refer.str() << ".png";
 c->Print( name.str().c_str() );
 
-TProfileX * hpx = h->ProfileX();
+TProfile * hpx = h->ProfileX();
 hpx->Draw();
 stringstream name_px;
 name_px << refer.str() << "_px" << ".png";
