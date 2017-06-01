@@ -1,6 +1,4 @@
-
-
-void into_png( string data_file , string histo_name , int nHistos) {
+void into_png() {
 
 TFile * f = new TFile( data_file.c_str() );
 
