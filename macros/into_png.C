@@ -42,10 +42,10 @@ name_fs2<< "_2";
 TH1 * h_2 = (TH1*)gDirectory->Get( name_fs2.str().c_str() );
 
 h_1->Draw();
-name_fs1<< ".png"
+name_fs1<< ".png";
 c->Print( name_fs2.str().c_str());
 h_2->Draw();
-name_fs2<< ".png"
+name_fs2<< ".png";
 c->Print( name_fs2.str().c_str());
 
 
