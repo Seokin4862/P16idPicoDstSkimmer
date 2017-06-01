@@ -16,7 +16,7 @@ TH2 *h = (TH2*)f->Get( refer.str().c_str());
 if( 0 == h ) continue;
 h->Draw("colz");
 
-c1->print( refer.str() )
+c1->print( refer.str() );
 
 }
 
