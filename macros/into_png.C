@@ -14,10 +14,20 @@ refer << "dEdxphi" << i;
 
 TH2 *h = (TH2*)f->Get( refer.str().c_str());
 if( 0 == h ) continue;
+
 h->Draw("colz");
 stringstream name;
 name << refer.str() << ".png";
 c->Print( name.str().c_str() );
+
+TProfileX * hpx = h->ProfileX();
+hpx->Draw();
+stringstream name_px;
+name_px << refer.str() << "_px" << ".png";
+c->Print ( name_px.str().c_str() );
+
+
+
 
 }
 
