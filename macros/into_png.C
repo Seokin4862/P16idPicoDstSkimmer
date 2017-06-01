@@ -15,8 +15,9 @@ refer << "dEdxphi" << i;
 TH2 *h = (TH2*)f->Get( refer.str().c_str());
 if( 0 == h ) continue;
 h->Draw("colz");
-name = refer;
-c->print( (name + ".png").str() );
+stringstream name;
+name << refer.str() << ".png";
+c->print( name.str() );
 
 }
 
