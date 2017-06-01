@@ -27,14 +27,26 @@ name_px << refer.str() << "_px" << ".png";
 c->Print( name_px.str().c_str() );
 
 h->FitSlicesY();
-TH1 * h_0 = (TH1*)gDirectory->Get( ("h_0") );
-TH1 * h_1 = (TH1*)gDirectory->Get( ("h_1") );
-TH1 * h_2 = (TH1*)gDirectory->Get( ("h_2") );
+
+stringstream name_fs0;
+name_fs0<< refer.str();
+name_fs0<< "_0";
+TH1 * h_0 = (TH1*)gDirectory->Get( name_fs0.str().c_str() );
+stringstream name_fs1;
+name_fs1<< refer.str();
+name_fs1<< "_1";
+TH1 * h_1 = (TH1*)gDirectory->Get( name_fs1.str().c_str() );
+stringstream name_fs2;
+name_fs2<< refer.str();
+name_fs2<< "_2";
+TH1 * h_2 = (TH1*)gDirectory->Get( name_fs2.str().c_str() );
 
 h_1->Draw();
-c->Print( (refer+"_1"+".png").c_str());
+name_fs1<< ".png"
+c->Print( name_fs2.str().c_str());
 h_2->Draw();
-c->Print( (refer+"_2"+".png").c_str());
+name_fs2<< ".png"
+c->Print( name_fs2.str().c_str());
 
 
 }
