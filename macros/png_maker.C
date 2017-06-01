@@ -26,7 +26,7 @@ stringtream sstr;
 
 string s = sstr.str();
 
-s.c_str()
+s.c_str();
 
 void png_maker( string data_file, string histo_name, int nHistos ) {
 
