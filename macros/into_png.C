@@ -6,7 +6,7 @@ TFile * f = new TFile( "/home/sy34/workspace/safe/dEdxvsphi/Pion1Data/nSigmaPion
 
 for( int i = 1 ; i = 8 ; i++  ) {
 stringstream refer;
-refer << histo_name << i
+refer << "histo_name" << i
 cout<< "name of histogram: " << refer.str() << endl;
 }
 
