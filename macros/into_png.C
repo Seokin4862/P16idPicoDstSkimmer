@@ -27,9 +27,9 @@ name_px << refer.str() << "_px" << ".png";
 c->Print( name_px.str().c_str() );
 
 h->FitSlicesY();
-TH1 * h_0 = (TH1*)gDirectory->Get( (refer + "_0").c_str() );
-TH1 * h_1 = (TH1*)gDirectory->Get( (refer + "_1").c_str() );
-TH1 * h_2 = (TH1*)gDirectory->Get( (refer + "_2").c_str() );
+TH1 * h_0 = (TH1*)gDirectory->Get( ("dEdxphi" + "_0").c_str() );
+TH1 * h_1 = (TH1*)gDirectory->Get( ("dEdxphi" + "_1").c_str() );
+TH1 * h_2 = (TH1*)gDirectory->Get( ("dEdxphi" + "_2").c_str() );
 
 h_1->Draw();
 c->Print( (refer+"_1"+".png").c_str());
