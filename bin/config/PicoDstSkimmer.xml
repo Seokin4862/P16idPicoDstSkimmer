@@ -5,7 +5,7 @@
 	<PDS>
 		<EventLoop progress="true" />
 		<input>
-			<dst treeName="PicoDst" url="./list.lis" splitBy="5" nEvents="-1"/>
+			<dst treeName="PicoDst" url="./list.lis" splitBy="50" nEvents="2000"/>
 		</input>
 
 		<output>
