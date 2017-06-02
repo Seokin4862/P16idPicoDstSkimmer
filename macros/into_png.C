@@ -2,14 +2,14 @@
 
 void into_png() {
 
-TFile * f = new TFile( "/home/sy34/workspace/safe/ImpdEdxvsphi/ImpdEdxvsphi.root" );
+TFile * f = new TFile( "/home/sy34/workspace/safe/1600dEdxvsRunN/1600dEdxvsRunNRight/dEdxvsRunN.root" );
 
 TCanvas * c = new TCanvas("c","c");
 
 for( int i = 1 ; i < 10 ; i++  ) {
   // i < number - 1
 stringstream refer;
-refer << "nSno0" << i;
+refer << "nhMeanRunN0" << i;
 
 TH2 *h = (TH2*)f->Get( refer.str().c_str());
 if( 0 == h ) continue;
