@@ -6,7 +6,7 @@ TFile * f = new TFile( "/home/sy34/workspace/safe/dEdxvsMom/dEdxvsMom.root" );
 
 TCanvas * c = new TCanvas("c","c");
 
-for( int i = 1 ; i < 10 ; i++  ) {
+for( int i = 1 ; i < 2 ; i++  ) {
   // i < number - 1
 stringstream refer;
 refer << "dEdxvsMom";
