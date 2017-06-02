@@ -26,7 +26,7 @@ title_px << hpx->GetTitle() << " ProfileX";
 hpx->SetTitle( title_px.str().c_str() );
 hpx->SetXTitle( "#phi" );
 hpx->SetYTitle( "dEdx" );
-hpx->GetYaxis( 2 , 3 );
+hpx->GetYaxis()->SetRange( 2 , 3 );
 hpx->Draw();
 stringstream name_px;
 name_px << refer.str() << "_px" << ".png";
