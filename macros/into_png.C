@@ -22,8 +22,11 @@ c->Print( name.str().c_str() );
 
 stringstream title_px;
 TProfile * hpx = h->ProfileX();
-title_px << hpx->GetTitle() << "ProfileX";
+title_px << hpx->GetTitle() << " ProfileX";
 hpx->SetTitle( title_px.str().c_str() );
+hpx->SetXTitle( "#phi" );
+hpx->SetYTitle( "dEdx" );
+hpx->GetYaxis( 2 , 3 );
 hpx->Draw();
 stringstream name_px;
 name_px << refer.str() << "_px" << ".png";
@@ -46,7 +49,7 @@ TH1 * h_2 = (TH1*)gDirectory->Get( name_fs2.str().c_str() );
 
 h_1->Draw();
 name_fs1<< ".png";
-c->Print( name_fs2.str().c_str());
+c->Print( name_fs1.str().c_str());
 h_2->Draw();
 name_fs2<< ".png";
 c->Print( name_fs2.str().c_str());
