@@ -47,9 +47,16 @@ name_fs2<< refer.str();
 name_fs2<< "_2";
 TH1 * h_2 = (TH1*)gDirectory->Get( name_fs2.str().c_str() );
 
+stringstream title_1;
+title_1 << h->GetTitle() << "Fitted Mean";
+h_1->SetTitle( title_1.str().c_str() );
 h_1->Draw();
 name_fs1<< ".png";
 c->Print( name_fs1.str().c_str());
+
+stringstream title_1;
+title_2 << h->GetTitle() << "Fitted Sigma";
+h_2->SetTitle( title_2.str().c_str() );
 h_2->Draw();
 name_fs2<< ".png";
 c->Print( name_fs2.str().c_str());
