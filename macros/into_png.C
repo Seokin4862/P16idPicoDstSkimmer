@@ -9,12 +9,13 @@ TCanvas * c = new TCanvas("c","c");
 for( int i = 1 ; i < 10 ; i++  ) {
   // i < number - 1
 stringstream refer;
-refer << "nhMeanRunN0" << i;
+refer << "nMeanRunN0" << i;
 
 TH2 *h = (TH2*)f->Get( refer.str().c_str());
 if( 0 == h ) continue;
 
 h->Draw("colz");
+h->SetAxisRange(2.5, 4.5, "Y")
 stringstream name;
 name << refer.str() << ".png";
 c->Print( name.str().c_str() );
@@ -26,7 +27,7 @@ hpx->SetTitle( title_px.str().c_str() );
 hpx->SetXTitle( "#phi" );
 hpx->SetYTitle( "dEdx" );
 //the below is for dEdxvsRunN ProfileX
-hpx->SetAxisRange( 2.5 , 3.5 , "Y");
+hpx->SetAxisRange( 2.5 , 4.5 , "Y");
 hpx->Draw();
 stringstream name_px;
 name_px << refer.str() << "_px" << ".png";
@@ -50,7 +51,7 @@ TH1 * h_2 = (TH1*)gDirectory->Get( name_fs2.str().c_str() );
 stringstream title_1;
 title_1 << h->GetTitle() << " Fitted Mean";
 h_1->SetTitle( title_1.str().c_str() );
-//h_1->SetAxisRange( 2, 3, "Y" );
+h_1->SetAxisRange( 2.5, 4.5, "Y" );
 h_1->Draw();
 name_fs1<< ".png";
 c->Print( name_fs1.str().c_str());
@@ -58,7 +59,7 @@ c->Print( name_fs1.str().c_str());
 stringstream title_2;
 title_2 << h->GetTitle() << " Fitted Sigma";
 h_2->SetTitle( title_2.str().c_str() );
-//h_2->SetAxisRange( .1, .15, "Y" );
+h_2->SetAxisRange( 2.5, 4.5, "Y" );
 h_2->Draw();
 name_fs2<< ".png";
 c->Print( name_fs2.str().c_str());
