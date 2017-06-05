@@ -138,27 +138,27 @@ protected:
 
 				if( track->charge() > 0 ){
 					hdEdxvsRunN01->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-					if( track->pMom().pseudoRapidity() < 1 ){
+					if( track->pMom().pseudoRapidity() < 0 ){
 					hdEdxvsRunN02->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
 					};
-					if( track->pMom().pseudoRapidity() > 1 ){
+					if( track->pMom().pseudoRapidity() > 0 ){
 					hdEdxvsRunN03->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
 					};
 				};
 				if( track->charge() < 0 ){
 					hdEdxvsRunN04->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-					if( track->pMom().pseudoRapidity() < 1 ){
+					if( track->pMom().pseudoRapidity() < 0 ){
 					hdEdxvsRunN05->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
 					};
-					if( track->pMom().pseudoRapidity() > 1 ){
+					if( track->pMom().pseudoRapidity() > 0 ){
 					hdEdxvsRunN06->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
 					};
 				};
 						hdEdxvsRunN07->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-					if( track->pMom().pseudoRapidity() < 1 ){
+					if( track->pMom().pseudoRapidity() < 0 ){
 						hdEdxvsRunN08->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
 					};
-					if( track->pMom().pseudoRapidity() > 1 ){
+					if( track->pMom().pseudoRapidity() > 0 ){
 						hdEdxvsRunN09->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
 					};
 		};
@@ -167,27 +167,27 @@ protected:
 
 			if( track->charge() > 0 ){
 				hdEdxvsRunN11->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-				if( track->pMom().pseudoRapidity() < 1 ){
+				if( track->pMom().pseudoRapidity() < 0 ){
 				hdEdxvsRunN12->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
 				};
-				if( track->pMom().pseudoRapidity() > 1 ){
+				if( track->pMom().pseudoRapidity() > 0 ){
 				hdEdxvsRunN13->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
 				};
 			};
 			if( track->charge() < 0 ){
 				hdEdxvsRunN14->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-				if( track->pMom().pseudoRapidity() < 1 ){
+				if( track->pMom().pseudoRapidity() < 0 ){
 				hdEdxvsRunN15->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
 				};
-				if( track->pMom().pseudoRapidity() > 1 ){
+				if( track->pMom().pseudoRapidity() > 0 ){
 				hdEdxvsRunN16->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
 				};
 			};
 					hdEdxvsRunN17->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-				if( track->pMom().pseudoRapidity() < 1 ){
+				if( track->pMom().pseudoRapidity() < 0 ){
 					hdEdxvsRunN18->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
 				};
-				if( track->pMom().pseudoRapidity() > 1 ){
+				if( track->pMom().pseudoRapidity() > 0 ){
 					hdEdxvsRunN19->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
 				};
 	};
