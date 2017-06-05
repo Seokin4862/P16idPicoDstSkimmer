@@ -15,7 +15,7 @@ TH2 *h = (TH2*)f->Get( refer.str().c_str());
 if( 0 == h ) continue;
 
 h->Draw("colz");
-h->SetAxisRange(2.5, 4.5, "Y");
+h->SetAxisRange(0, 5, "Y");
 h->SetAxisRange(1350, 1900, "X");
 stringstream name;
 name << refer.str() << ".png";
@@ -25,16 +25,15 @@ stringstream title_px;
 TProfile * hpx = h->ProfileX();
 title_px << hpx->GetTitle() << " ProfileX";
 hpx->SetTitle( title_px.str().c_str() );
-hpx->SetXTitle( "#phi" );
-hpx->SetYTitle( "dEdx" );
-//hpx->SetAxisRange( 2.5 , 4.5 , "Y");
+hpx->SetXTitle( "run number" );
+hpx->SetAxisRange( 2.5 , 4.5 , "Y");
 hpx->SetAxisRange(1350, 1900, "X");
 hpx->Draw();
 stringstream name_px;
 name_px << refer.str() << "_px" << ".png";
 c->Print( name_px.str().c_str() );
 
-h->FitSlicesY( 0, 0, -1, 20);
+h->FitSlicesY( 0, 0, -1, 30);
 
 stringstream name_fs0;
 name_fs0<< refer.str();
