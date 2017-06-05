@@ -178,6 +178,8 @@ protected:
 
 			if( track->pMom().mag() < .3 ) continue;
 			if( track->pMom().mag() > .4 ) continue;
+			if( track->nSigmaPion() >  2 ) continue;
+			if( track->nSigmaPion() < -2 ) continue;
 //			if( track->pMom().phi() < 2.56 ) continue;
 //			if( track->pMom().phi() > 2.60 ) continue;
 
