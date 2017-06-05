@@ -125,10 +125,17 @@ protected:
 		for ( size_t i = 0; i < nTracks; i++ ){
 			StPicoTrack * track = _rTrack.get( i );
 
+			StPicoBTofPidTraits *btofPidTraits = nullptr;
+
+			if ( track->bTofPidTraitsIndex() >= 0 )
+				btofPidTraits = _rBTofPid.get( track->bTofPidTraitsIndex() );
+
 			if( track->pMom().mag() < .3 ) continue;
 			if( track->pMom().mag() > .4 ) continue;
 //			if( track->pMom().phi() < 2.56 ) continue;
 //			if( track->pMom().phi() > 2.60 ) continue;
+
+			// hInvBeta->Fill( 1.0/btofPidTraits->btofBeta() )
 
 			hDedx->Fill( track->dEdx() );
 			hphi->Fill( track->pMom().phi() );
