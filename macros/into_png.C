@@ -15,7 +15,8 @@ TH2 *h = (TH2*)f->Get( refer.str().c_str());
 if( 0 == h ) continue;
 
 h->Draw("colz");
-//h->SetAxisRange(2.5, 4.5, "Y")
+h->SetAxisRange(2.5, 4.5, "Y");
+h->SetAxisRange(1350, 1900, "X");
 stringstream name;
 name << refer.str() << ".png";
 c->Print( name.str().c_str() );
@@ -27,12 +28,13 @@ hpx->SetTitle( title_px.str().c_str() );
 hpx->SetXTitle( "#phi" );
 hpx->SetYTitle( "dEdx" );
 //hpx->SetAxisRange( 2.5 , 4.5 , "Y");
+hpx->SetAxisRange(1350, 1900, "X");
 hpx->Draw();
 stringstream name_px;
 name_px << refer.str() << "_px" << ".png";
 c->Print( name_px.str().c_str() );
 
-h->FitSlicesY( 0, 0, -1, 50);
+h->FitSlicesY( 0, 0, -1, 20);
 
 stringstream name_fs0;
 name_fs0<< refer.str();
@@ -51,6 +53,7 @@ stringstream title_1;
 title_1 << h->GetTitle() << " Fitted Mean";
 h_1->SetTitle( title_1.str().c_str() );
 //h_1->SetAxisRange( 2.5, 4.5, "Y" );
+h_1->SetAxisRange(1350, 1900, "X");
 h_1->Draw();
 name_fs1<< ".png";
 c->Print( name_fs1.str().c_str());
@@ -59,6 +62,7 @@ stringstream title_2;
 title_2 << h->GetTitle() << " Fitted Sigma";
 h_2->SetTitle( title_2.str().c_str() );
 //h_2->SetAxisRange( 2.5, 4.5, "Y" );
+h_2->SetAxisRange(135, 1900, "X");
 h_2->Draw();
 name_fs2<< ".png";
 c->Print( name_fs2.str().c_str());
