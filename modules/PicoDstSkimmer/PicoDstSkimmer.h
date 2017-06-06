@@ -58,6 +58,8 @@ protected:
 
 	TH2D *hInvBetavsMom = 0;
 
+	StPicoBTofPidTraits *btofPidTraits = nullptr;
+
 	void makeHistograms(){
 
 		hDedx = new TH1D( "dEdx", "dEdx of Various Tracks; x-axis; y-axis", 1000, 0, 30 );
@@ -85,8 +87,6 @@ protected:
 		size_t nTracks =  _rTrack.N();
 		for ( size_t i = 0; i < nTracks; i++ ){
 			StPicoTrack * track = _rTrack.get( i );
-
-			StPicoBTofPidTraits *btofPidTraits = nullptr;
 
 			if ( track->bTofPidTraitsIndex() >= 0 ){
 				btofPidTraits = _rBTofPid.get( track->bTofPidTraitsIndex() );
