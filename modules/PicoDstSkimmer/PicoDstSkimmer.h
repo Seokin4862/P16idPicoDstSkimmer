@@ -58,7 +58,7 @@ protected:
 
 	TH2D *hInvBetavsMom = 0;
 
-	StPicoBTofPidTraits *btofPidTraits = nullptr;
+
 
 	void makeHistograms(){
 
@@ -88,6 +88,7 @@ protected:
 		for ( size_t i = 0; i < nTracks; i++ ){
 			StPicoTrack * track = _rTrack.get( i );
 
+			StPicoBTofPidTraits *btofPidTraits = nullptr;
 			if ( track->bTofPidTraitsIndex() >= 0 ){
 				btofPidTraits = _rBTofPid.get( track->bTofPidTraitsIndex() );
 			};
@@ -95,13 +96,17 @@ protected:
 			hDedx->Fill( track->dEdx() );
 			hphi->Fill( track->pMom().phi() );
 			hRunN->Fill( rmf.indexForRun( event->runId() ) );
-			hMatchFlag->Fill( btofPidTraits->btofMatchFlag() );
-			hBeta->Fill( btofPidTraits->btofBeta() );
-			hInvBeta->Fill( 1.0/btofPidTraits->btofBeta() );
-			hYLocal->Fill( btofPidTraits->btofYLocal() );
-			hZLocal->Fill( btofPidTraits->btofZLocal() );
 
-			hInvBetavsMom->Fill( btofPidTraits->btofBeta(), track->pMom().mag() );
+
+				if ( nullptr != btofPidTraits ){
+					hInvBetavsMom->Fill( btofPidTraits->btofBeta(), track->pMom().mag() );
+					hMatchFlag->Fill( btofPidTraits->btofMatchFlag() );
+					hBeta->Fill( btofPidTraits->btofBeta() );
+					hInvBeta->Fill( 1.0/btofPidTraits->btofBeta() );
+					hYLocal->Fill( btofPidTraits->btofYLocal() );
+					hZLocal->Fill( btofPidTraits->btofZLocal() );
+				}
+
 
 			}
 
