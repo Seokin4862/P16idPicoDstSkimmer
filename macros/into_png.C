@@ -9,7 +9,7 @@ TCanvas * c = new TCanvas("c","c");
 for( int i = 1 ; i < 10 ; i++  ) {
   // i < number - 1
 stringstream refer;
-refer << "hdEdxvsRunN0" << i;
+refer << "hdEdxvsRunN1" << i;
 
 TH2 *h = (TH2*)f->Get( refer.str().c_str());
 if( 0 == h ) continue;
