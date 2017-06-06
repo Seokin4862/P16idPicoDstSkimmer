@@ -85,12 +85,12 @@ overlap << "overlap mean" << i << ".png";
 c->Print( overlap.str().c_str() );
 
 stringstream title_2;
-title_2 << "ovrelap of fitted sigma " << i;
+title_2 << "overlap of fitted sigma " << i;
 h_2->SetTitle( title_2.str().c_str() );
-h_2->SetAxisRange( .1, .3, "Y" );
+h_2->SetAxisRange( 0, 1, "Y" );
 h_2->SetAxisRange( 1350, 1900, "X" );
 h2_2->SetTitle( title_2.str().c_str() );
-h2_2->SetAxisRange( .1, .3, "Y" );
+h2_2->SetAxisRange( 0, 1, "Y" );
 h2_2->SetAxisRange( 1350, 1900, "X" );
 h2_2->SetLineColor( 2 );
 h_2->Draw(  );
