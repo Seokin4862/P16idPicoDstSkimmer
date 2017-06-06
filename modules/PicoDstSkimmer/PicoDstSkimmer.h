@@ -63,7 +63,6 @@ protected:
 		hDedx = new TH1D( "dEdx", "dEdx of Various Tracks; x-axis; y-axis", 1000, 0, 30 );
 		hphi = new TH1D( "phi", "phi of Various Tracks; x-axis; y-axis", 1000, -3.2, 3.2 );
 		hRunN = new TH1D( "RunN", "Run Numbers", 2751, 1, 2751 );
-		hphicheck = new TH1D( "phi check", "phi of Various Tracks; x-axis, y-axis", 1000, -3.2, 3.2 );
 
 		hMatchFlag = new TH1D( "MatchFlag", "MatchFlag of Various Tracks; x-axis; y-axis", 3, 0, 2);
 		hBeta = new TH1D( "Beta", "Beta of Various Tracks; x-axis; y-axis", 100, 0, 1);
