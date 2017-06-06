@@ -72,7 +72,8 @@ TH1 * h2_2 = (TH1*)gDirectory->Get( name2_fs2.str().c_str() );
 stringstream title_1;
 title_1 << "overlap of fitted mean " << i;
 h2_1->SetTitle( title_1.str().c_str() );
-
+h2_1->SetAxisRange( 2.6, 2.9, "Y" );
+h2_1->SetAxisRange( 1350, 1900, "X" );
 h_1->Draw(  );
 h2_1->Draw( "same" );
 stringstream overlap;
@@ -81,8 +82,9 @@ c->Print( overlap.str().c_str() );
 
 stringstream title_2;
 title_2 << "ovrelap of fitted sigma " << i;
-h2_1->SetTitle( title_2.str().c_str() );
-
+h2_2->SetTitle( title_2.str().c_str() );
+h2_2->SetAxisRange( .1, .3, "Y" );
+h2_2->SetAxisRange( 1350, 1900, "X" );
 h_2->Draw(  );
 h2_2->Draw( "same" );
 stringstream overlap;
