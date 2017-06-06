@@ -60,7 +60,7 @@ c->Print( name_fs1.str().c_str());
 stringstream title_2;
 title_2 << h->GetTitle() << " Fitted Sigma";
 h_2->SetTitle( title_2.str().c_str() );
-h_2->SetAxisRange( 0, 2.5, "Y" );
+h_2->SetAxisRange( 0, .5, "Y" );
 h_2->SetAxisRange(1350, 1900, "X");
 h_2->Draw();
 name_fs2<< ".png";
