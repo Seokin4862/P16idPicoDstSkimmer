@@ -15,7 +15,7 @@ TH2 *h = (TH2*)f->Get( refer.str().c_str());
 if( 0 == h ) continue;
 
 h->Draw("colz");
-h->SetAxisRange(0, 5, "Y");
+h->SetAxisRange(1.5, 5, "Y");
 h->SetAxisRange(1350, 1900, "X");
 stringstream name;
 name << refer.str() << ".png";
@@ -51,7 +51,7 @@ TH1 * h_2 = (TH1*)gDirectory->Get( name_fs2.str().c_str() );
 stringstream title_1;
 title_1 << h->GetTitle() << " Fitted Mean";
 h_1->SetTitle( title_1.str().c_str() );
-h_1->SetAxisRange( 2.5, 3.5, "Y" );
+h_1->SetAxisRange( 2.5, 3.0, "Y" );
 h_1->SetAxisRange(1350, 1900, "X");
 h_1->Draw();
 name_fs1<< ".png";
