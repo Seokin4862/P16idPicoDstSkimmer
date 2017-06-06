@@ -72,7 +72,7 @@ protected:
 		hYLocal = new TH1D( "YLocal", "YLocal of Various Tracks; x-axis; y-axis", 100, -5, 5);
 		hZLocal = new TH1D( "ZLocal", "XLocal of Various Tracks; x-axis; y-axis", 100, -5, 5);
 
-		hInvBetavsMom = new TH2D( "InvBetavsMom", "1/Beta vs Momentum; x-axis; y-axis", 1000, 1, 1000);
+		hInvBetavsMom = new TH2D( "InvBetavsMom", "1/Beta vs Momentum; x-axis; y-axis", 1000, 1, 1000, 1000, 0, 100);
 
 
 	}
