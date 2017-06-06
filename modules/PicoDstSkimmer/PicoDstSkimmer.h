@@ -51,31 +51,13 @@ protected:
 	TH1D *hphi = 0;
 	TH1D *hRunN = 0;
 	TH1D *hphicheck = 0;
+	TH1D *hMatchFlag = 0;
+	TH1D *hBeta = 0;
+	TH1D *hInvBeta = 0;
+	TH1D *hYLocal = 0;
+	TH1D *hZLocal = 0;
 
-	TH2D *hdEdxvsRunN01 = 0;
-	TH2D *hdEdxvsRunN02 = 0;
-	TH2D *hdEdxvsRunN03 = 0;
-
-	TH2D *hdEdxvsRunN04 = 0;
-	TH2D *hdEdxvsRunN05 = 0;
-	TH2D *hdEdxvsRunN06 = 0;
-
-	TH2D *hdEdxvsRunN07 = 0;
-	TH2D *hdEdxvsRunN08 = 0;
-	TH2D *hdEdxvsRunN09 = 0;
-
-
-	TH2D *hdEdxvsRunN11 = 0;
-	TH2D *hdEdxvsRunN12 = 0;
-	TH2D *hdEdxvsRunN13 = 0;
-
-	TH2D *hdEdxvsRunN14 = 0;
-	TH2D *hdEdxvsRunN15 = 0;
-	TH2D *hdEdxvsRunN16 = 0;
-
-	TH2D *hdEdxvsRunN17 = 0;
-	TH2D *hdEdxvsRunN18 = 0;
-	TH2D *hdEdxvsRunN19 = 0;
+	TH2D *hInvBetavsMom = 0;
 
 	void makeHistograms(){
 
@@ -84,32 +66,13 @@ protected:
 		hRunN = new TH1D( "RunN", "Run Numbers", 2751, 1, 2751 );
 		hphicheck = new TH1D( "phi check", "phi of Various Tracks; x-axis, y-axis", 1000, -3.2, 3.2 );
 
-		//this is all rather brute forced, it feelsto me.
+		hMatchFlag = new TH1D( "", "", 3, 0, 2);
+		hBeta = new TH1D( "", "", 100, 0, 1);
+		hInvBeta = new TH1D( "", "", 1000, 1, 1000);
+		hYLocal = new TH1D( "", "", 100, -5, 5);
+		hXLocal = new TH1D( "", "", 100, -5, 5);
 
-		hdEdxvsRunN01 = new TH2D( "hdEdxvsRunN01" , " dEdx vs run number, Mom .3 to .4, phi 2.55 to 2.60, charge + eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-		hdEdxvsRunN02 = new TH2D( "hdEdxvsRunN02" , " dEdx vs run number, Mom .3 to .4, phi 2.55 to 2.60, charge + eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-		hdEdxvsRunN03 = new TH2D( "hdEdxvsRunN03" , " dEdx vs run number, Mom .3 to .4, phi 2.55 to 2.60, charge + eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-
-		hdEdxvsRunN04 = new TH2D( "hdEdxvsRunN04" , " dEdx vs run number, Mom .3 to .4, phi 2.55 to 2.60, charge - eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-		hdEdxvsRunN05 = new TH2D( "hdEdxvsRunN05" , " dEdx vs run number, Mom .3 to .4, phi 2.55 to 2.60, charge - eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-		hdEdxvsRunN06 = new TH2D( "hdEdxvsRunN06" , " dEdx vs run number, Mom .3 to .4, phi 2.55 to 2.60, charge - eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-
-		hdEdxvsRunN07 = new TH2D( "hdEdxvsRunN07" , " dEdx vs run number, Mom .3 to .4, phi 2.55 to 2.60, charge = eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-		hdEdxvsRunN08 = new TH2D( "hdEdxvsRunN08" , " dEdx vs run number, Mom .3 to .4, phi 2.55 to 2.60, charge = eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-		hdEdxvsRunN09 = new TH2D( "hdEdxvsRunN09" , " dEdx vs run number, Mom .3 to .4, phi 2.55 to 2.60, charge = eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-
-
-		hdEdxvsRunN11 = new TH2D( "hdEdxvsRunN11" , " dEdx vs run number, Mom .3 to .4, phi -.55 to -.6 (less displacement), charge + eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-		hdEdxvsRunN12 = new TH2D( "hdEdxvsRunN12" , " dEdx vs run number, Mom .3 to .4, phi -.55 to -.6 (less displacement), charge + eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-		hdEdxvsRunN13 = new TH2D( "hdEdxvsRunN13" , " dEdx vs run number, Mom .3 to .4, phi -.55 to -.6 (less displacement), charge + eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-
-		hdEdxvsRunN14 = new TH2D( "hdEdxvsRunN14" , " dEdx vs run number, Mom .3 to .4, phi -.55 to -.6 (less displacement), charge - eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-		hdEdxvsRunN15 = new TH2D( "hdEdxvsRunN15" , " dEdx vs run number, Mom .3 to .4, phi -.55 to -.6 (less displacement), charge - eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-		hdEdxvsRunN16 = new TH2D( "hdEdxvsRunN16" , " dEdx vs run number, Mom .3 to .4, phi -.55 to -.6 (less displacement), charge - eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-
-		hdEdxvsRunN17 = new TH2D( "hdEdxvsRunN17" , " dEdx vs run number, Mom .3 to .4, phi -.55 to -.6 (less displacement), charge = eta = ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-		hdEdxvsRunN18 = new TH2D( "hdEdxvsRunN18" , " dEdx vs run number, Mom .3 to .4, phi -.55 to -.6 (less displacement), charge = eta + ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
-		hdEdxvsRunN19 = new TH2D( "hdEdxvsRunN19" , " dEdx vs run number, Mom .3 to .4, phi -.55 to -.6 (less displacement), charge = eta - ; run number ; dE/dx ", 2751, 1, 2751, 1000, 0, 20 );
+		hInvBetavsMom = new TH2D( "", "", 1000, 1, 1000)
 
 
 	}
@@ -130,8 +93,8 @@ protected:
 			if ( track->bTofPidTraitsIndex() >= 0 )
 				btofPidTraits = _rBTofPid.get( track->bTofPidTraitsIndex() );
 
-			if( track->pMom().mag() < .3 ) continue;
-			if( track->pMom().mag() > .4 ) continue;
+//			if( track->pMom().mag() < .3 ) continue;
+//			if( track->pMom().mag() > .4 ) continue;
 //			if( track->pMom().phi() < 2.56 ) continue;
 //			if( track->pMom().phi() > 2.60 ) continue;
 
@@ -140,64 +103,44 @@ protected:
 			hDedx->Fill( track->dEdx() );
 			hphi->Fill( track->pMom().phi() );
 			hRunN->Fill( rmf.indexForRun( event->runId() ) );
+			hMatchFlag->Fill( btofPidTraits->btofMatchFlag() );
+			hBeta->Fill( btofPidTraits->btofBeta() );
+			hInvBeta->Fill( 1.0/btofPidTraits->btofBeta() );
+			hYLocal->Fill( btofPidTraits->btofYLocal() );
+			hXLocal->Fill( btofPidTraits->btofXLocal() );
 
-			if( track->pMom().phi() > 2.55 && track->pMom().phi() < 2.60 ){
+			hInvBetavsMom->Fill( btofPidTraits->btofBeta(), track->pMom().mag() );
 
-				if( track->charge() > 0 ){
-					hdEdxvsRunN01->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-					if( track->pMom().pseudoRapidity() < 0 ){
-					hdEdxvsRunN02->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-					};
-					if( track->pMom().pseudoRapidity() > 0 ){
-					hdEdxvsRunN03->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-					};
-				};
-				if( track->charge() < 0 ){
-					hdEdxvsRunN04->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-					if( track->pMom().pseudoRapidity() < 0 ){
-					hdEdxvsRunN05->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-					};
-					if( track->pMom().pseudoRapidity() > 0 ){
-					hdEdxvsRunN06->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-					};
-				};
-						hdEdxvsRunN07->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-					if( track->pMom().pseudoRapidity() < 0 ){
-						hdEdxvsRunN08->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-					};
-					if( track->pMom().pseudoRapidity() > 0 ){
-						hdEdxvsRunN09->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-					};
-		};
 
-		if( track->pMom().phi() > -.6 && track->pMom().phi() < -.55 ){
-
-			if( track->charge() > 0 ){
-				hdEdxvsRunN11->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-				if( track->pMom().pseudoRapidity() < 0 ){
-				hdEdxvsRunN12->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-				};
-				if( track->pMom().pseudoRapidity() > 0 ){
-				hdEdxvsRunN13->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-				};
-			};
-			if( track->charge() < 0 ){
-				hdEdxvsRunN14->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-				if( track->pMom().pseudoRapidity() < 0 ){
-				hdEdxvsRunN15->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-				};
-				if( track->pMom().pseudoRapidity() > 0 ){
-				hdEdxvsRunN16->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-				};
-			};
-					hdEdxvsRunN17->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-				if( track->pMom().pseudoRapidity() < 0 ){
-					hdEdxvsRunN18->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-				};
-				if( track->pMom().pseudoRapidity() > 0 ){
-					hdEdxvsRunN19->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-				};
-	};
+	// 		if( track->pMom().phi() > 2.55 && track->pMom().phi() < 2.60 ){
+	//
+	// 			if( track->charge() > 0 ){
+	// 				hdEdxvsRunN01->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+	// 				if( track->pMom().pseudoRapidity() < 0 ){
+	// 				hdEdxvsRunN02->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+	// 				};
+	// 				if( track->pMom().pseudoRapidity() > 0 ){
+	// 				hdEdxvsRunN03->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+	// 				};
+	// 			};
+	// 			if( track->charge() < 0 ){
+	// 				hdEdxvsRunN04->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+	// 				if( track->pMom().pseudoRapidity() < 0 ){
+	// 				hdEdxvsRunN05->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+	// 				};
+	// 				if( track->pMom().pseudoRapidity() > 0 ){
+	// 				hdEdxvsRunN06->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+	// 				};
+	// 			};
+	// 					hdEdxvsRunN07->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+	// 				if( track->pMom().pseudoRapidity() < 0 ){
+	// 					hdEdxvsRunN08->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+	// 				};
+	// 				if( track->pMom().pseudoRapidity() > 0 ){
+	// 					hdEdxvsRunN09->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
+	// 				};
+	// 	};
+	//
 
 
 	//		hdEdxvsRunN1->Fill( rmf.indexForRun( event->runId() ) , track->dEdx() );
