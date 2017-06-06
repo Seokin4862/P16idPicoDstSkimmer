@@ -66,13 +66,13 @@ protected:
 		hphi = new TH1D( "phi", "phi of Various Tracks; x-axis; y-axis", 1000, -3.2, 3.2 );
 		hRunN = new TH1D( "RunN", "Run Numbers", 2751, 1, 2751 );
 
-		hMatchFlag = new TH1D( "MatchFlag", "MatchFlag of Various Tracks; x-axis; y-axis", 3, 0, 2);
-		hBeta = new TH1D( "Beta", "Beta of Various Tracks; x-axis; y-axis", 100, 0, 1);
-		hInvBeta = new TH1D( "InvBeta", "1/Beta of Various Tracks; x-axis; y-axis", 1000, 1, 1000);
+		hMatchFlag = new TH1D( "MatchFlag", "MatchFlag of Various Tracks; x-axis; y-axis", 3, -.5, 2.5);
+		hBeta = new TH1D( "Beta", "Beta of Various Tracks; x-axis; y-axis", 1000, 0, 1);
+		hInvBeta = new TH1D( "InvBeta", "1/Beta of Various Tracks; x-axis; y-axis", 1000, 0, 15);
 		hYLocal = new TH1D( "YLocal", "YLocal of Various Tracks; x-axis; y-axis", 100, -5, 5);
 		hZLocal = new TH1D( "ZLocal", "XLocal of Various Tracks; x-axis; y-axis", 100, -5, 5);
 
-		hInvBetavsMom = new TH2D( "InvBetavsMom", "1/Beta vs Momentum; x-axis; y-axis", 1000, 1, 1000, 1000, 0, 100);
+		hInvBetavsMom = new TH2D( "InvBetavsMom", "1/Beta vs Momentum; x-axis; y-axis", 1000, 0, 15, 1000, 0, 100);
 
 
 	}

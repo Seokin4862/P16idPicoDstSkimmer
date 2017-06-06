@@ -1,6 +1,6 @@
 
 
-void into_png() {
+void overlap() {
 
 TFile * f = new TFile( "/home/sy34/workspace/safe/65dEdxvsRunN/dEdxvsRunN.root" );
 
@@ -56,10 +56,6 @@ h_11->SetAxisRange( 2.6, 2.9, "Y" );
 h_11->SetAxisRange(1350, 1900, "X");
 h_11->Draw();
 h_12->Draw( "same" );
-
-
-
-
 
 name_fs1<< ".png";
 c->Print( name_fs1.str().c_str());
