@@ -99,7 +99,7 @@ protected:
 
 
 				if ( nullptr != btofPidTraits ){
-					hInvBetavsMom->Fill( btofPidTraits->btofBeta(), track->pMom().mag() );
+					hInvBetavsMom->Fill( 1.0/btofPidTraits->btofBeta(), track->pMom().mag() );
 					hMatchFlag->Fill( btofPidTraits->btofMatchFlag() );
 					hBeta->Fill( btofPidTraits->btofBeta() );
 					hInvBeta->Fill( 1.0/(btofPidTraits->btofBeta()) );
