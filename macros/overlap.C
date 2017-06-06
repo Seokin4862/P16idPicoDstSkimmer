@@ -76,7 +76,7 @@ h2_1->SetTitle( title_1.str().c_str() );
 h_1->Draw(  );
 h2_1->Draw( "same" );
 stringstream overlap;
-overlap << "overlap" << i << ".png";
+overlap << "overlap mean" << i << ".png";
 c->Print( overlap.str().c_str() );
 
 stringstream title_2;
@@ -86,7 +86,7 @@ h2_1->SetTitle( title_2.str().c_str() );
 h_2->Draw(  );
 h2_2->Draw( "same" );
 stringstream overlap;
-overlap << "overlap" << i << ".png";
+overlap << "overlap sigma" << i << ".png";
 c->Print( overlap.str().c_str() );
 
 // stringstream title_1;
