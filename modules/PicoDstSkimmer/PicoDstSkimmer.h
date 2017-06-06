@@ -66,11 +66,11 @@ protected:
 		hRunN = new TH1D( "RunN", "Run Numbers", 2751, 1, 2751 );
 		hphicheck = new TH1D( "phi check", "phi of Various Tracks; x-axis, y-axis", 1000, -3.2, 3.2 );
 
-		hMatchFlag = new TH1D( "", "", 3, 0, 2);
-		hBeta = new TH1D( "", "", 100, 0, 1);
-		hInvBeta = new TH1D( "", "", 1000, 1, 1000);
-		hYLocal = new TH1D( "", "", 100, -5, 5);
-		hXLocal = new TH1D( "", "", 100, -5, 5);
+		hMatchFlag = new TH1D( "MatchFlag", "MatchFlag of Various Tracks; x-axis; y-axis", 3, 0, 2);
+		hBeta = new TH1D( "Beta", "Beta of Various Tracks; x-axis; y-axis", 100, 0, 1);
+		hInvBeta = new TH1D( "InvBeta", "1/Beta of Various Tracks; x-axis; y-axis", 1000, 1, 1000);
+		hYLocal = new TH1D( "YLocal", "YLocal of Various Tracks; x-axis; y-axis", 100, -5, 5);
+		hXLocal = new TH1D( "XLocal", "XLocal of Various Tracks; x-axis; y-axis", 100, -5, 5);
 
 		hInvBetavsMom = new TH2D( "", "", 1000, 1, 1000)
 
