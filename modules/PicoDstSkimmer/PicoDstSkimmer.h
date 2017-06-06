@@ -54,7 +54,9 @@ protected:
 	TH1D *hBeta = 0;
 	TH1D *hInvBeta = 0;
 	TH1D *hYLocal = 0;
-	TH1D *hZLocal = 0;
+	TH1D *hChargePt = 0;
+	TH1D *hPMom = 0;
+	TH1D *hChargePMom = 0;
 
 	TH2D *hInvBetavsMom = 0;
 
@@ -71,6 +73,9 @@ protected:
 		hInvBeta = new TH1D( "InvBeta", "1/Beta of Various Tracks; x-axis; y-axis", 1000, 0, 1.5);
 		hYLocal = new TH1D( "YLocal", "YLocal of Various Tracks; x-axis; y-axis", 100, -5, 5);
 		hZLocal = new TH1D( "ZLocal", "XLocal of Various Tracks; x-axis; y-axis", 100, -5, 5);
+		hChargePt = new TH1D( "ChargePt", " Charge times Pt of Various tracks; x-axis; y-axis", 100, -10, 10 );
+		hPMom = new TH1D( "PMom", "PMom of Various tracks; x-axis;y-axis", 100, -10, 10 );
+		hChargePMom = new TH1D( "ChargePMom", "Charge times Momentum of Various tracks; x-axis; y-axis", 100, -10, 10 );
 
 		hInvBetavsMom = new TH2D( "InvBetavsMom", "1/Beta vs Momentum; x-axis; y-axis", 1000, 0, 1.5, 1000, 0, 100);
 
