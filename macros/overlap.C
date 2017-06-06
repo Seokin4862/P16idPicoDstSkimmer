@@ -65,7 +65,7 @@ name2_fs1<< "_1";
 TH1 * h2_1 = (TH1*)gDirectory->Get( name2_fs1.str().c_str() );
 stringstream name2_fs2;
 name2_fs2<< refer2.str();
-name2_fs2<< "_0";
+name2_fs2<< "_2";
 TH1 * h2_2 = (TH1*)gDirectory->Get( name2_fs2.str().c_str() );
 
 
@@ -81,7 +81,7 @@ h2_1->SetLineColor( 2 );
 h_1->Draw(  );
 h2_1->Draw( "same" );
 stringstream overlap;
-overlap << "overlap mean" << i << ".png";
+overlap << "mean_overlap" << i << ".png";
 c->Print( overlap.str().c_str() );
 
 stringstream title_2;
@@ -96,7 +96,7 @@ h2_2->SetLineColor( 2 );
 h_2->Draw(  );
 h2_2->Draw( "same" );
 stringstream overlap;
-overlap << "overlap sigma" << i << ".png";
+overlap << "sigma_overlap" << i << ".png";
 c->Print( overlap.str().c_str() );
 
 // stringstream title_1;
