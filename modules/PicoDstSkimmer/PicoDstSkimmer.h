@@ -101,8 +101,8 @@ protected:
 				if ( nullptr != btofPidTraits ){
 					hInvBetavsMom->Fill( btofPidTraits->btofBeta(), track->pMom().mag() );
 					hMatchFlag->Fill( btofPidTraits->btofMatchFlag() );
-					hBeta->Fill( btofPidTraits->btofBeta()*2000 );
-					hInvBeta->Fill( 1.0/(btofPidTraits->btofBeta()*2000) );
+					hBeta->Fill( btofPidTraits->btofBeta() );
+					hInvBeta->Fill( 1.0/(btofPidTraits->btofBeta()) );
 					hYLocal->Fill( btofPidTraits->btofYLocal() );
 					hZLocal->Fill( btofPidTraits->btofZLocal() );
 				}
