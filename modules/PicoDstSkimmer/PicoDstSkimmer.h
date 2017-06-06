@@ -50,7 +50,6 @@ protected:
 	TH1D *hDedx = 0;
 	TH1D *hphi = 0;
 	TH1D *hRunN = 0;
-	TH1D *hphicheck = 0;
 	TH1D *hMatchFlag = 0;
 	TH1D *hBeta = 0;
 	TH1D *hInvBeta = 0;
@@ -88,7 +87,7 @@ protected:
 		for ( size_t i = 0; i < nTracks; i++ ){
 			StPicoTrack * track = _rTrack.get( i );
 
-			StPicoBTofPidTraits *btofPidTraits = 0;
+			StPicoBTofPidTraits *btofPidTraits = nullptr;
 
 			if ( track->bTofPidTraitsIndex() >= 0 ){
 				btofPidTraits = _rBTofPid.get( track->bTofPidTraitsIndex() );
