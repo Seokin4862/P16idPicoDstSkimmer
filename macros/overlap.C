@@ -1,6 +1,6 @@
 
 
-void into_png() {
+void overlap() {
 
 TFile * f = new TFile( "/home/sy34/workspace/safe/65dEdxvsRunN/dEdxvsRunN.root" );
 
