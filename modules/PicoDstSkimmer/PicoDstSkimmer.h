@@ -94,13 +94,6 @@ protected:
 				btofPidTraits = _rBTofPid.get( track->bTofPidTraitsIndex() );
 			};
 
-//			if( track->pMom().mag() < .3 ) continue;
-//			if( track->pMom().mag() > .4 ) continue;
-//			if( track->pMom().phi() < 2.56 ) continue;
-//			if( track->pMom().phi() > 2.60 ) continue;
-
-			// hInvBeta->Fill( 1.0/btofPidTraits->btofBeta() )
-
 			hDedx->Fill( track->dEdx() );
 			hphi->Fill( track->pMom().phi() );
 			hRunN->Fill( rmf.indexForRun( event->runId() ) );
@@ -111,42 +104,6 @@ protected:
 			hZLocal->Fill( btofPidTraits->btofZLocal() );
 
 			hInvBetavsMom->Fill( btofPidTraits->btofBeta(), track->pMom().mag() );
-
-
-	// 		if( track->pMom().phi() > 2.55 && track->pMom().phi() < 2.60 ){
-	//
-	// 			if( track->charge() > 0 ){
-	// 				hdEdxvsRunN01->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-	// 				if( track->pMom().pseudoRapidity() < 0 ){
-	// 				hdEdxvsRunN02->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-	// 				};
-	// 				if( track->pMom().pseudoRapidity() > 0 ){
-	// 				hdEdxvsRunN03->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-	// 				};
-	// 			};
-	// 			if( track->charge() < 0 ){
-	// 				hdEdxvsRunN04->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-	// 				if( track->pMom().pseudoRapidity() < 0 ){
-	// 				hdEdxvsRunN05->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-	// 				};
-	// 				if( track->pMom().pseudoRapidity() > 0 ){
-	// 				hdEdxvsRunN06->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-	// 				};
-	// 			};
-	// 					hdEdxvsRunN07->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-	// 				if( track->pMom().pseudoRapidity() < 0 ){
-	// 					hdEdxvsRunN08->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-	// 				};
-	// 				if( track->pMom().pseudoRapidity() > 0 ){
-	// 					hdEdxvsRunN09->Fill( rmf.indexForRun( event->runId() ), track->dEdx() );
-	// 				};
-	// 	};
-	//
-
-
-	//		hdEdxvsRunN1->Fill( rmf.indexForRun( event->runId() ) , track->dEdx() );
-	//		hdEdxvsRunN2->Fill( rmf.indexForRun( event->runId() ) , track->dEdx() );
-				//hDedxphi1->Fill( track->pMom().phi() , track->dEdx() );
 
 			}
 
@@ -159,8 +116,6 @@ protected:
 		// LOG_IF_F( INFO, DEBUG, "#Tracks: %u", _rTrack.N() );
 		// LOG_IF_F( INFO, DEBUG, "#MtdHits: %u", _rMtdHit.N() );
 		// LOG_IF_F( INFO, DEBUG, "#MtdPids: %u", _rMtdPid.N() );
-
 };
-
 
 #endif
