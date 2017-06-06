@@ -88,7 +88,7 @@ protected:
 		for ( size_t i = 0; i < nTracks; i++ ){
 			StPicoTrack * track = _rTrack.get( i );
 
-			StPicoBTofPidTraits *btofPidTraits = nullptr;
+			StPicoBTofPidTraits *btofPidTraits = 0;
 
 			if ( track->bTofPidTraitsIndex() >= 0 ){
 				btofPidTraits = _rBTofPid.get( track->bTofPidTraitsIndex() );
