@@ -90,8 +90,9 @@ protected:
 
 			StPicoBTofPidTraits *btofPidTraits = nullptr;
 
-			if ( track->bTofPidTraitsIndex() >= 0 )
+			if ( track->bTofPidTraitsIndex() >= 0 ){
 				btofPidTraits = _rBTofPid.get( track->bTofPidTraitsIndex() );
+			};
 
 //			if( track->pMom().mag() < .3 ) continue;
 //			if( track->pMom().mag() > .4 ) continue;
