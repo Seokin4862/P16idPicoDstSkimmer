@@ -70,9 +70,9 @@ protected:
 		hBeta = new TH1D( "Beta", "Beta of Various Tracks; x-axis; y-axis", 100, 0, 1);
 		hInvBeta = new TH1D( "InvBeta", "1/Beta of Various Tracks; x-axis; y-axis", 1000, 1, 1000);
 		hYLocal = new TH1D( "YLocal", "YLocal of Various Tracks; x-axis; y-axis", 100, -5, 5);
-		hXLocal = new TH1D( "XLocal", "XLocal of Various Tracks; x-axis; y-axis", 100, -5, 5);
+		hZLocal = new TH1D( "ZLocal", "XLocal of Various Tracks; x-axis; y-axis", 100, -5, 5);
 
-		hInvBetavsMom = new TH2D( "", "", 1000, 1, 1000)
+		hInvBetavsMom = new TH2D( "InvBetavsMom", "1/Beta vs Momentum; x-axis; y-axis", 1000, 1, 1000);
 
 
 	}
@@ -107,7 +107,7 @@ protected:
 			hBeta->Fill( btofPidTraits->btofBeta() );
 			hInvBeta->Fill( 1.0/btofPidTraits->btofBeta() );
 			hYLocal->Fill( btofPidTraits->btofYLocal() );
-			hXLocal->Fill( btofPidTraits->btofXLocal() );
+			hZLocal->Fill( btofPidTraits->btofZLocal() );
 
 			hInvBetavsMom->Fill( btofPidTraits->btofBeta(), track->pMom().mag() );
 
