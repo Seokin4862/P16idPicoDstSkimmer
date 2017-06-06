@@ -26,7 +26,7 @@ TProfile * hpx = h->ProfileX();
 title_px << hpx->GetTitle() << " ProfileX";
 hpx->SetTitle( title_px.str().c_str() );
 hpx->SetXTitle( "run number" );
-hpx->SetAxisRange( 2.5 , 4.5 , "Y");
+hpx->SetAxisRange( 2.5 , 3.1 , "Y");
 hpx->SetAxisRange(1350, 1900, "X");
 hpx->Draw();
 stringstream name_px;
