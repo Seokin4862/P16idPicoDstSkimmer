@@ -78,7 +78,7 @@ protected:
 		hPMom = new TH1D( "PMom", "PMom of Various tracks; x-axis;y-axis", 100, -10, 10 );
 		hChargePMom = new TH1D( "ChargePMom", "Charge times Momentum of Various tracks; x-axis; y-axis", 100, -10, 10 );
 
-		hInvBetavsMom = new TH2D( "InvBetavsMom", "1/Beta vs Momentum; x-axis; y-axis", 1000, 0, 1.5, 1000, 0, 100);
+		hInvBetavsMom = new TH2D( "InvBetavsMom", "1/Beta vs Momentum; x-axis; y-axis", 1000, 0, 1.5, 1000, 0, 10);
 
 
 	}
