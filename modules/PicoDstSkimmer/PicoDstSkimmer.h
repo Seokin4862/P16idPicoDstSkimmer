@@ -70,7 +70,7 @@ protected:
 		// hRunN = new TH1D( "RunN", "Run Numbers", 2751, 1, 2751 );
 
 		hMatchFlag = new TH1D( "MatchFlag", "MatchFlag of Various Tracks; Match Flag Numer (0, 1, 2); number of tracks", 3, -.5, 2.5);
-		hBeta = new TH1D( "Beta", "Beta of Various Tracks; Beta, number of tracks", 1000, 0, 1);
+		hBeta = new TH1D( "Beta", "Beta of Various Tracks; Beta; number of tracks", 1000, 0, 1);
 		hInvBeta = new TH1D( "InvBeta", "1/Beta of Various Tracks; 1/Beta; number of tracks", 1000, 0, 1.5);
 		hYLocal = new TH1D( "YLocal", "YLocal of Various Tracks; YLocal; number of tracks", 100, -5, 5);
 		hZLocal = new TH1D( "ZLocal", "XLocal of Various Tracks; ZLocal; number of tracks", 100, -5, 5);
