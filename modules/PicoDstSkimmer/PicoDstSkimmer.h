@@ -70,7 +70,7 @@ protected:
 		// hRunN = new TH1D( "RunN", "Run Numbers", 2751, 1, 2751 );
 
 		hMatchFlag = new TH1D( "MatchFlag", "MatchFlag of Various Tracks; Match Flag Numer (0, 1, 2); number of tracks", 3, -.5, 2.5);
-		hBeta = new TH1D( "Beta", "Beta of Various Tracks; Beta; number of tracks", 1000, 0, 1);
+		hBeta = new TH1D( "Beta", "Beta of Various Tracks; Beta; number of tracks", 1000, 0, 1.5);
 		hInvBeta = new TH1D( "InvBeta", "1/Beta of Various Tracks; 1/Beta; number of tracks", 1000, 0, 1.5);
 		hYLocal = new TH1D( "YLocal", "YLocal of Various Tracks; YLocal; number of tracks", 100, -5, 5);
 		hZLocal = new TH1D( "ZLocal", "XLocal of Various Tracks; ZLocal; number of tracks", 100, -5, 5);
@@ -78,7 +78,7 @@ protected:
 		hPMom = new TH1D( "PMom", "Magnitude of Momentum of Various tracks; Magnitude of Momentum; number of tracks", 100, -10, 10 );
 		hChargePMom = new TH1D( "ChargePMom", "Charge times Momentum of Various tracks; Magnitude of Momentum; number of trakcs", 100, -10, 10 );
 
-		hInvBetavsMom = new TH2D( "InvBetavsMom", "1/Beta vs Momentum; 1/Beta; Total Momentum", 1000, .8, 2, 1000, 0, 10);
+		hInvBetavsMom = new TH2D( "InvBetavsMom", "1/Beta vs Momentum; Total Momentum; 1/Beta", 1000, 0, 10, 1000, .8, 2);
 
 
 	}
@@ -108,7 +108,7 @@ protected:
 					hChargePt->Fill( (track->charge())*(track->gPt()) );
 					hPMom->Fill( track->pMom().mag() );
 					hChargePMom->Fill( (track->charge())*(track->pMom().mag()) );
-					hInvBetavsMom->Fill( 1.0/btofPidTraits->btofBeta(), track->pMom().mag() );
+					hInvBetavsMom->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() );
 					hMatchFlag->Fill( btofPidTraits->btofMatchFlag() );
 					hBeta->Fill( btofPidTraits->btofBeta() );
 					hInvBeta->Fill( 1.0/(btofPidTraits->btofBeta()) );
