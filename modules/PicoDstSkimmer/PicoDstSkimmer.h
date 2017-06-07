@@ -104,6 +104,9 @@ protected:
 
 
 				if ( nullptr != btofPidTraits ){
+					hChargePt->Fill( (track->charge())*(track->gPt()) );
+					hPMom->Fill( track->pMom().mag() );
+					hChargeMom->Fill( (track->charge())*(track->pMom().mag()) );
 					hInvBetavsMom->Fill( 1.0/btofPidTraits->btofBeta(), track->pMom().mag() );
 					hMatchFlag->Fill( btofPidTraits->btofMatchFlag() );
 					hBeta->Fill( btofPidTraits->btofBeta() );
