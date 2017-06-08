@@ -23,7 +23,8 @@ for( int i = 1; i < 10 ; i++ ) {
   mona << "" << i;
   int r1 = hdEdx->GetXaxis()->FindBin( .05(i-1) );
   int r2 = hdEdx->GetXaxis()->FindBin( .05(i) );
-  c->ProjectionY( mona.str().c_str() , r1 , r2 );
+  TH1 *kid = hdEdx->ProjectionY( mona.str().c_str() , r1 , r2 );
+  kid->Draw();
 
 }
 
