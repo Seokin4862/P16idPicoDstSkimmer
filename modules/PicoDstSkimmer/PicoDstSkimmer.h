@@ -52,7 +52,7 @@ protected:
 
 	void makeHistograms(){
 
-		hDedxvsMom = new TH2D( "DedxvsMom", "dEdx vs Momentum; Total Momentum; dEdx", 300, 0, 3, 1000, 0, 30 );
+		hDedxvsMom = new TH2D( "DedxvsMom", "dEdx vs Momentum; Total Momentum; dEdx", 300, 0, 3, 1000, 0, 60 );
 		hInvBetavsMom = new TH2D( "InvBetavsMom", "1/Beta vs Momentum; Total Momentum; 1/Beta", 300, 0, 3, 1000, .8, 2);
 
 	}
