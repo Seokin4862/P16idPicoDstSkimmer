@@ -68,7 +68,7 @@ protected:
 		for ( size_t i = 0; i < nTracks; i++ ){
 			StPicoTrack * track = _rTrack.get( i );
 
-			hDedxvsMom = new TH2D( track->pMom().mag(), track->dEdx() );
+			hDedxvsMom->Fill( track->pMom().mag(), track->dEdx() );
 
 			StPicoBTofPidTraits *btofPidTraits = nullptr;
 			if ( track->bTofPidTraitsIndex() >= 0 ){
