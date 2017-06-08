@@ -1,6 +1,6 @@
 
 
-void into_png() {
+void slices() {
 
 TFile * f = new TFile( "/home/sy34/workspace/safe/8InvBetadEdxMom/dEdxandInvBetavsMom.root" );
 
