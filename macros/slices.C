@@ -23,7 +23,7 @@ for( int i = 1; i < 41 ; i++ ) {
   mona << "mona" << i;
   int m1 = hdEdx->GetXaxis()->FindBin( .05*(i-1) );
   int m2 = hdEdx->GetXaxis()->FindBin( .05*(i) );
-  TH1 *kid = hdEdx->ProjectionY( mona.str().c_str() , r1 , r2 );
+  TH1 *kid = hdEdx->ProjectionY( mona.str().c_str() , m1 , m2 );
   kid->Draw();
   c->SetLogy();
   mona << ".png";
@@ -33,7 +33,7 @@ for( int i = 1; i < 41 ; i++ ) {
   lisa << "lisa" << i;
   int l1 = hInvBeta->GetXaxis()->FindBin( .05*(i-1) );
   int l2 = hInvBeta->GetXaxis()->FindBin( .05(i) );
-  TH1 *africa = hInvBeta->ProjectionY( lisa.str().c_str(), r1, r2 );
+  TH1 *africa = hInvBeta->ProjectionY( lisa.str().c_str(), l1, l2 );
   africa->Draw();
   c->SetLogy();
   lisa << ".png";
