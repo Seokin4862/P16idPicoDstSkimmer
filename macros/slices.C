@@ -17,7 +17,7 @@ hInvBeta->Draw("colz");
 c->SetLogz();
 // c->Print( "InvBetavsMom.png" );
 
-for( int i = 1; i < 10 ; i++ ) {
+for( int i = 1; i < 61 ; i++ ) {
 
   stringstream mona;
   mona << "" << i;
