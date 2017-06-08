@@ -20,12 +20,14 @@ c->SetLogz();
 for( int i = 1; i < 61 ; i++ ) {
 
   stringstream mona;
-  mona << "" << i;
+  mona << "mona" << i;
   int r1 = hdEdx->GetXaxis()->FindBin( .05*(i-1) );
   int r2 = hdEdx->GetXaxis()->FindBin( .05*(i) );
   TH1 *kid = hdEdx->ProjectionY( mona.str().c_str() , r1 , r2 );
   kid->Draw();
   c->SetLogy();
+  mona << ".png";
+  c->Print( mona.str().c_str() );
 
 }
 
