@@ -14,6 +14,9 @@
 
 #include "ProductionUtils/RunMapFactory.h"
 
+// add include dEdx mapper
+
+
 #include "vendor/loguru.h"
 
 class PicoDstSkimmer : public TreeAnalyzer
@@ -38,8 +41,13 @@ public:
 		book->cd();
 
 		makeHistograms();
+
+		// mapper.load_maps( ..., ... );
+
 	}
 protected:
+
+	// Mapper_dEdx mapper;
 
 	TClonesArrayReader < StPicoEvent        > _rEvent;
 	TClonesArrayReader < StPicoMtdHit       > _rMtdHit;
@@ -67,6 +75,14 @@ protected:
 		size_t nTracks =  _rTrack.N();
 		for ( size_t i = 0; i < nTracks; i++ ){
 			StPicoTrack * track = _rTrack.get( i );
+
+
+
+			// float corr_dEdx = 0;
+			// float corr_nSigmaE = 0;
+			// mp.apply_map_dEdx_nsigmaE( 0.0, 0.5, 1, 0.5, 3.2, 2, corr_dEdx, corr_nSigmaE );
+
+
 
 			hDedxvsMom->Fill( track->pMom().mag(), track->dEdx() );
 
