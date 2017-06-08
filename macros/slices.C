@@ -21,8 +21,8 @@ for( int i = 1; i < 41 ; i++ ) {
 
   stringstream mona;
   mona << "mona" << i;
-  int r1 = hdEdx->GetXaxis()->FindBin( .05*(i-1) );
-  int r2 = hdEdx->GetXaxis()->FindBin( .05*(i) );
+  int m1 = hdEdx->GetXaxis()->FindBin( .05*(i-1) );
+  int m2 = hdEdx->GetXaxis()->FindBin( .05*(i) );
   TH1 *kid = hdEdx->ProjectionY( mona.str().c_str() , r1 , r2 );
   kid->Draw();
   c->SetLogy();
@@ -31,9 +31,9 @@ for( int i = 1; i < 41 ; i++ ) {
 
   stringstream lisa;
   lisa << "lisa" << i;
-  int r1 = hInvBeta->GetXaxis()->FindBin( .05*(i-1) );
-  int r2 = hInvBeta->GetXaxis()->FindBin( .05(i) );
-  TH1 *africa = hdEdx->ProjectionY( lisa.str().c_str(), r1, r2 );
+  int l1 = hInvBeta->GetXaxis()->FindBin( .05*(i-1) );
+  int l2 = hInvBeta->GetXaxis()->FindBin( .05(i) );
+  TH1 *africa = hInvBeta->ProjectionY( lisa.str().c_str(), r1, r2 );
   africa->Draw();
   c->SetLogy();
   lisa << ".png";
