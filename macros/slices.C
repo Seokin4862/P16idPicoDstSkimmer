@@ -26,8 +26,8 @@ for( int i = 1; i < 41 ; i++ ) {
   TH1 *kid = hdEdx->ProjectionY( mona.str().c_str() , m1 , m2 );
   kid->Draw();
   c->SetLogy();
-  // mona << ".png";
-  // c->Print( mona.str().c_str() );
+  mona << ".png";
+  c->Print( mona.str().c_str() );
 
   stringstream lisa;
   lisa << "lisa" << i;
@@ -36,8 +36,8 @@ for( int i = 1; i < 41 ; i++ ) {
   TH1 *child = hInvBeta->ProjectionY( lisa.str().c_str(), l1, l2 );
   child->Draw();
   c->SetLogy();
-  // lisa << ".png";
-  // c->Print( lisa.str().c_str() );
+  lisa << ".png";
+  c->Print( lisa.str().c_str() );
 }
 
 }
