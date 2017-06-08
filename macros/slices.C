@@ -25,6 +25,7 @@ for( int i = 1; i < 10 ; i++ ) {
   int r2 = hdEdx->GetXaxis()->FindBin( .05*(i) );
   TH1 *kid = hdEdx->ProjectionY( mona.str().c_str() , r1 , r2 );
   kid->Draw();
+  c->SetLogy();
 
 }
 
