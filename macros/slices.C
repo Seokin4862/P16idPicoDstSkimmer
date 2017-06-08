@@ -29,6 +29,15 @@ for( int i = 1; i < 61 ; i++ ) {
   mona << ".png";
   c->Print( mona.str().c_str() );
 
+  stringstream lisa;
+  lisa << "lisa" << i;
+  int r1 = hInvBeta->GetXaxis()->FindBin( .05*(i-1) );
+  int r2 = hInvBeta->GetXaxis()->FindBin( .05(i) );
+  TH1 *africa = hdEdx->ProjectionY( lisa.str().c_str(), r1, r2 );
+  kid->Draw();
+  c->SetLogy();
+  lisa << ".png";
+  c->Print( lisa.str().c_str() );
 }
 
 }
