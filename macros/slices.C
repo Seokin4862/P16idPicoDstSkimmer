@@ -32,7 +32,7 @@ for( int i = 1; i < 41 ; i++ ) {
   stringstream lisa;
   lisa << "lisa" << i;
   int l1 = hInvBeta->GetXaxis()->FindBin( .05*(i-1) );
-  int l2 = hInvBeta->GetXaxis()->FindBin( .05(i) );
+  int l2 = hInvBeta->GetXaxis()->FindBin( .05*(i) );
   TH1 *child = hInvBeta->ProjectionY( lisa.str().c_str(), l1, l2 );
   child->Draw();
   c->SetLogy();
