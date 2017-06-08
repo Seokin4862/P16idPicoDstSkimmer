@@ -10,7 +10,7 @@ TH2 *hdEdx = (TH2*)f->Get( "DedxvsMom" );
 TH2 *hInvBeta = (TH2*)f->Get( "InvBetavsMom" );
 
 hdEdx->Draw("colz");
-c.SetLogZ();
+c.SetLogz();
 
 }
 
