@@ -5,12 +5,15 @@ void slices() {
 TFile * f = new TFile( "/home/sy34/workspace/safe/8InvBetadEdxMom/dEdxandInvBetavsMom.root" );
 
 TCanvas * c = new TCanvas("c","c");
+TCanvas * c1 = new TCanvas("c1","c1");
 
 TH2 *hdEdx = (TH2*)f->Get( "DedxvsMom" );
 TH2 *hInvBeta = (TH2*)f->Get( "InvBetavsMom" );
 
 hdEdx->Draw("colz");
-c.SetLogz();
+c->SetLogz();
+
+
 
 }
 
