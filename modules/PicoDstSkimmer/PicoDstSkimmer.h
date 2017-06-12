@@ -90,7 +90,7 @@ protected:
 
 			float corr_dEdx = 0;
 			float corr_nSigmaE = 0;
-			mp.apply_map_dEdx_nsigmaE( 0.0, 0.5, 1, 0.5, 3.2, 2, corr_dEdx, corr_nSigmaE );
+			mapper.apply_map_dEdx_nsigmaE( 0.0, 0.5, 1, 0.5, 3.2, 2, corr_dEdx, corr_nSigmaE );
 
 			hDedx->Fill( track->dEdx() );
 			hcorrDedx->Fill( corr_dEdx );
