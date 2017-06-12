@@ -45,7 +45,7 @@ public:
 
 		// mapper.load_maps( ..., ... );
 
-		mapper.Load_maps( "/home/fs26/dedx_ana/quantile_dedx.root", "/home/fs26/dedx_ana/quantile_nsigmae.root" );
+		mapper.load_maps( "/home/fs26/dedx_ana/quantile_dedx.root", "/home/fs26/dedx_ana/quantile_nsigmae.root" );
 
 	}
 protected:

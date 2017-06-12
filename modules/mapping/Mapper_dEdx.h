@@ -23,7 +23,7 @@ protected:
   static const Int_t map_nBinsPhi = 180;
 
   Float_t       map_phi_range = TMath::TwoPi();
-  
+
   // graphs to load (map for dEdx)
   TGraph* gr_dEdx_map_pp[map_nBinsPt][map_nBinsEta][map_nBinsPhi];
   TGraph* gr_dEdx_map_pn[map_nBinsPt][map_nBinsEta][map_nBinsPhi];
