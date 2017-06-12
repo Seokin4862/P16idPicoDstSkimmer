@@ -60,8 +60,11 @@ protected:
 	TClonesArrayReader < StPicoMtdPidTraits > _rMtdPid;
 	TClonesArrayReader < StPicoBTofPidTraits > _rBTofPid;
 
-	TH2D *hDedxvsMom = 0;
-	TH2D *hInvBetavsMom = 0;
+	TH1D *hDedx = 0;
+	TH1D *hcorrDedx = 0;
+
+	// TH2D *hDedxvsMom = 0;
+	// TH2D *hInvBetavsMom = 0;
 
 	void makeHistograms(){
 
