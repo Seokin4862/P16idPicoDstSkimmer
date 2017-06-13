@@ -98,30 +98,30 @@ protected:
 		// hDedxvsMom = new TH2D( "DedxvsMom", "dEdx vs Momentum; Total Momentum; dEdx", 300, 0, 3, 1000, 0, 60 );
 		// hInvBetavsMom = new TH2D( "InvBetavsMom", "1/Beta vs Momentum; Total Momentum; 1/Beta", 300, 0, 3, 1000, .8, 2);
 
-		hDedxvsPhi1 = new TH2D( "DedxvsPhi1", "dEdx vs Phi, total momentum .3 to .4, = charge, = #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 10 );
-		hDedxvsPhi2 = new TH2D( "DedxvsPhi2", "dEdx vs Phi, total momentum .3 to .4, = charge, + #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 10 );
-		hDedxvsPhi3 = new TH2D( "DedxvsPhi3", "dEdx vs Phi, total momentum .3 to .4, = charge, - #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 10 );
+		hDedxvsPhi1 = new TH2D( "DedxvsPhi1", "dEdx vs Phi, total momentum .3 to .4, = charge, = #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 5 );
+		hDedxvsPhi2 = new TH2D( "DedxvsPhi2", "dEdx vs Phi, total momentum .3 to .4, = charge, + #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 5 );
+		hDedxvsPhi3 = new TH2D( "DedxvsPhi3", "dEdx vs Phi, total momentum .3 to .4, = charge, - #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 5 );
 
-		hDedxvsPhi4 = new TH2D( "DedxvsPhi4", "dEdx vs Phi, total momentum .3 to .4, + charge, = #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 10 );
-		hDedxvsPhi5 = new TH2D( "DedxvsPhi5", "dEdx vs Phi, total momentum .3 to .4, + charge, + #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 10 );
-		hDedxvsPhi6 = new TH2D( "DedxvsPhi6", "dEdx vs Phi, total momentum .3 to .4, + charge, - #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 10 );
+		hDedxvsPhi4 = new TH2D( "DedxvsPhi4", "dEdx vs Phi, total momentum .3 to .4, + charge, = #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 5 );
+		hDedxvsPhi5 = new TH2D( "DedxvsPhi5", "dEdx vs Phi, total momentum .3 to .4, + charge, + #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 5 );
+		hDedxvsPhi6 = new TH2D( "DedxvsPhi6", "dEdx vs Phi, total momentum .3 to .4, + charge, - #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 5 );
 
-		hDedxvsPhi7 = new TH2D( "DedxvsPhi7", "dEdx vs Phi, total momentum .3 to .4, - charge, = #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 10 );
-		hDedxvsPhi8 = new TH2D( "DedxvsPhi8", "dEdx vs Phi, total momentum .3 to .4, - charge, + #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 10 );
-		hDedxvsPhi9 = new TH2D( "DedxvsPhi9", "dEdx vs Phi, total momentum .3 to .4, - charge, - #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 10 );
+		hDedxvsPhi7 = new TH2D( "DedxvsPhi7", "dEdx vs Phi, total momentum .3 to .4, - charge, = #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 5 );
+		hDedxvsPhi8 = new TH2D( "DedxvsPhi8", "dEdx vs Phi, total momentum .3 to .4, - charge, + #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 5 );
+		hDedxvsPhi9 = new TH2D( "DedxvsPhi9", "dEdx vs Phi, total momentum .3 to .4, - charge, - #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 5 );
 
 
-		hcorrDedxvsPhi1 = new TH2D( "corrDedxvsPhi1", "corrected dEdx vs Phi, total momentum .3 to .4, = charge, = #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 10);
-		hcorrDedxvsPhi2 = new TH2D( "corrDedxvsPhi2", "corrected dEdx vs Phi, total momentum .3 to .4, = charge, + #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 10);
-		hcorrDedxvsPhi3 = new TH2D( "corrDedxvsPhi3", "corrected dEdx vs Phi, total momentum .3 to .4, = charge, - #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 10);
+		hcorrDedxvsPhi1 = new TH2D( "corrDedxvsPhi1", "corrected dEdx vs Phi, total momentum .3 to .4, = charge, = #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 5);
+		hcorrDedxvsPhi2 = new TH2D( "corrDedxvsPhi2", "corrected dEdx vs Phi, total momentum .3 to .4, = charge, + #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 5);
+		hcorrDedxvsPhi3 = new TH2D( "corrDedxvsPhi3", "corrected dEdx vs Phi, total momentum .3 to .4, = charge, - #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 5);
 
-		hcorrDedxvsPhi4 = new TH2D( "corrDedxvsPhi4", "corrected dEdx vs Phi, total momentum .3 to .4, + charge, = #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 10);
-		hcorrDedxvsPhi5 = new TH2D( "corrDedxvsPhi5", "corrected dEdx vs Phi, total momentum .3 to .4, + charge, + #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 10);
-		hcorrDedxvsPhi6 = new TH2D( "corrDedxvsPhi6", "corrected dEdx vs Phi, total momentum .3 to .4, + charge, - #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 10);
+		hcorrDedxvsPhi4 = new TH2D( "corrDedxvsPhi4", "corrected dEdx vs Phi, total momentum .3 to .4, + charge, = #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 5);
+		hcorrDedxvsPhi5 = new TH2D( "corrDedxvsPhi5", "corrected dEdx vs Phi, total momentum .3 to .4, + charge, + #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 5);
+		hcorrDedxvsPhi6 = new TH2D( "corrDedxvsPhi6", "corrected dEdx vs Phi, total momentum .3 to .4, + charge, - #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 5);
 
-		hcorrDedxvsPhi7 = new TH2D( "corrDedxvsPhi7", "corrected dEdx vs Phi, total momentum .3 to .4, - charge, = #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 10);
-		hcorrDedxvsPhi8 = new TH2D( "corrDedxvsPhi8", "corrected dEdx vs Phi, total momentum .3 to .4, - charge, + #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 10);
-		hcorrDedxvsPhi9 = new TH2D( "corrDedxvsPhi9", "corrected dEdx vs Phi, total momentum .3 to .4, - charge, - #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 10);
+		hcorrDedxvsPhi7 = new TH2D( "corrDedxvsPhi7", "corrected dEdx vs Phi, total momentum .3 to .4, - charge, = #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 5);
+		hcorrDedxvsPhi8 = new TH2D( "corrDedxvsPhi8", "corrected dEdx vs Phi, total momentum .3 to .4, - charge, + #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 5);
+		hcorrDedxvsPhi9 = new TH2D( "corrDedxvsPhi9", "corrected dEdx vs Phi, total momentum .3 to .4, - charge, - #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 5);
 
 	}
 
