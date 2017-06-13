@@ -176,6 +176,7 @@ protected:
 				}
 			}
 
+
 			hcorrDedxvsPhi1->Fill( track->pMom().phi(), corr_dEdx );
 			if( track->pMom().pseudoRapidity() > 0 ){
 				hcorrDedxvsPhi2->Fill( track->pMom().phi(), corr_dEdx );
@@ -192,6 +193,7 @@ protected:
 				if( track->pMom().pseudoRapidity() < 0 ){
 					hcorrDedxvsPhi6->Fill( track->pMom().phi(), corr_dEdx );
 				}
+			}
 
 				if( track->charge() < 0 ){
 					hcorrDedxvsPhi7->Fill( track->pMom().phi(), corr_dEdx );
@@ -201,8 +203,6 @@ protected:
 					if( track->pMom().pseudoRapidity() < 0 ){
 						hcorrDedxvsPhi9->Fill( track->pMom().phi(), corr_dEdx );
 					}
-
-
 			}
 
 			}
