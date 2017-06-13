@@ -89,7 +89,7 @@ protected:
 
 			float corr_dEdx = 0;
 			float corr_nSigmaE = 0;
-			mapper.apply_map_dEdx_nsigmaE( track->pMom().phi(), track->pMom().pseudoRapidity(), track->charge(), track->dEdx(), track->nSigmaElectron(), corr_dEdx, corr_nSigmaE );
+			mapper.apply_map_dEdx_nsigmaE( track->pMom().phi(), track->pMom().pseudoRapidity(), track->charge(), track->gPt(), track->dEdx(), track->nSigmaElectron(), corr_dEdx, corr_nSigmaE );
 
 			hDedx->Fill( track->dEdx() );
 			hcorrDedx->Fill( corr_dEdx );
