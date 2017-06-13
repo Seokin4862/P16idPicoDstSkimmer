@@ -69,7 +69,7 @@ protected:
 	void makeHistograms(){
 
 		hDedx = new TH1D( "dEdx", "dEdx; dEdx; number of tracks", 100, 0, 10 );
-		hcorrDedx = new TH1D( "dEdx", "dEdx; dEdx; number of tracks", 100, 0, 10 );
+		hcorrDedx = new TH1D( "corrdEdx", "corrected dEdx; corrected dEdx; number of tracks", 100, 0, 10 );
 		// hDedxvsMom = new TH2D( "DedxvsMom", "dEdx vs Momentum; Total Momentum; dEdx", 300, 0, 3, 1000, 0, 60 );
 		// hInvBetavsMom = new TH2D( "InvBetavsMom", "1/Beta vs Momentum; Total Momentum; 1/Beta", 300, 0, 3, 1000, .8, 2);
 
