@@ -52,6 +52,7 @@ protected:
 
 	// Mapper_dEdx mapper;
 
+	Mapper_dEdx mapper;
 
 	TClonesArrayReader < StPicoEvent        > _rEvent;
 	TClonesArrayReader < StPicoMtdHit       > _rMtdHit;
