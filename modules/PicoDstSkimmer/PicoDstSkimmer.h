@@ -45,14 +45,12 @@ public:
 
 		// mapper.load_maps( ..., ... );
 
-		mapper.load_maps( "/home/fs26/dedx_ana/quantile_dedx.root", "/home/fs26/dedx_ana/quantile_nsigmae.root" );
 
 	}
 protected:
 
 	// Mapper_dEdx mapper;
 
-	Mapper_dEdx mapper;
 
 	TClonesArrayReader < StPicoEvent        > _rEvent;
 	TClonesArrayReader < StPicoMtdHit       > _rMtdHit;
@@ -69,7 +67,6 @@ protected:
 	void makeHistograms(){
 
 		hDedx = new TH1D( "dEdx", "dEdx; dEdx; number of tracks", 100, 0, 10 );
-		hcorrDedx = new TH1D( "corrdEdx", "corrected dEdx; corrected dEdx; number of tracks", 100, 0, 10 );
 		// hDedxvsMom = new TH2D( "DedxvsMom", "dEdx vs Momentum; Total Momentum; dEdx", 300, 0, 3, 1000, 0, 60 );
 		// hInvBetavsMom = new TH2D( "InvBetavsMom", "1/Beta vs Momentum; Total Momentum; 1/Beta", 300, 0, 3, 1000, .8, 2);
 
@@ -87,14 +84,7 @@ protected:
 			StPicoTrack * track = _rTrack.get( i );
 
 
-
-			float corr_dEdx = 0;
-			float corr_nSigmaE = 0;
-			mapper.apply_map_dEdx_nsigmaE( 0.0, 0.5, 1, 0.5, 3.2, 2, corr_dEdx, corr_nSigmaE );
-
 			hDedx->Fill( track->dEdx() );
-			hcorrDedx->Fill( corr_dEdx );
-
 
 
 			// hDedxvsMom->Fill( track->pMom().mag(), track->dEdx() );
