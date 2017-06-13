@@ -76,8 +76,8 @@ protected:
 		// hDedxvsMom = new TH2D( "DedxvsMom", "dEdx vs Momentum; Total Momentum; dEdx", 300, 0, 3, 1000, 0, 60 );
 		// hInvBetavsMom = new TH2D( "InvBetavsMom", "1/Beta vs Momentum; Total Momentum; 1/Beta", 300, 0, 3, 1000, .8, 2);
 
-		hDedxvsPhi = new TH2D( "DedxvsPhi", "dEdx vs Phi; #phi; dEdx", 100, -3.2, 3.2, 500, 0, 40 );
-		hcorrDedxvsPhi = new TH2D( "corrDedxvsPhi", "corrected dEdx vs Phi; #phi; dEdx", 100, -3.2, 3.2, 500, 0, 40 );
+		hDedxvsPhi = new TH2D( "DedxvsPhi", "dEdx vs Phi; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 10 );
+		hcorrDedxvsPhi = new TH2D( "corrDedxvsPhi", "corrected dEdx vs Phi; #phi; dEdx", 500, -3.2, 3.2, 500, 0, 10);
 
 	}
 
