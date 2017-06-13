@@ -204,8 +204,6 @@ protected:
 						hcorrDedxvsPhi9->Fill( track->pMom().phi(), corr_dEdx );
 					}
 			}
-
-			}
 			// hDedxvsMom->Fill( track->pMom().mag(), track->dEdx() );
 			//
 			// StPicoBTofPidTraits *btofPidTraits = nullptr;
