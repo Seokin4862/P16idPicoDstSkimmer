@@ -63,15 +63,21 @@ protected:
 	TH1D *hDedx = 0;
 	TH1D *hcorrDedx = 0;
 
+	TH2D *hDedxvsPhi = 0;
+	TH2D *hcorrDedxvsPhi = 0;
+
 	// TH2D *hDedxvsMom = 0;
 	// TH2D *hInvBetavsMom = 0;
 
 	void makeHistograms(){
 
 		hDedx = new TH1D( "dEdx", "dEdx; dEdx; number of tracks", 100, 0, 10 );
-		hcorrDedx = new TH1D( "corrdEdx", "corrected dEdx; corrected dEdx; number of tracks", 100, 0, 10 );
+		hcorrDedx = new TH1D( "corrDedx", "corrected dEdx; corrected dEdx; number of tracks", 100, 0, 10 );
 		// hDedxvsMom = new TH2D( "DedxvsMom", "dEdx vs Momentum; Total Momentum; dEdx", 300, 0, 3, 1000, 0, 60 );
 		// hInvBetavsMom = new TH2D( "InvBetavsMom", "1/Beta vs Momentum; Total Momentum; 1/Beta", 300, 0, 3, 1000, .8, 2);
+
+		hDedxvsPhi = new TH2D( "DedxvsPhi", "dEdx vs Phi; #phi; dEdx", 100, -3.2, 3.2, 500, 0, 40 );
+		hcorrDedxvsPhi = new TH2D( "corrDedxvsPhi", "corrected dEdx vs Phi; #phi; dEdx", 100, -3.2, 3.2, 500, 0, 40 );
 
 	}
 
@@ -94,6 +100,8 @@ protected:
 			hDedx->Fill( track->dEdx() );
 			hcorrDedx->Fill( corr_dEdx );
 
+			hDedxvsPhi->Fill( track->pMom().phi(), track->dEdx() );
+			hcorrDedxvsPhi->Fill( track->pMom().phi(), corr_dEdx );
 
 			// hDedxvsMom->Fill( track->pMom().mag(), track->dEdx() );
 			//
