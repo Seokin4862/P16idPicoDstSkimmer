@@ -148,31 +148,31 @@ protected:
 			hDedx->Fill( track->dEdx() );
 			hcorrDedx->Fill( corr_dEdx );
 
-			hDedxPhi1->Fill( track->pMom().phi(), track->dEdx() );
+			hDedxvsPhi1->Fill( track->pMom().phi(), track->dEdx() );
 			if( track->pMom().pseudoRapidity() > 0 ){
-				hDedxPhi2->Fill( track->pMom().phi(), track->dEdx() );
+				hDedxvsPhi2->Fill( track->pMom().phi(), track->dEdx() );
 			}
 			if( track->pMom().pseudoRapidity() < 0 ){
-				hDedxPhi3->Fill( track->pMom().phi(), track->dEdx() );
+				hDedxvsPhi3->Fill( track->pMom().phi(), track->dEdx() );
 			}
 
 			if( track->charge() > 0 ){
-				hDedxPhi4->Fill( track->pMom().phi(), track->dEdx() );
+				hDedxvsPhi4->Fill( track->pMom().phi(), track->dEdx() );
 				if( track->pMom().pseudoRapidity() > 0 ){
-					hDedxPhi5->Fill( track->pMom().phi(), track->dEdx() );
+					hDedxvsPhi5->Fill( track->pMom().phi(), track->dEdx() );
 				}
 				if( track->pMom().pseudoRapidity() < 0 ){
-					hDedxPhi6->Fill( track->pMom().phi(), track->dEdx() );
+					hDedxvsPhi6->Fill( track->pMom().phi(), track->dEdx() );
 				}
 			}
 
 			if( track->charge() < 0 ){
-				hDedxPhi7->Fill( track->pMom().phi(), track->dEdx() );
+				hDedxvsPhi7->Fill( track->pMom().phi(), track->dEdx() );
 				if( track->pMom().pseudoRapidity() > 0 ){
-					hDedxPhi8->Fill( track->pMom().phi(), track->dEdx() );
+					hDedxvsPhi8->Fill( track->pMom().phi(), track->dEdx() );
 				}
 				if( track->pMom().pseudoRapidity() < 0 ){
-					hDedxPhi9->Fill( track->pMom().phi(), track->dEdx() );
+					hDedxvsPhi9->Fill( track->pMom().phi(), track->dEdx() );
 				}
 			}
 
