@@ -216,13 +216,11 @@ protected:
 			// 		}
 			// }
 
-			hDedxvsMom->Fill( track->pMom().mag(), track->dEdx() );
-
-
+			hDedxvsMom1->Fill( track->pMom().mag(), track->dEdx() );
 
 			StPicoBTofPidTraits *btofPidTraits = nullptr;
 			if ( track->bTofPidTraitsIndex() >= 0 ){
-				btofPidTraits1 = _rBTofPid.get( track->bTofPidTraitsIndex() );
+				btofPidTraits = _rBTofPid.get( track->bTofPidTraitsIndex() );
 			};
 
 				if ( nullptr != btofPidTraits ){
@@ -230,8 +228,11 @@ protected:
 				}
 
 				if( track->charge() > 0 ){
+
+					hDedxvsMom2->Fill( track->pMom().mag(), track->dEdx() );
+
 					if ( track->bTofPidTraitsIndex() >= 0 ){
-						btofPidTraits2 = _rBTofPid.get( track->bTofPidTraitsIndex() );
+						btofPidTraits = _rBTofPid.get( track->bTofPidTraitsIndex() );
 					};
 
 						if ( nullptr != btofPidTraits ){
@@ -240,8 +241,11 @@ protected:
 				};
 
 				if( track->charge() < 0 ){
+
+					hDedxvsMom3->Fill( track->pMom().mag(), track->dEdx() );
+
 					if ( track->bTofPidTraitsIndex() >= 0 ){
-						btofPidTraits3 = _rBTofPid.get( track->bTofPidTraitsIndex() );
+						btofPidTraits = _rBTofPid.get( track->bTofPidTraitsIndex() );
 					};
 
 						if ( nullptr != btofPidTraits ){
