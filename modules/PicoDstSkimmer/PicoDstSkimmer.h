@@ -61,7 +61,7 @@ protected:
 	TClonesArrayReader < StPicoBTofPidTraits > _rBTofPid;
 
 	TH1D *hDedx = 0;
-	TH1D *hcorrDedx = 0;
+	// TH1D *hcorrDedx = 0;
 
 	// TH2D *hDedxvsPhi1 = 0;
 	// TH2D *hDedxvsPhi2 = 0;
@@ -100,16 +100,16 @@ protected:
 	void makeHistograms(){
 
 		hDedx = new TH1D( "dEdx", "dEdx; dEdx; number of tracks", 100, 0, 10 );
-		hcorrDedx = new TH1D( "corrDedx", "corrected dEdx; corrected dEdx; number of tracks", 100, 0, 10 );
+		// hcorrDedx = new TH1D( "corrDedx", "corrected dEdx; corrected dEdx; number of tracks", 100, 0, 10 );
 
-		hDedxvsMom1 = new TH2D( "DedxvsMom", "dEdx vs Momentum, all charge; Total Momentum; dEdx", 300, 0, 3, 1000, 0, 60 );
-		hInvBetavsMom1 = new TH2D( "InvBetavsMom", "1/Beta vs Momentum, all charge; Total Momentum; 1/Beta", 300, 0, 3, 1000, .8, 2);
+		hDedxvsMom1 = new TH2D( "DedxvsMom1", "dEdx vs Momentum, all charge; Total Momentum; dEdx", 300, 0, 3, 1000, 0, 60 );
+		hInvBetavsMom1 = new TH2D( "InvBetavsMom1", "1/Beta vs Momentum, all charge; Total Momentum; 1/Beta", 300, 0, 3, 1000, .8, 2);
 
-		hDedxvsMom2 = new TH2D( "DedxvsMom", "dEdx vs Momentum, + charge; Total Momentum; dEdx", 300, 0, 3, 1000, 0, 60 );
-		hInvBetavsMom2 = new TH2D( "InvBetavsMom", "1/Beta vs Momentum, + charge; Total Momentum; 1/Beta", 300, 0, 3, 1000, .8, 2);
+		hDedxvsMom2 = new TH2D( "DedxvsMom2", "dEdx vs Momentum, + charge; Total Momentum; dEdx", 300, 0, 3, 1000, 0, 60 );
+		hInvBetavsMom2 = new TH2D( "InvBetavsMom2", "1/Beta vs Momentum, + charge; Total Momentum; 1/Beta", 300, 0, 3, 1000, .8, 2);
 
-		hDedxvsMom3 = new TH2D( "DedxvsMom", "dEdx vs Momentum; Total Momentum, - charge; dEdx", 300, 0, 3, 1000, 0, 60 );
-		hInvBetavsMom3 = new TH2D( "InvBetavsMom", "1/Beta vs Momentum; Total Momentum, - charge; 1/Beta", 300, 0, 3, 1000, .8, 2);
+		hDedxvsMom3 = new TH2D( "DedxvsMom3", "dEdx vs Momentum; Total Momentum, - charge; dEdx", 300, 0, 3, 1000, 0, 60 );
+		hInvBetavsMom3 = new TH2D( "InvBetavsMom3", "1/Beta vs Momentum; Total Momentum, - charge; 1/Beta", 300, 0, 3, 1000, .8, 2);
 
 		// hDedxvsPhi1 = new TH2D( "DedxvsPhi1", "dEdx vs Phi, total momentum .3 to .4, = charge, = #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 1.5, 6 );
 		// hDedxvsPhi2 = new TH2D( "DedxvsPhi2", "dEdx vs Phi, total momentum .3 to .4, = charge, + #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 1.5, 6 );
