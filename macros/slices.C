@@ -174,7 +174,7 @@ c->SetLogz();
 
 for( int i = 11; i < 36 ; i++ ) {
   stringstream angie;
-  angie << "negdEdxS" << i;
+  angie << "ndEdxS" << i;
   int a1 = hdEdx->GetXaxis()->FindBin( .01*(i-1) );
   int a2 = hdEdx->GetXaxis()->FindBin( .01*(i) );
   TH1 *bobby = hdEdx->ProjectionY( angie.str().c_str() , a1 , a2 );
