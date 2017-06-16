@@ -151,7 +151,7 @@ for( int i = 8; i < 41; i++ ) {
   phi << "pInvBetaL" << i;
   int h1 = hInvBeta->GetXaxis()->FindBin( .05*(i-1) );
   int h2 = hInvBeta->GetXaxis()->FindBin( .05*(i) );
-  TH1 *will = hInvBeta->ProjectionY( poor.str().c_str(), h1, h2 );
+  TH1 *will = hInvBeta->ProjectionY( phi.str().c_str(), h1, h2 );
   stringstream willtitle;
   willtitle << "pos charge InvBeta for momentum range " << .05*(i-1) << " to " << .05*(i) ;
   will->SetTitle( willtitle.str().c_str() );
