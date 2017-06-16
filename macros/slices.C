@@ -12,7 +12,7 @@ TH2 *hInvBeta = (TH2*)f->Get( "InvBetavsMom1" );
 hdEdx->Draw("colz");
 c->SetLogz();
 
-for( int i = 10; i < 36 ; i++ ) {
+for( int i = 11; i < 36 ; i++ ) {
   stringstream angie;
   angie << "dEdxS" << i;
   int a1 = hdEdx->GetXaxis()->FindBin( .01*(i-1) );
@@ -29,7 +29,7 @@ for( int i = 10; i < 36 ; i++ ) {
 
 }
 
-for( int i = 7; i < 41 ; i++ ) {
+for( int i = 8; i < 41 ; i++ ) {
   stringstream mitchell;
   mitchell << "dEdxL" << i;
   int c1 = hdEdx->GetXaxis()->FindBin( .05*(i-1) );
@@ -49,7 +49,7 @@ for( int i = 7; i < 41 ; i++ ) {
 hInvBeta->Draw("colz");
 c->SetLogz();
 
-for( int i = 10; i < 36 ; i++ ) {
+for( int i = 11; i < 36 ; i++ ) {
   stringstream poor;
   poor << "InvBetaS" << i;
   int p1 = hInvBeta->GetXaxis()->FindBin( .01*(i-1) );
@@ -66,7 +66,7 @@ for( int i = 10; i < 36 ; i++ ) {
 
 }
 
-for( int i = 7; i < 41; i++ ) {
+for( int i = 8; i < 41; i++ ) {
   stringstream phi;
   phi << "InvBetaL" << i;
   int h1 = hInvBeta->GetXaxis()->FindBin( .05*(i-1) );
@@ -78,8 +78,8 @@ for( int i = 7; i < 41; i++ ) {
   will->SetYTitle( "Number of Tracks" );
   will->Draw();
   c->SetLogy();
-  poor << ".png";
-  c->Print( poor.str().c_str() );
+  phi << ".png";
+  c->Print( phi.str().c_str() );
 
 }
 
