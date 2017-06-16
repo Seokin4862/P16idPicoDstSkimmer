@@ -15,7 +15,7 @@ c->Print( "dEdxvsMom1.png" );
 
 for( int i = 1; i < 36 ; i++ ) {
   stringstream angie;
-  angie << "dEdx" << i;
+  angie << "dEdxS" << i;
   int a1 = hdEdx->GetXaxis()->FindBin( .01*(i-1) );
   int a2 = hdEdx->GetXaxis()->FindBin( .01*(i) );
   TH1 *bobby = hdEdx->ProjectionY( angie.str().c_str() , a1 , a2 );
@@ -32,7 +32,7 @@ for( int i = 1; i < 36 ; i++ ) {
 
 for( int i = 7; i < 41 ; i++ ) {
   stringstream mitchell;
-  mitchell << "dEdx" << i;
+  mitchell << "dEdxL" << i;
   int c1 = hdEdx->GetXaxis()->FindBin( .05*(i-1) );
   int c2 = hdEdx->GetXaxis()->FindBin( .05*(i) );
   TH1 *newmark = hdEdx->ProjectionY( mitchell.str().c_str() , c1 , c2 );
@@ -53,10 +53,10 @@ c->Print( "InvBetavsMom1.png" );
 
 for( int i = 1; i < 36 ; i++ ) {
   stringstream poor;
-  poor << "InvBeta" << i;
+  poor << "InvBetaS" << i;
   int p1 = hInvBeta->GetXaxis()->FindBin( .01*(i-1) );
   int p2 = hInvBeta->GetXaxis()->FindBin( .01*(i) );
-  TH1 *robin = hInvBeta->ProjectionY ( poor.str().c_str(), c1, c2 );
+  TH1 *robin = hInvBeta->ProjectionY ( poor.str().c_str(), p1, p2 );
   stringstream robintitle;
   robintitle << "InvBeta for momentum range " << .01*(i-1) << " to " << .01*(i) ;
   robin->SetTitle( robintitle.str().c_str() );
@@ -70,10 +70,10 @@ for( int i = 1; i < 36 ; i++ ) {
 
 for( int i = 7; i < 41; i++ ) {
   stringstream phi;
-  phi << "InvBeta" << i;
+  phi << "InvBetaL" << i;
   int h1 = hInvBeta->GetXaxis()->FindBin( .05*(i-1) );
   int h2 = hInvBeta->GetXaxis()->FindBin( .05*(i) );
-  TH1 *will = hInvBeta->ProjectionY( poor.str().c_str(), c1, c2 );
+  TH1 *will = hInvBeta->ProjectionY( poor.str().c_str(), h1, h2 );
   stringstream willtitle;
   willtitle << "InvBeta for momentum range " << .01*(i-1) << " to " << .01*(i) ;
   will->SetTitle( willtitle.str().c_str() );
