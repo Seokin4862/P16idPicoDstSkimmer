@@ -14,7 +14,7 @@ c->SetLogz();
 
 for( int i = 11; i < 36 ; i++ ) {
   stringstream angie;
-  angie << "dEdxS" << i;
+  angie << "adEdxS" << i;
   int a1 = hdEdx->GetXaxis()->FindBin( .01*(i-1) );
   int a2 = hdEdx->GetXaxis()->FindBin( .01*(i) );
   TH1 *bobby = hdEdx->ProjectionY( angie.str().c_str() , a1 , a2 );
@@ -31,7 +31,7 @@ for( int i = 11; i < 36 ; i++ ) {
 
 for( int i = 8; i < 41 ; i++ ) {
   stringstream mitchell;
-  mitchell << "dEdxL" << i;
+  mitchell << "adEdxL" << i;
   int c1 = hdEdx->GetXaxis()->FindBin( .05*(i-1) );
   int c2 = hdEdx->GetXaxis()->FindBin( .05*(i) );
   TH1 *newmark = hdEdx->ProjectionY( mitchell.str().c_str() , c1 , c2 );
@@ -51,7 +51,7 @@ c->SetLogz();
 
 for( int i = 11; i < 36 ; i++ ) {
   stringstream poor;
-  poor << "InvBetaS" << i;
+  poor << "aInvBetaS" << i;
   int p1 = hInvBeta->GetXaxis()->FindBin( .01*(i-1) );
   int p2 = hInvBeta->GetXaxis()->FindBin( .01*(i) );
   TH1 *robin = hInvBeta->ProjectionY ( poor.str().c_str(), p1, p2 );
@@ -68,7 +68,7 @@ for( int i = 11; i < 36 ; i++ ) {
 
 for( int i = 8; i < 41; i++ ) {
   stringstream phi;
-  phi << "InvBetaL" << i;
+  phi << "aInvBetaL" << i;
   int h1 = hInvBeta->GetXaxis()->FindBin( .05*(i-1) );
   int h2 = hInvBeta->GetXaxis()->FindBin( .05*(i) );
   TH1 *will = hInvBeta->ProjectionY( poor.str().c_str(), h1, h2 );
