@@ -102,13 +102,13 @@ protected:
 		hDedx = new TH1D( "dEdx", "dEdx; dEdx; number of tracks", 100, 0, 10 );
 		// hcorrDedx = new TH1D( "corrDedx", "corrected dEdx; corrected dEdx; number of tracks", 100, 0, 10 );
 
-		hDedxvsMom1 = new TH2D( "DedxvsMom1", "Ln(dEdx) vs Momentum, all charge; Total Momentum; dEdx", 300, 0, 3, 1000, 0, 60 );
+		hLnDedxvsMom1 = new TH2D( "DedxvsMom1", "Ln(dEdx) vs Momentum, all charge; Total Momentum; Ln(dEdx)", 300, 0, 3, 1000, 0, 10 );
 		hInvBetavsMom1 = new TH2D( "InvBetavsMom1", "1/Beta vs Momentum, all charge; Total Momentum; 1/Beta", 300, 0, 3, 1000, .8, 2);
 
-		hDedxvsMom2 = new TH2D( "DedxvsMom2", "Ln(dEdx) vs Momentum, + charge; Total Momentum; dEdx", 300, 0, 3, 1000, 0, 60 );
+		hLnDedxvsMom2 = new TH2D( "DedxvsMom2", "Ln(dEdx) vs Momentum, + charge; Total Momentum; Ln(dEdx)", 300, 0, 3, 1000, 0, 10 );
 		hInvBetavsMom2 = new TH2D( "InvBetavsMom2", "1/Beta vs Momentum, + charge; Total Momentum; 1/Beta", 300, 0, 3, 1000, .8, 2);
 
-		hDedxvsMom3 = new TH2D( "DedxvsMom3", "Ln(dEdx) vs Momentum; Total Momentum, - charge; dEdx", 300, 0, 3, 1000, 0, 60 );
+		hLnDedxvsMom3 = new TH2D( "DedxvsMom3", "Ln(dEdx) vs Momentum; Total Momentum, - charge; Ln(dEdx)", 300, 0, 3, 1000, 0, 10 );
 		hInvBetavsMom3 = new TH2D( "InvBetavsMom3", "1/Beta vs Momentum; Total Momentum, - charge; 1/Beta", 300, 0, 3, 1000, .8, 2);
 
 		// hDedxvsPhi1 = new TH2D( "DedxvsPhi1", "dEdx vs Phi, total momentum .3 to .4, = charge, = #eta; #phi; dEdx", 500, -3.2, 3.2, 500, 1.5, 6 );
