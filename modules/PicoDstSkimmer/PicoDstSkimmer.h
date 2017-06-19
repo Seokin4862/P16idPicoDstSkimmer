@@ -216,7 +216,7 @@ protected:
 			// 		}
 			// }
 
-			hDedxvsMom1->Fill( track->pMom().mag(), Log(track->dEdx()) );
+			hDedxvsMom1->Fill( track->pMom().mag(), log(track->dEdx()) );
 
 			StPicoBTofPidTraits *btofPidTraits = nullptr;
 			if ( track->bTofPidTraitsIndex() >= 0 ){
@@ -229,7 +229,7 @@ protected:
 
 				if( track->charge() > 0 ){
 
-					hDedxvsMom2->Fill( track->pMom().mag(), Log(track->dEdx()) );
+					hDedxvsMom2->Fill( track->pMom().mag(), log(track->dEdx()) );
 
 					if ( track->bTofPidTraitsIndex() >= 0 ){
 						btofPidTraits = _rBTofPid.get( track->bTofPidTraitsIndex() );
@@ -242,7 +242,7 @@ protected:
 
 				if( track->charge() < 0 ){
 
-					hDedxvsMom3->Fill( track->pMom().mag(), Log(track->dEdx()) );
+					hDedxvsMom3->Fill( track->pMom().mag(), log(track->dEdx()) );
 
 					if ( track->bTofPidTraitsIndex() >= 0 ){
 						btofPidTraits = _rBTofPid.get( track->bTofPidTraitsIndex() );
