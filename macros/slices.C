@@ -2,11 +2,11 @@
 
 void slices() {
 
-TFile * f = new TFile( "/home/sy34/workspace/safe/newbtofs/newbtofs.root" );
+TFile * f = new TFile( "/home/sy34/workspace/safe/lndedx/lndedx.root" );
 
 TCanvas * c = new TCanvas("c","c");
 
-TH2 *hdEdx = (TH2*)f->Get( "DedxvsMom1" );
+TH2 *hdEdx = (TH2*)f->Get( "LnDedxvsMom1" );
 TH2 *hInvBeta = (TH2*)f->Get( "InvBetavsMom1" );
 
 hdEdx->Draw("colz");
@@ -14,12 +14,12 @@ c->SetLogz();
 
 for( int i = 11; i < 36 ; i++ ) {
   stringstream angie;
-  angie << "adEdxS" << i;
+  angie << "alndEdxS" << i;
   int a1 = hdEdx->GetXaxis()->FindBin( .01*(i-1) );
   int a2 = hdEdx->GetXaxis()->FindBin( .01*(i) );
   TH1 *bobby = hdEdx->ProjectionY( angie.str().c_str() , a1 , a2 );
   stringstream bobbytitle;
-  bobbytitle << "all charge dEdx for momentum range " << .01*(i-1) << " to " << .01*(i) ;
+  bobbytitle << "all charge ln(dEdx) for momentum range " << .01*(i-1) << " to " << .01*(i) ;
   bobby->SetTitle( bobbytitle.str().c_str() );
   bobby->SetYTitle( "Number of Tracks" );
   bobby->Draw();
@@ -31,12 +31,12 @@ for( int i = 11; i < 36 ; i++ ) {
 
 for( int i = 8; i < 41 ; i++ ) {
   stringstream mitchell;
-  mitchell << "adEdxL" << i;
+  mitchell << "alndEdxL" << i;
   int c1 = hdEdx->GetXaxis()->FindBin( .05*(i-1) );
   int c2 = hdEdx->GetXaxis()->FindBin( .05*(i) );
   TH1 *newmark = hdEdx->ProjectionY( mitchell.str().c_str() , c1 , c2 );
   stringstream newmarktitle;
-  newmarktitle << "all charge dEdx for momentum range " << .05*(i-1) << " to " << .05*(i) ;
+  newmarktitle << "all charge ln(dEdx) for momentum range " << .05*(i-1) << " to " << .05*(i) ;
   newmark->SetTitle( newmarktitle.str().c_str() );
   newmark->SetYTitle( "Number of Tracks" );
   newmark->Draw();
@@ -86,7 +86,7 @@ for( int i = 8; i < 41; i++ ) {
 
 
 
-TH2 *hdEdx = (TH2*)f->Get( "DedxvsMom2" );
+TH2 *hdEdx = (TH2*)f->Get( "LnDedxvsMom2" );
 TH2 *hInvBeta = (TH2*)f->Get( "InvBetavsMom2" );
 
 hdEdx->Draw("colz");
@@ -94,12 +94,12 @@ c->SetLogz();
 
 for( int i = 11; i < 36 ; i++ ) {
   stringstream angie;
-  angie << "pdEdxS" << i;
+  angie << "plndEdxS" << i;
   int a1 = hdEdx->GetXaxis()->FindBin( .01*(i-1) );
   int a2 = hdEdx->GetXaxis()->FindBin( .01*(i) );
   TH1 *bobby = hdEdx->ProjectionY( angie.str().c_str() , a1 , a2 );
   stringstream bobbytitle;
-  bobbytitle << "pos charge dEdx for momentum range " << .01*(i-1) << " to " << .01*(i) ;
+  bobbytitle << "pos charge ln(dEdx) for momentum range " << .01*(i-1) << " to " << .01*(i) ;
   bobby->SetTitle( bobbytitle.str().c_str() );
   bobby->SetYTitle( "Number of Tracks" );
   bobby->Draw();
@@ -111,12 +111,12 @@ for( int i = 11; i < 36 ; i++ ) {
 
 for( int i = 8; i < 41 ; i++ ) {
   stringstream mitchell;
-  mitchell << "pdEdxL" << i;
+  mitchell << "plndEdxL" << i;
   int c1 = hdEdx->GetXaxis()->FindBin( .05*(i-1) );
   int c2 = hdEdx->GetXaxis()->FindBin( .05*(i) );
   TH1 *newmark = hdEdx->ProjectionY( mitchell.str().c_str() , c1 , c2 );
   stringstream newmarktitle;
-  newmarktitle << "pos charge dEdx for momentum range " << .05*(i-1) << " to " << .05*(i) ;
+  newmarktitle << "pos charge ln(dEdx) for momentum range " << .05*(i-1) << " to " << .05*(i) ;
   newmark->SetTitle( newmarktitle.str().c_str() );
   newmark->SetYTitle( "Number of Tracks" );
   newmark->Draw();
@@ -166,7 +166,7 @@ for( int i = 8; i < 41; i++ ) {
 
 
 
-TH2 *hdEdx = (TH2*)f->Get( "DedxvsMom3" );
+TH2 *hdEdx = (TH2*)f->Get( "LnDedxvsMom3" );
 TH2 *hInvBeta = (TH2*)f->Get( "InvBetavsMom3" );
 
 hdEdx->Draw("colz");
@@ -174,12 +174,12 @@ c->SetLogz();
 
 for( int i = 11; i < 36 ; i++ ) {
   stringstream angie;
-  angie << "ndEdxS" << i;
+  angie << "nlndEdxS" << i;
   int a1 = hdEdx->GetXaxis()->FindBin( .01*(i-1) );
   int a2 = hdEdx->GetXaxis()->FindBin( .01*(i) );
   TH1 *bobby = hdEdx->ProjectionY( angie.str().c_str() , a1 , a2 );
   stringstream bobbytitle;
-  bobbytitle << "neg charge dEdx for moment um range " << .01*(i-1) << " to " << .01*(i) ;
+  bobbytitle << "neg charge ln(dEdx) for moment um range " << .01*(i-1) << " to " << .01*(i) ;
   bobby->SetTitle( bobbytitle.str().c_str() );
   bobby->SetYTitle( "Number of Tracks" );
   bobby->Draw();
@@ -191,12 +191,12 @@ for( int i = 11; i < 36 ; i++ ) {
 
 for( int i = 8; i < 41 ; i++ ) {
   stringstream mitchell;
-  mitchell << "ndEdxL" << i;
+  mitchell << "nlndEdxL" << i;
   int c1 = hdEdx->GetXaxis()->FindBin( .05*(i-1) );
   int c2 = hdEdx->GetXaxis()->FindBin( .05*(i) );
   TH1 *newmark = hdEdx->ProjectionY( mitchell.str().c_str() , c1 , c2 );
   stringstream newmarktitle;
-  newmarktitle << "neg charge dEdx for momentum range " << .05*(i-1) << " to " << .05*(i) ;
+  newmarktitle << "neg charge ln(dEdx) for momentum range " << .05*(i-1) << " to " << .05*(i) ;
   newmark->SetTitle( newmarktitle.str().c_str() );
   newmark->SetYTitle( "Number of Tracks" );
   newmark->Draw();
