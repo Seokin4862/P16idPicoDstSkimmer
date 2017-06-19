@@ -216,7 +216,7 @@ protected:
 			// 		}
 			// }
 
-			hDedxvsMom1->Fill( track->pMom().mag(), log(track->dEdx()) );
+			hLnDedxvsMom1->Fill( track->pMom().mag(), log(track->dEdx()) );
 
 			StPicoBTofPidTraits *btofPidTraits = nullptr;
 			if ( track->bTofPidTraitsIndex() >= 0 ){
@@ -224,32 +224,32 @@ protected:
 			};
 
 				if ( nullptr != btofPidTraits ){
-					hLnInvBetavsMom1->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() );
+					hInvBetavsMom1->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() );
 				}
 
 				if( track->charge() > 0 ){
 
-					hDedxvsMom2->Fill( track->pMom().mag(), log(track->dEdx()) );
+					hLnDedxvsMom2->Fill( track->pMom().mag(), log(track->dEdx()) );
 
 					if ( track->bTofPidTraitsIndex() >= 0 ){
 						btofPidTraits = _rBTofPid.get( track->bTofPidTraitsIndex() );
 					};
 
 						if ( nullptr != btofPidTraits ){
-							hLnInvBetavsMom2->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() );
+							hInvBetavsMom2->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() );
 						}
 				};
 
 				if( track->charge() < 0 ){
 
-					hDedxvsMom3->Fill( track->pMom().mag(), log(track->dEdx()) );
+					hLnDedxvsMom3->Fill( track->pMom().mag(), log(track->dEdx()) );
 
 					if ( track->bTofPidTraitsIndex() >= 0 ){
 						btofPidTraits = _rBTofPid.get( track->bTofPidTraitsIndex() );
 					};
 
 						if ( nullptr != btofPidTraits ){
-							hLnInvBetavsMom3->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() );
+							hInvBetavsMom3->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() );
 						}
 				};
 
