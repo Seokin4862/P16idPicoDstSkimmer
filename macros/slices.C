@@ -179,7 +179,7 @@ for( int i = 11; i < 36 ; i++ ) {
   int a2 = hdEdx->GetXaxis()->FindBin( .01*(i) );
   TH1 *bobby = hdEdx->ProjectionY( angie.str().c_str() , a1 , a2 );
   stringstream bobbytitle;
-  bobbytitle << "neg charge dEdx for momentum range " << .01*(i-1) << " to " << .01*(i) ;
+  bobbytitle << "neg charge dEdx for moment um range " << .01*(i-1) << " to " << .01*(i) ;
   bobby->SetTitle( bobbytitle.str().c_str() );
   bobby->SetYTitle( "Number of Tracks" );
   bobby->Draw();
