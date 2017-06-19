@@ -22,6 +22,7 @@ for( int i = 11; i < 36 ; i++ ) {
   bobbytitle << "all charge ln(dEdx) for momentum range " << .01*(i-1) << " to " << .01*(i) ;
   bobby->SetTitle( bobbytitle.str().c_str() );
   bobby->SetYTitle( "Number of Tracks" );
+  bobby->GetXaxis()->SetRange( 0, 5 );
   bobby->Draw();
   c->SetLogy();
   angie << ".png";
@@ -39,6 +40,7 @@ for( int i = 8; i < 41 ; i++ ) {
   newmarktitle << "all charge ln(dEdx) for momentum range " << .05*(i-1) << " to " << .05*(i) ;
   newmark->SetTitle( newmarktitle.str().c_str() );
   newmark->SetYTitle( "Number of Tracks" );
+  newmark->GetXaxis()->SetRange( 0, 5 );
   newmark->Draw();
   c->SetLogy();
   mitchell << ".png";
@@ -102,6 +104,7 @@ for( int i = 11; i < 36 ; i++ ) {
   bobbytitle << "pos charge ln(dEdx) for momentum range " << .01*(i-1) << " to " << .01*(i) ;
   bobby->SetTitle( bobbytitle.str().c_str() );
   bobby->SetYTitle( "Number of Tracks" );
+  bobby->GetXaxis()->SetRange( 0, 5 );
   bobby->Draw();
   c->SetLogy();
   angie << ".png";
@@ -119,6 +122,7 @@ for( int i = 8; i < 41 ; i++ ) {
   newmarktitle << "pos charge ln(dEdx) for momentum range " << .05*(i-1) << " to " << .05*(i) ;
   newmark->SetTitle( newmarktitle.str().c_str() );
   newmark->SetYTitle( "Number of Tracks" );
+  newmark->GetXaxis()->SetRange( 0, 5 );
   newmark->Draw();
   c->SetLogy();
   mitchell << ".png";
@@ -182,6 +186,7 @@ for( int i = 11; i < 36 ; i++ ) {
   bobbytitle << "neg charge ln(dEdx) for moment um range " << .01*(i-1) << " to " << .01*(i) ;
   bobby->SetTitle( bobbytitle.str().c_str() );
   bobby->SetYTitle( "Number of Tracks" );
+  bobby->GetXaxis()->SetRange( 0, 5 );
   bobby->Draw();
   c->SetLogy();
   angie << ".png";
@@ -199,6 +204,7 @@ for( int i = 8; i < 41 ; i++ ) {
   newmarktitle << "neg charge ln(dEdx) for momentum range " << .05*(i-1) << " to " << .05*(i) ;
   newmark->SetTitle( newmarktitle.str().c_str() );
   newmark->SetYTitle( "Number of Tracks" );
+  newmark->GetXaxis()->SetRange( 0, 5 );
   newmark->Draw();
   c->SetLogy();
   mitchell << ".png";
