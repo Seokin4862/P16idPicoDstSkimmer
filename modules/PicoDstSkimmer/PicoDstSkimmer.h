@@ -88,13 +88,13 @@ protected:
 	// TH2D *hcorrDedxvsPhi8 = 0;
 	// TH2D *hcorrDedxvsPhi9 = 0;
 
-	TH2D *hDedxvsMom1 = 0;
+	TH2D *hLnDedxvsMom1 = 0;
 	TH2D *hInvBetavsMom1 = 0;
 
-	TH2D *hDedxvsMom2 = 0;
+	TH2D *hLnDedxvsMom2 = 0;
 	TH2D *hInvBetavsMom2 = 0;
 
-	TH2D *hDedxvsMom3 = 0;
+	TH2D *hLnDedxvsMom3 = 0;
 	TH2D *hInvBetavsMom3 = 0;
 
 	void makeHistograms(){
@@ -224,7 +224,7 @@ protected:
 			};
 
 				if ( nullptr != btofPidTraits ){
-					hInvBetavsMom1->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() );
+					hLnInvBetavsMom1->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() );
 				}
 
 				if( track->charge() > 0 ){
@@ -236,7 +236,7 @@ protected:
 					};
 
 						if ( nullptr != btofPidTraits ){
-							hInvBetavsMom2->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() );
+							hLnInvBetavsMom2->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() );
 						}
 				};
 
@@ -249,7 +249,7 @@ protected:
 					};
 
 						if ( nullptr != btofPidTraits ){
-							hInvBetavsMom3->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() );
+							hLnInvBetavsMom3->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() );
 						}
 				};
 
