@@ -17,8 +17,8 @@ getslice << "alndEdxK" << i;
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 turandot->Fit( fit, "R" , "" , bag, end );
-bag = fit->GetParameter(1) - fit->GetParameter(2);
-end = fit->GetParameter(1) + fit->GetParameter(2);
+bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
+end = fit->GetParameter(1) + 2*fit->GetParameter(2);
 }
 
 }
