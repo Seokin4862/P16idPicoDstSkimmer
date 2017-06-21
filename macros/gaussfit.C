@@ -10,7 +10,7 @@ TF1 * fit = new TF1( "fit", "gaus" );
 
 for( int i = 11; i < 36; i++ ){
 stringstream getslice;
-getslice << "aLndEdxK" << i;
+getslice << "alndEdxK" << i;
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 turandot->Fit( fit );
