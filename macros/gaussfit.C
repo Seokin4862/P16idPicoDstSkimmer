@@ -2,17 +2,17 @@
 
 void gaussfit() {
 
-TFile *f = new TFile( "/" );
+TFile *f = new TFile( "/home/sy34/workspace/safe/slices/slicesgraphs.root" );
 
 TCanvas *c = new TCanvas( "c", "c" );
 
-TH2 *hdEdx = (TF2*)f->Get( "LnDedxvsMom1" );
-TH2 *hInvBeta = (TF2*)f->Get( "LnInvBetavsMom1" );
+TF1 *f = new TF1( "fit", "gaus" );
 
-hdEdx->Draw("colz");
-c->SetLogz();
-
-for( int i = 11 )
-
+for( int i = 11; i < 36; i++ ){
+stringstream getslice;
+getslice << aLndEdxK << i;
+TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
+turandot->Fit( f );
+}
 
 }
