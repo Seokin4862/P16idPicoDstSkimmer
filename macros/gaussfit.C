@@ -8,8 +8,8 @@ TCanvas *c = new TCanvas( "c", "c" );
 
 TF1 * fit = new TF1( "fit", "gaus" );
 
-double bag = 1.8;
-double end = 2.5;
+double bag = 0;
+double end = 20;
 
 for( int i = 11; i < 36; i++ ){
 stringstream getslice;
@@ -20,7 +20,7 @@ c->SetLogy();
 turandot->Fit( fit, "R" , "" , bag, end );
 bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
-getslice << ".png";
+getslice << "fitted.png";
 c->Print( getslice.str().c_str() );
 }
 
