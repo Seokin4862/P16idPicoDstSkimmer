@@ -12,8 +12,8 @@ for( int i = 11; i < 36; i++ ){
 stringstream getslice;
 getslice << "aLndEdxK" << i;
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
-turandot->Fit( fit );
 turandot->Draw();
+turandot->Fit( fit );
 }
 
 }
