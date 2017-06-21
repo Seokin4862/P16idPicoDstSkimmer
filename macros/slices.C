@@ -4,6 +4,8 @@ void slices() {
 
 TFile * f = new TFile( "/home/sy34/workspace/safe/lndedx/lndedx.root" );
 
+TFile * rootfile = new TFile("slicesgraphs.root", "RECREATE" );
+
 TCanvas * c = new TCanvas("c","c");
 
 TH2 *hdEdx = (TH2*)f->Get( "LnDedxvsMom1" );
@@ -23,6 +25,7 @@ for( int i = 11; i < 36 ; i++ ) {
   bobby->SetTitle( bobbytitle.str().c_str() );
   bobby->SetYTitle( "Number of Tracks" );
   bobby->GetXaxis()->SetRange( 0, 600 );
+  bobby->Write();
   bobby->Draw();
   c->SetLogy();
   angie << ".png";
@@ -41,6 +44,7 @@ for( int i = 8; i < 41 ; i++ ) {
   newmark->SetTitle( newmarktitle.str().c_str() );
   newmark->SetYTitle( "Number of Tracks" );
   newmark->GetXaxis()->SetRange( 0, 600 );
+  newmark->Write();
   newmark->Draw();
   c->SetLogy();
   mitchell << ".png";
@@ -61,6 +65,7 @@ for( int i = 11; i < 36 ; i++ ) {
   robintitle << "all charge InvBeta for momentum range " << .01*(i-1) << " to " << .01*(i) ;
   robin->SetTitle( robintitle.str().c_str() );
   robin->SetYTitle( "Number of Tracks" );
+  robin->Write();
   robin->Draw();
   c->SetLogy();
   poor << ".png";
@@ -78,6 +83,7 @@ for( int i = 8; i < 41; i++ ) {
   willtitle << "all charge InvBeta for momentum range " << .05*(i-1) << " to " << .05*(i) ;
   will->SetTitle( willtitle.str().c_str() );
   will->SetYTitle( "Number of Tracks" );
+  will->Write();
   will->Draw();
   c->SetLogy();
   phi << ".png";
@@ -105,6 +111,7 @@ for( int i = 11; i < 36 ; i++ ) {
   bobby->SetTitle( bobbytitle.str().c_str() );
   bobby->SetYTitle( "Number of Tracks" );
   bobby->GetXaxis()->SetRange( 0, 600 );
+  bobby->Write();
   bobby->Draw();
   c->SetLogy();
   angie << ".png";
@@ -123,6 +130,7 @@ for( int i = 8; i < 41 ; i++ ) {
   newmark->SetTitle( newmarktitle.str().c_str() );
   newmark->SetYTitle( "Number of Tracks" );
   newmark->GetXaxis()->SetRange( 0, 600 );
+  newmark->Write();
   newmark->Draw();
   c->SetLogy();
   mitchell << ".png";
@@ -143,6 +151,7 @@ for( int i = 11; i < 36 ; i++ ) {
   robintitle << "pos charge InvBeta for momentum range " << .01*(i-1) << " to " << .01*(i) ;
   robin->SetTitle( robintitle.str().c_str() );
   robin->SetYTitle( "Number of Tracks" );
+  robin->Write();
   robin->Draw();
   c->SetLogy();
   poor << ".png";
@@ -160,6 +169,7 @@ for( int i = 8; i < 41; i++ ) {
   willtitle << "pos charge InvBeta for momentum range " << .05*(i-1) << " to " << .05*(i) ;
   will->SetTitle( willtitle.str().c_str() );
   will->SetYTitle( "Number of Tracks" );
+  will->Write();
   will->Draw();
   c->SetLogy();
   phi << ".png";
@@ -187,6 +197,7 @@ for( int i = 11; i < 36 ; i++ ) {
   bobby->SetTitle( bobbytitle.str().c_str() );
   bobby->SetYTitle( "Number of Tracks" );
   bobby->GetXaxis()->SetRange( 0, 600 );
+  bobby->Write();
   bobby->Draw();
   c->SetLogy();
   angie << ".png";
@@ -205,6 +216,7 @@ for( int i = 8; i < 41 ; i++ ) {
   newmark->SetTitle( newmarktitle.str().c_str() );
   newmark->SetYTitle( "Number of Tracks" );
   newmark->GetXaxis()->SetRange( 0, 600 );
+  newmark->Write();
   newmark->Draw();
   c->SetLogy();
   mitchell << ".png";
@@ -225,6 +237,7 @@ for( int i = 11; i < 36 ; i++ ) {
   robintitle << "neg charge InvBeta for momentum range " << .01*(i-1) << " to " << .01*(i) ;
   robin->SetTitle( robintitle.str().c_str() );
   robin->SetYTitle( "Number of Tracks" );
+  robin->Write();
   robin->Draw();
   c->SetLogy();
   poor << ".png";
@@ -242,11 +255,14 @@ for( int i = 8; i < 41; i++ ) {
   willtitle << "neg charge InvBeta for momentum range " << .05*(i-1) << " to " << .05*(i) ;
   will->SetTitle( willtitle.str().c_str() );
   will->SetYTitle( "Number of Tracks" );
+  will->Write();
   will->Draw();
   c->SetLogy();
   phi << ".png";
   c->Print( phi.str().c_str() );
 
 }
+
+rootfile->Close();
 
 }
