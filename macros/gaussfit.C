@@ -78,8 +78,8 @@ c->Print( getslice.str().c_str() );
 
 
 
-double bag = 0;
-double end = 20;
+double bag = 1.5;
+double end = 2;
 
 for( int i = 11; i < 36; i++ ){
 stringstream getslice;
@@ -95,8 +95,8 @@ c->Print( getslice.str().c_str() );
 }
 
 
-double bag = 0;
-double end = 20;
+double bag = .7;
+double end = 1.3;
 
 for( int i = 8; i < 41; i++ ){
 stringstream getslice;
@@ -112,8 +112,8 @@ c->Print( getslice.str().c_str() );
 }
 
 
-double bag = 0;
-double end = 20;
+double bag = 1.3;
+double end = 1.45;
 
 for( int i = 11; i < 36; i++ ){
 stringstream getslice;
@@ -129,8 +129,8 @@ c->Print( getslice.str().c_str() );
 }
 
 
-double bag = 0;
-double end = 20;
+double bag = 1.04;
+double end = 1.13;
 
 for( int i = 8; i < 41; i++ ){
 stringstream getslice;
@@ -149,8 +149,8 @@ c->Print( getslice.str().c_str() );
 
 
 
-double bag = 0;
-double end = 20;
+double bag = 1.5;
+double end = 2;
 
 for( int i = 11; i < 36; i++ ){
 stringstream getslice;
@@ -166,8 +166,8 @@ c->Print( getslice.str().c_str() );
 }
 
 
-double bag = 0;
-double end = 20;
+double bag = .7;
+double end = 1.3;
 
 for( int i = 8; i < 41; i++ ){
 stringstream getslice;
@@ -183,8 +183,8 @@ c->Print( getslice.str().c_str() );
 }
 
 
-double bag = 0;
-double end = 20;
+double bag = 1.3;
+double end = 1.45;
 
 for( int i = 11; i < 36; i++ ){
 stringstream getslice;
@@ -200,8 +200,8 @@ c->Print( getslice.str().c_str() );
 }
 
 
-double bag = 0;
-double end = 20;
+double bag = 1.04;
+double end = 1.13;
 
 for( int i = 8; i < 41; i++ ){
 stringstream getslice;
