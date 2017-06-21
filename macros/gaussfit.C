@@ -75,4 +75,145 @@ getslice << "fitted.png";
 c->Print( getslice.str().c_str() );
 }
 
+
+
+
+double bag = 0;
+double end = 20;
+
+for( int i = 11; i < 36; i++ ){
+stringstream getslice;
+getslice << "plndEdxK" << i;
+TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
+turandot->Draw();
+c->SetLogy();
+turandot->Fit( fit, "R" , "" , bag, end );
+bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
+end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+getslice << "fitted.png";
+c->Print( getslice.str().c_str() );
+}
+
+
+double bag = 0;
+double end = 20;
+
+for( int i = 8; i < 41; i++ ){
+stringstream getslice;
+getslice << "plndEdxL" << i;
+TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
+turandot->Draw();
+c->SetLogy();
+turandot->Fit( fit, "R" , "" , bag, end );
+bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
+end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+getslice << "fitted.png";
+c->Print( getslice.str().c_str() );
+}
+
+
+double bag = 0;
+double end = 20;
+
+for( int i = 11; i < 36; i++ ){
+stringstream getslice;
+getslice << "pInvBetaK" << i;
+TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
+turandot->Draw();
+c->SetLogy();
+turandot->Fit( fit, "R" , "" , bag, end );
+bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
+end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+getslice << "fitted.png";
+c->Print( getslice.str().c_str() );
+}
+
+
+double bag = 0;
+double end = 20;
+
+for( int i = 8; i < 41; i++ ){
+stringstream getslice;
+getslice << "pInvBetaL" << i;
+TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
+turandot->Draw();
+c->SetLogy();
+turandot->Fit( fit, "R" , "" , bag, end );
+bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
+end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+getslice << "fitted.png";
+c->Print( getslice.str().c_str() );
+}
+
+
+
+
+
+double bag = 0;
+double end = 20;
+
+for( int i = 11; i < 36; i++ ){
+stringstream getslice;
+getslice << "nlndEdxK" << i;
+TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
+turandot->Draw();
+c->SetLogy();
+turandot->Fit( fit, "R" , "" , bag, end );
+bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
+end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+getslice << "fitted.png";
+c->Print( getslice.str().c_str() );
+}
+
+
+double bag = 0;
+double end = 20;
+
+for( int i = 8; i < 41; i++ ){
+stringstream getslice;
+getslice << "nlndEdxL" << i;
+TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
+turandot->Draw();
+c->SetLogy();
+turandot->Fit( fit, "R" , "" , bag, end );
+bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
+end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+getslice << "fitted.png";
+c->Print( getslice.str().c_str() );
+}
+
+
+double bag = 0;
+double end = 20;
+
+for( int i = 11; i < 36; i++ ){
+stringstream getslice;
+getslice << "nInvBetaK" << i;
+TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
+turandot->Draw();
+c->SetLogy();
+turandot->Fit( fit, "R" , "" , bag, end );
+bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
+end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+getslice << "fitted.png";
+c->Print( getslice.str().c_str() );
+}
+
+
+double bag = 0;
+double end = 20;
+
+for( int i = 8; i < 41; i++ ){
+stringstream getslice;
+getslice << "nInvBetaL" << i;
+TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
+turandot->Draw();
+c->SetLogy();
+turandot->Fit( fit, "R" , "" , bag, end );
+bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
+end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+getslice << "fitted.png";
+c->Print( getslice.str().c_str() );
+}
+
 }
