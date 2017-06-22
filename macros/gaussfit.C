@@ -13,7 +13,11 @@ double end = 2;
 
 for( int i = 11; i < 36; i++ ){
 stringstream getslice;
-getslice << "alndEdxK" << i;
+if( i < 10 ) {
+  getslice << "alndEdxK0" << i;
+} else {
+  getslice << "alndEdxK" << i;
+}
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 c->SetLogy();
@@ -30,7 +34,11 @@ double end = 1.3;
 
 for( int i = 8; i < 41; i++ ){
 stringstream getslice;
-getslice << "alndEdxL" << i;
+if( i < 10 ) {
+  getslice << "alndEdxL0" << i;
+} else {
+  getslice << "alndEdxL" << i;
+}
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 c->SetLogy();
@@ -47,7 +55,11 @@ double end = 1.45;
 
 for( int i = 11; i < 36; i++ ){
 stringstream getslice;
-getslice << "aInvBetaK" << i;
+if( i < 10 ) {
+  getslice << "aInvBetaK0" << i;
+} else {
+  getslice << "aInvBetaK" << i;
+}
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 c->SetLogy();
@@ -64,7 +76,11 @@ double end = 1.13;
 
 for( int i = 8; i < 41; i++ ){
 stringstream getslice;
-getslice << "aInvBetaL" << i;
+if( i < 10 ) {
+  getslice << "aInvBetaL0" << i;
+} else {
+  getslice << "aInvBetaL" << i;
+}
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 c->SetLogy();
@@ -83,7 +99,11 @@ double end = 2;
 
 for( int i = 11; i < 36; i++ ){
 stringstream getslice;
-getslice << "plndEdxK" << i;
+if( i < 10 ) {
+  getslice << "plndEdxK0" << i;
+} else {
+  getslice << "plndEdxK" << i;
+}
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 c->SetLogy();
@@ -100,7 +120,11 @@ double end = 1.3;
 
 for( int i = 8; i < 41; i++ ){
 stringstream getslice;
-getslice << "plndEdxL" << i;
+if( i < 10 ) {
+  getslice << "plndEdxL0" << i;
+} else {
+  getslice << "plndEdxL" << i;
+}
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 c->SetLogy();
@@ -117,7 +141,11 @@ double end = 1.45;
 
 for( int i = 11; i < 36; i++ ){
 stringstream getslice;
-getslice << "pInvBetaK" << i;
+if( i < 10 ) {
+  getslice << "pInvBetaK0" << i;
+} else {
+  getslice << "pInvBetaK" << i;
+}
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 c->SetLogy();
@@ -134,7 +162,11 @@ double end = 1.13;
 
 for( int i = 8; i < 41; i++ ){
 stringstream getslice;
-getslice << "pInvBetaL" << i;
+if( i < 10 ) {
+  getslice << "pInvBetaL0" << i;
+} else {
+  getslice << "pInvBetaL" << i;
+}
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 c->SetLogy();
@@ -154,7 +186,11 @@ double end = 2;
 
 for( int i = 11; i < 36; i++ ){
 stringstream getslice;
-getslice << "nlndEdxK" << i;
+if( i < 10 ) {
+  getslice << "nlndEdxK0" << i;
+} else {
+  getslice << "nlndEdxK" << i;
+}
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 c->SetLogy();
@@ -171,7 +207,11 @@ double end = 1.3;
 
 for( int i = 8; i < 41; i++ ){
 stringstream getslice;
-getslice << "nlndEdxL" << i;
+if( i < 10 ) {
+  getslice << "nlndEdxL0" << i;
+} else {
+  getslice << "nlndEdxL" << i;
+}
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 c->SetLogy();
@@ -188,7 +228,11 @@ double end = 1.45;
 
 for( int i = 11; i < 36; i++ ){
 stringstream getslice;
-getslice << "nInvBetaK" << i;
+if( i < 10 ) {
+  getslice << "nInvBetaK0" << i;
+} else {
+  getslice << "nInvBetaK" << i;
+}
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 c->SetLogy();
@@ -205,7 +249,11 @@ double end = 1.13;
 
 for( int i = 8; i < 41; i++ ){
 stringstream getslice;
-getslice << "nInvBetaL" << i;
+if( i < 10 ) {
+  getslice << "nInvBetaL0" << i;
+} else {
+  getslice << "nInvBetaL" << i;
+}
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 c->SetLogy();
