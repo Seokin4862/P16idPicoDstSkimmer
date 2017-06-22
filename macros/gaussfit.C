@@ -39,7 +39,7 @@ bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
 stringstream Lname;
 if( i < 10 ) {
-  Lname << "alndEdxL0" << i << "fitted.png";
+  Lname << "alndEdxL0" << i << "fitted.png"
 } else {
   Lname << "alndEdxL" << i << "fitted.png";
 }
@@ -50,7 +50,7 @@ c->Print( Lname.str().c_str() );
 double bag = 1.3;
 double end = 1.45;
 
-for( int i = 11; i < 36; i++ ){
+for( int i = 16; i < 36; i++ ){
 stringstream getslice;
 getslice << "aInvBetaK" << i;
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
@@ -130,7 +130,7 @@ c->Print( Lname.str().c_str() );
 double bag = 1.3;
 double end = 1.45;
 
-for( int i = 11; i < 36; i++ ){
+for( int i = 16; i < 36; i++ ){
 stringstream getslice;
 getslice << "pInvBetaK" << i;
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
@@ -211,7 +211,7 @@ c->Print( Lname.str().c_str() );
 double bag = 1.3;
 double end = 1.45;
 
-for( int i = 11; i < 36; i++ ){
+for( int i = 16; i < 36; i++ ){
 stringstream getslice;
 getslice << "nInvBetaK" << i;
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
