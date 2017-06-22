@@ -13,11 +13,7 @@ double end = 2;
 
 for( int i = 11; i < 36; i++ ){
 stringstream getslice;
-if( i < 10 ) {
-  getslice << "alndEdxK0" << i;
-} else {
-  getslice << "alndEdxK" << i;
-}
+getslice << "alndEdxK" << i;
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 c->SetLogy();
@@ -34,19 +30,20 @@ double end = 1.3;
 
 for( int i = 8; i < 41; i++ ){
 stringstream getslice;
-if( i < 10 ) {
-  getslice << "alndEdxL0" << i;
-} else {
-  getslice << "alndEdxL" << i;
-}
+getslice << "alndEdxL" << i;
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 c->SetLogy();
 turandot->Fit( fit, "R" , "" , bag, end );
 bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
-getslice << "fitted.png";
-c->Print( getslice.str().c_str() );
+stringstream Lname;
+if( i < 10 ) {
+  Lname << "alndEdxL0" << i << "fitted.png"
+} else {
+  Lname << "alndEdxL" << i << "fitted.png"
+}
+c->Print( Lname.str().c_str() );
 }
 
 
@@ -55,11 +52,7 @@ double end = 1.45;
 
 for( int i = 11; i < 36; i++ ){
 stringstream getslice;
-if( i < 10 ) {
-  getslice << "aInvBetaK0" << i;
-} else {
-  getslice << "aInvBetaK" << i;
-}
+getslice << "aInvBetaK" << i;
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 c->SetLogy();
@@ -76,19 +69,20 @@ double end = 1.13;
 
 for( int i = 8; i < 41; i++ ){
 stringstream getslice;
-if( i < 10 ) {
-  getslice << "aInvBetaL0" << i;
-} else {
-  getslice << "aInvBetaL" << i;
-}
+getslice << "aInvBetaL" << i;
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 c->SetLogy();
 turandot->Fit( fit, "R" , "" , bag, end );
 bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
-getslice << "fitted.png";
-c->Print( getslice.str().c_str() );
+stringstream Lname;
+if( i < 10 ) {
+  Lname << "aInvBetaL0" << i << "fitted.png";
+} else {
+  Lname << "aInvBetaL" << i << "fitted.png";
+}
+c->Print( Lname.str().c_str() );
 }
 
 
@@ -99,11 +93,7 @@ double end = 2;
 
 for( int i = 11; i < 36; i++ ){
 stringstream getslice;
-if( i < 10 ) {
-  getslice << "plndEdxK0" << i;
-} else {
-  getslice << "plndEdxK" << i;
-}
+getslice << "plndEdxK" << i;
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 c->SetLogy();
@@ -120,19 +110,20 @@ double end = 1.3;
 
 for( int i = 8; i < 41; i++ ){
 stringstream getslice;
-if( i < 10 ) {
-  getslice << "plndEdxL0" << i;
-} else {
-  getslice << "plndEdxL" << i;
-}
+getslice << "plndEdxL" << i;
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 c->SetLogy();
 turandot->Fit( fit, "R" , "" , bag, end );
 bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
-getslice << "fitted.png";
-c->Print( getslice.str().c_str() );
+stringstream Lname;
+if( i < 10 ) {
+  Lname << "plndEdxL0" << i << "fitted.png";
+} else {
+  Lname << "plndEdxL" << i << "fitted.png";
+}
+c->Print( Lname.str().c_str() );
 }
 
 
@@ -141,11 +132,7 @@ double end = 1.45;
 
 for( int i = 11; i < 36; i++ ){
 stringstream getslice;
-if( i < 10 ) {
-  getslice << "pInvBetaK0" << i;
-} else {
-  getslice << "pInvBetaK" << i;
-}
+getslice << "pInvBetaK" << i;
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 c->SetLogy();
@@ -162,19 +149,20 @@ double end = 1.13;
 
 for( int i = 8; i < 41; i++ ){
 stringstream getslice;
-if( i < 10 ) {
-  getslice << "pInvBetaL0" << i;
-} else {
-  getslice << "pInvBetaL" << i;
-}
+getslice << "pInvBetaL" << i;
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 c->SetLogy();
 turandot->Fit( fit, "R" , "" , bag, end );
 bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
-getslice << "fitted.png";
-c->Print( getslice.str().c_str() );
+stringstream Lname;
+if( i < 10 ) {
+  Lname << "pInvBetaL0" << i << "fitted.png";
+} else {
+  Lname << "pInvBetaL" << i << "fitted.png";
+}
+c->Print( Lname.str().c_str() );
 }
 
 
@@ -186,11 +174,7 @@ double end = 2;
 
 for( int i = 11; i < 36; i++ ){
 stringstream getslice;
-if( i < 10 ) {
-  getslice << "nlndEdxK0" << i;
-} else {
-  getslice << "nlndEdxK" << i;
-}
+getslice << "nlndEdxK" << i;
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 c->SetLogy();
@@ -207,19 +191,20 @@ double end = 1.3;
 
 for( int i = 8; i < 41; i++ ){
 stringstream getslice;
-if( i < 10 ) {
-  getslice << "nlndEdxL0" << i;
-} else {
-  getslice << "nlndEdxL" << i;
-}
+getslice << "nlndEdxL" << i;
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 c->SetLogy();
 turandot->Fit( fit, "R" , "" , bag, end );
 bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
-getslice << "fitted.png";
-c->Print( getslice.str().c_str() );
+stringstream Lname;
+if( i < 10 ) {
+  Lname << "nlndEdxL0" << i << "fitted.png";
+} else {
+  Lname << "nlndEdxL" << i << "fitted.png";
+}
+c->Print( Lname.str().c_str() );
 }
 
 
@@ -228,11 +213,7 @@ double end = 1.45;
 
 for( int i = 11; i < 36; i++ ){
 stringstream getslice;
-if( i < 10 ) {
-  getslice << "nInvBetaK0" << i;
-} else {
-  getslice << "nInvBetaK" << i;
-}
+getslice << "nInvBetaK" << i;
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 c->SetLogy();
@@ -249,19 +230,20 @@ double end = 1.13;
 
 for( int i = 8; i < 41; i++ ){
 stringstream getslice;
-if( i < 10 ) {
-  getslice << "nInvBetaL0" << i;
-} else {
-  getslice << "nInvBetaL" << i;
-}
+getslice << "nInvBetaL" << i;
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
 turandot->Draw();
 c->SetLogy();
 turandot->Fit( fit, "R" , "" , bag, end );
 bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
-getslice << "fitted.png";
-c->Print( getslice.str().c_str() );
+stringstream Lname;
+if( i < 10 ) {
+  Lname << "nInvBetaL0" << i << "fitted.png";
+} else {
+  Lname << "nInvBetaL" << i << "fitted.png";
+}
+c->Print( Lname.str().c_str() );
 }
 
 }
