@@ -39,9 +39,9 @@ bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
 stringstream Lname;
 if( i < 10 ) {
-  Lname << "alndEdxL0" << i << "fitted.png"
+  Lname << "alndEdxL0" << i << "fitted.png";
 } else {
-  Lname << "alndEdxL" << i << "fitted.png"
+  Lname << "alndEdxL" << i << "fitted.png";
 }
 c->Print( Lname.str().c_str() );
 }
