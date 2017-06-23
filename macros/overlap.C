@@ -70,7 +70,7 @@ TH1 * h2_2 = (TH1*)gDirectory->Get( name2_fs2.str().c_str() );
 
 
 stringstream title_1;
-title_1 << h->GetTitle() << " Fitted Mean";
+title_1 << h->GetTitle() << " Fitted Mean with same from Mom -.55 to -.6";
 h_1->SetTitle( title_1.str().c_str() );
 h_1->SetAxisRange( 2.6, 2.9, "Y" );
 h_1->SetAxisRange( 1350, 1900, "X" );
@@ -85,7 +85,7 @@ overlap << "mean_overlap" << i << ".png";
 c->Print( overlap.str().c_str() );
 
 stringstream title_2;
-title_2 << h->GetTitle() << " Fitted Sigma";
+title_2 << h->GetTitle() << " Fitted Sigma with same from Mom -.55 to -.6";
 h_2->SetTitle( title_2.str().c_str() );
 h_2->SetAxisRange( .1, .3, "Y" );
 h_2->SetAxisRange( 1350, 1900, "X" );
