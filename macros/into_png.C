@@ -2,14 +2,14 @@
 
 void into_png() {
 
-TFile * f = new TFile( "/home/sy34/workspace/safe/65dEdxvsRunN/dEdxvsRunN.root" );
+TFile * f = new TFile( "/home/sy34/workspace/safe/ImpdEdxvsphi/ImpdEdxvsphi.root" );
 
 TCanvas * c = new TCanvas("c","c");
 
 for( int i = 1 ; i < 10 ; i++  ) {
   // i < number - 1
 stringstream refer;
-refer << "hdEdxvsRunN1" << i;
+refer << "nSPi1" << i;
 
 TH2 *h = (TH2*)f->Get( refer.str().c_str());
 if( 0 == h ) continue;
@@ -51,7 +51,7 @@ TH1 * h_2 = (TH1*)gDirectory->Get( name_fs2.str().c_str() );
 stringstream title_1;
 title_1 << h->GetTitle() << " Fitted Mean";
 h_1->SetTitle( title_1.str().c_str() );
-h_1->SetAxisRange( 2.6, 2.9, "Y" );
+h_1->SetAxisRange( 2.0, 3.5, "Y" );
 h_1->SetAxisRange(1350, 1900, "X");
 h_1->Draw();
 name_fs1<< ".png";
@@ -60,7 +60,7 @@ c->Print( name_fs1.str().c_str());
 stringstream title_2;
 title_2 << h->GetTitle() << " Fitted Sigma";
 h_2->SetTitle( title_2.str().c_str() );
-h_2->SetAxisRange( .1, .3, "Y" );
+h_2->SetAxisRange( .16, .24, "Y" );
 h_2->SetAxisRange(1350, 1900, "X");
 h_2->Draw();
 name_fs2<< ".png";
