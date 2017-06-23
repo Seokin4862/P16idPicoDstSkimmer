@@ -17,6 +17,7 @@ void yami() {
   stringstream title_px;
   title_px << hpx->GetTitle() << " ProfileX";
   hpx->SetTitle( title_px.str().c_str() );
+  hpx->SetAxisRange( 2.6 , 3.0 , "Y");
   hpx->Draw();
   stringstream name;
   name << refer.str() << ".png";
