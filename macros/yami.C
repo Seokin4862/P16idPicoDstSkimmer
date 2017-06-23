@@ -14,7 +14,7 @@ void yami() {
   TH2 *h = (TH2*)f->Get( refer.str().c_str());
   TProfile *hpx = h->ProfileX();
 
-  stringsteam title_px;
+  stringstream title_px;
   title_px << hpx->GetTitle() << " ProfileX";
   hpx->SetTitle( title_px.str().c_str() );
   hpx->Draw();
