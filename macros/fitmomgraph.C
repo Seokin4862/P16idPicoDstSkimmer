@@ -10,6 +10,7 @@ TF1 * fit = new TF1( "fit", "gaus" );
 
 double bag = 1.5;
 double end = 2;
+const Int_t NBINS = 34;
 int edges[35] = {};
 
 for( int i = 11; i < 36; i++ ){
@@ -26,7 +27,7 @@ double inted = fit->Integral( 0, 10 );
 edges[i-1] = .01*(i-1) ;
 }
 edges[35] = .35;
-TH1 *intedmom = new TH1D( "intedmom" , "Integral of the Fit against Momentum Range" , 34 , edges );
+TH1D * intedmom = new TH1D( "intedmom" , "Integral of the Fit against Momentum Range" , NBINS , edges );
 intedmom->Draw();
 
 }
