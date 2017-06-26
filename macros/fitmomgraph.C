@@ -22,7 +22,7 @@ turandot->Fit( fit, "R" , "" , bag, end );
 bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
 getslice << "fitted.png";
-double inted = fit->Integrate( 0, 10 );
+double inted = fit->Integral( 0, 10 );
 edges[i-1] = hdEdx->GetXaxis()->FindBin( .01*(i-1) );
 }
 edges[35] = .35
