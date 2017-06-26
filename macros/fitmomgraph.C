@@ -25,8 +25,8 @@ getslice << "fitted.png";
 double inted = fit->Integral( 0, 10 );
 edges[i-1] = .01*(i-1) ;
 }
-edges[35] = .35
-TH1* intedmom = new TH1D( "intedmom" , "Integral of the Fit against Momentum Range" , 34 , edges );
+edges[35] = .35;
+TH1 *intedmom = new TH1D( "intedmom" , "Integral of the Fit against Momentum Range" , 34 , edges );
 intedmom->Draw();
 
 }
