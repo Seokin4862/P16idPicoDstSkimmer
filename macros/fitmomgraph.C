@@ -11,7 +11,7 @@ TF1 * fit = new TF1( "fit", "gaus" );
 double bag = 1.5;
 double end = 2;
 const Int_t NBINS = 34;
-int edges[35] = {};
+Double_t edges[35] = {};
 
 for( int i = 11; i < 36; i++ ){
 stringstream getslice;
