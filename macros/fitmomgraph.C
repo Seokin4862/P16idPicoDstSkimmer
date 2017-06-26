@@ -23,11 +23,14 @@ turandot->Fit( fit, "R" , "" , bag, end );
 bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
 getslice << "fitted.png";
-double inted = fit->Integral( 0, 10 );
+double inted[i-1] = fit->Integral( 0, 10 );
 edges[i-1] = .01*(i-1) ;
 }
 edges[35] = .35;
 TH1D * intedmom = new TH1D( "intedmom" , "Integral of the Fit against Momentum Range" , NBINS , edges );
+for( int i = 11; i < 36; i++ ){
+intedmom->SetBinContent( i-1, inted[i-1] );
+}
 intedmom->Draw();
 
 }
