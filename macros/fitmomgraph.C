@@ -10,11 +10,11 @@ TF1 * fit = new TF1( "fit", "gaus" );
 
 double bag = 1.5;
 double end = 2;
-const Int_t NBINS = 34;
-Double_t edges[35] = {};
-Double_t inted[35] = {};
+const Int_t NBINS = 79;
+Double_t edges[80] = {};
+Double_t inted[80] = {};
 
-for( int i = 11; i < 36; i++ ){
+for( int i = 11; i < 81; i++ ){
 stringstream getslice;
 getslice << "alndEdxK" << i;
 TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
@@ -28,10 +28,10 @@ inted[i-1] = fit->Integral( 0, 10 );
 edges[i-1] = .01*(i-1) ;
 }
 
-edges[35] = .35;
+edges[80] = .80;
 TH1D * intedmom = new TH1D( "intedmom" , "Integral of the Fit against Momentum Range" , NBINS , edges );
 
-for( int i = 11; i < 36; i++ ){
+for( int i = 11; i < 81; i++ ){
 intedmom->SetBinContent( i-1, inted[i-1] );
 }
 
