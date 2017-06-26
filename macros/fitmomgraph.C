@@ -23,7 +23,7 @@ bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
 getslice << "fitted.png";
 double inted = fit->Integral( 0, 10 );
-edges[i-1] = hdEdx->GetXaxis()->FindBin( .01*(i-1) );
+edges[i-1] = .01*(i-1) ;
 }
 edges[35] = .35
 TH1* intedmom = new TH1D( "intedmom" , "Integral of the Fit against Momentum Range" , 35 , edges );
