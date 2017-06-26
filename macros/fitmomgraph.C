@@ -1,6 +1,6 @@
 
 
-void gaussfit() {
+void fitmomgraph() {
 
 TFile * f = new TFile( "/home/sy34/workspace/safe/slices/slicesgraphs.root" );
 
