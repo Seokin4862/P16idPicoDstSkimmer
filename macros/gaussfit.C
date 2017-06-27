@@ -8,6 +8,8 @@ TCanvas *c = new TCanvas( "c", "c" );
 
 TF1 * fit = new TF1( "fit", "gaus" );
 
+TFile * rootfile = new TFile("gaussfit.root", "RECREATE" );
+
 double bag = 1.5;
 double end = 2;
 
@@ -20,6 +22,7 @@ c->SetLogy();
 turandot->Fit( fit, "R" , "" , bag, end );
 bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+turandot->Write();
 getslice << "fitted.png";
 c->Print( getslice.str().c_str() );
 }
@@ -37,6 +40,7 @@ c->SetLogy();
 turandot->Fit( fit, "R" , "" , bag, end );
 bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+turandot->Write();
 stringstream Lname;
 if( i < 10 ) {
   Lname << "alndEdxL0" << i << "fitted.png";
@@ -59,6 +63,7 @@ c->SetLogy();
 turandot->Fit( fit, "R" , "" , bag, end );
 bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+turandot->Write();
 getslice << "fitted.png";
 c->Print( getslice.str().c_str() );
 }
@@ -76,6 +81,7 @@ c->SetLogy();
 turandot->Fit( fit, "R" , "" , bag, end );
 bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+turandot->Write();
 stringstream Lname;
 if( i < 10 ) {
   Lname << "aInvBetaL0" << i << "fitted.png";
@@ -100,6 +106,7 @@ c->SetLogy();
 turandot->Fit( fit, "R" , "" , bag, end );
 bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+turandot->Write();
 getslice << "fitted.png";
 c->Print( getslice.str().c_str() );
 }
@@ -117,6 +124,7 @@ c->SetLogy();
 turandot->Fit( fit, "R" , "" , bag, end );
 bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+turandot->Write();
 stringstream Lname;
 if( i < 10 ) {
   Lname << "plndEdxL0" << i << "fitted.png";
@@ -139,6 +147,7 @@ c->SetLogy();
 turandot->Fit( fit, "R" , "" , bag, end );
 bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+turandot->Write();
 getslice << "fitted.png";
 c->Print( getslice.str().c_str() );
 }
@@ -156,6 +165,7 @@ c->SetLogy();
 turandot->Fit( fit, "R" , "" , bag, end );
 bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+turandot->Write();
 stringstream Lname;
 if( i < 10 ) {
   Lname << "pInvBetaL0" << i << "fitted.png";
@@ -181,6 +191,7 @@ c->SetLogy();
 turandot->Fit( fit, "R" , "" , bag, end );
 bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+turandot->Write();
 getslice << "fitted.png";
 c->Print( getslice.str().c_str() );
 }
@@ -198,6 +209,7 @@ c->SetLogy();
 turandot->Fit( fit, "R" , "" , bag, end );
 bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+turandot->Write();
 stringstream Lname;
 if( i < 10 ) {
   Lname << "nlndEdxL0" << i << "fitted.png";
@@ -220,6 +232,7 @@ c->SetLogy();
 turandot->Fit( fit, "R" , "" , bag, end );
 bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+turandot->Write();
 getslice << "fitted.png";
 c->Print( getslice.str().c_str() );
 }
@@ -237,6 +250,7 @@ c->SetLogy();
 turandot->Fit( fit, "R" , "" , bag, end );
 bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+turandot->Write();
 stringstream Lname;
 if( i < 10 ) {
   Lname << "nInvBetaL0" << i << "fitted.png";
