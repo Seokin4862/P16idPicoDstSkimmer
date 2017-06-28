@@ -24,7 +24,7 @@ c->SetLogy();
 temph->Fit( fit, "R" , "" , beg, end );
 beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
-hintpt->SetBinContent( i, fit->Integral( 0, 10 ) );
+// hintpt->SetBinContent( i, fit->Integral( 0, 10 ) );
 }
 
 double beg = .7;
