@@ -14,17 +14,17 @@ double bag = 1.5;
 double end = 2;
 
 for( int i = 11; i < 36; i++ ){
-stringstream getslice;
-getslice << "alndEdxK" << i;
-TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
-turandot->Draw();
-c->SetLogy();
-turandot->Fit( fit, "R" , "" , bag, end );
-bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
-end = fit->GetParameter(1) + 2*fit->GetParameter(2);
-turandot->Write();
-getslice << "fitted.png";
-c->Print( getslice.str().c_str() );
+  stringstream getslice;
+  getslice << "alndEdxK" << i;
+  TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
+  turandot->Draw();
+  c->SetLogy();
+  turandot->Fit( fit, "R" , "" , bag, end );
+  bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
+  end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+  turandot->Write();
+  getslice << "fitted.png";
+  c->Print( getslice.str().c_str() );
 }
 
 
@@ -32,22 +32,22 @@ double bag = .7;
 double end = 1.3;
 
 for( int i = 8; i < 41; i++ ){
-stringstream getslice;
-getslice << "alndEdxL" << i;
-TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
-turandot->Draw();
-c->SetLogy();
-turandot->Fit( fit, "R" , "" , bag, end );
-bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
-end = fit->GetParameter(1) + 2*fit->GetParameter(2);
-turandot->Write();
-stringstream Lname;
-if( i < 10 ) {
-  Lname << "alndEdxL0" << i << "fitted.png";
-} else {
-  Lname << "alndEdxL" << i << "fitted.png";
-}
-c->Print( Lname.str().c_str() );
+  stringstream getslice;
+  getslice << "alndEdxL" << i;
+  TH1 *turandot = (TH1*)f->Get( getslice.str().c_str() );
+  turandot->Draw();
+  c->SetLogy();
+  turandot->Fit( fit, "R" , "" , bag, end );
+  bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
+  end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+  turandot->Write();
+  stringstream Lname;
+  if( i < 10 ) {
+    Lname << "alndEdxL0" << i << "fitted.png";
+  } else {
+    Lname << "alndEdxL" << i << "fitted.png";
+  }
+  c->Print( Lname.str().c_str() );
 }
 
 
