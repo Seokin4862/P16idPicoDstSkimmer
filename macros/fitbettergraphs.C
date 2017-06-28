@@ -20,9 +20,9 @@ for( int i = 11; i < 36; i++ ){
 stringstream getslice;
 getslice << "alndEdxK" << i;
 TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
-turandot->Draw();
+temph->Draw();
 c->SetLogy();
-temph->Fit( fit, "R" , "" , bag, end );
+temph->Fit( fit, "R" , "" , beg, end );
 beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
 hintpt->SetBinContent( i, fit->Integral( 0, 10 ) );
