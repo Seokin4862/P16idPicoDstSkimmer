@@ -24,7 +24,7 @@ c->SetLogy();
 temph->Fit( fit, "R" , "" , beg, end );
 beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
-// hintpt->SetBinContent( i, fit->Integral( 0, 10 ) );
+hintpt->SetBinContent( i, fit->Integral( 0, 10 ) );
 }
 
 double beg = .7;
@@ -37,11 +37,46 @@ TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
 temph->Draw();
 c->SetLogy();
 temph->Fit( fit, "R" , "" , beg, end );
-bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
+beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
 hintpt->SetBinContent( i+28, fit->Integral( 0, 10 ) );
 }
 
 hintpt->Draw();
+c->Print( "alndEdxL.png" );
+
+double beg = 1.3;
+double end = 1.45;
+
+for( int i = 16; i < 36; i++ ){
+stringstream getslice;
+getslice << "aInvBetaK" << i;
+TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
+temph->Draw();
+c->SetLogy();
+temph->Fit( fit, "R" , "" , beg, end );
+beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
+end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+hintpt->SetBinContent( i, fit->Integral( 0, 10 ) );
+}
+
+double beg = 1.04;
+double end = 1.13;
+
+for( int i = 8; i < 41; i++ ){
+stringstream getslice;
+getslice << "aInvBetaL" << i;
+TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
+temph->Draw();
+c->SetLogy();
+temph->Fit( fit, "R" , "" , beg, end );
+beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
+end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+hintpt->SetBinContent( i, fit->Integral( 0, 10 ) );
+}
+
+hintpt->Draw();
+c->Print( "aInvBetaL.png" );
+
 
 }
