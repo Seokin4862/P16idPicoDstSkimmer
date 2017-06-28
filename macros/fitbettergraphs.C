@@ -39,7 +39,7 @@ c->SetLogy();
 temph->Fit( fit, "R" , "" , beg, end );
 bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
-hintpt->SetBinContent( i, fit->Integral( 0, 10 ) );
+hintpt->SetBinContent( i+27, fit->Integral( 0, 10 ) );
 }
 
 hintpt->Draw();
