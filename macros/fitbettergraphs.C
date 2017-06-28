@@ -46,7 +46,7 @@ hintpt->SetBinContent( i+28, fit->Integral( 0, 10 ) );
 }
 
 hintpt->Draw();
-c->Print( "alndEdxL.png" );
+c->Print( "alndEdx.png" );
 
 double beg = 1.3;
 double end = 1.45;
@@ -75,11 +75,11 @@ c->SetLogy();
 temph->Fit( fit, "R" , "" , beg, end );
 beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
-hinvbpt->SetBinContent( i, fit->Integral( 0, 10 ) );
+hinvbpt->SetBinContent( i+28, fit->Integral( 0, 10 ) );
 }
 
 hinvbpt->Draw();
-c->Print( "aInvBetaL.png" );
+c->Print( "aInvBeta.png" );
 
 
 }
