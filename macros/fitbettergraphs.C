@@ -11,6 +11,9 @@ float binEdges[] = {0.0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0
 int nBins = 67;
 
 TH1D * hintpt = new TH1D( "intpt", "Integral of the Pion Fit vs Total Momentum", nBins, binEdges );
+TH1D * hinvbpt = new TH1D( "invbpt", "Integral of the Pion Fit vs Total Momentum", nBins, binEdges );
+
+
 
 double beg = 1.5;
 double end = 2;
@@ -57,7 +60,7 @@ c->SetLogy();
 temph->Fit( fit, "R" , "" , beg, end );
 beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
-hintpt->SetBinContent( i, fit->Integral( 0, 10 ) );
+hinvbpt->SetBinContent( i, fit->Integral( 0, 10 ) );
 }
 
 double beg = 1.04;
@@ -72,10 +75,10 @@ c->SetLogy();
 temph->Fit( fit, "R" , "" , beg, end );
 beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
-hintpt->SetBinContent( i, fit->Integral( 0, 10 ) );
+hinvbpt->SetBinContent( i, fit->Integral( 0, 10 ) );
 }
 
-hintpt->Draw();
+hinvbpt->Draw();
 c->Print( "aInvBetaL.png" );
 
 
