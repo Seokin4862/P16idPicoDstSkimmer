@@ -14,7 +14,6 @@ TH1D * hintpt = new TH1D( "intpt", "Integral of the Pion Fit vs Total Momentum",
 
 double beg = 1.5;
 double end = 2;
-float inted[67] = {};
 
 for( int i = 11; i < 36; i++ ){
 stringstream getslice;
@@ -24,6 +23,21 @@ temph->Draw();
 c->SetLogy();
 temph->Fit( fit, "R" , "" , beg, end );
 beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
+end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+hintpt->SetBinContent( i, fit->Integral( 0, 10 ) );
+}
+
+double beg = .7;
+double end = 1.3;
+
+for( int i = 8; i < 41; i++ ){
+stringstream getslice;
+getslice << "alndEdxL" << i;
+TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
+temph->Draw();
+c->SetLogy();
+temph->Fit( fit, "R" , "" , beg, end );
+bag = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
 hintpt->SetBinContent( i, fit->Integral( 0, 10 ) );
 }
