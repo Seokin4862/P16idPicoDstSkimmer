@@ -28,6 +28,6 @@ end = fit->GetParameter(1) + 2*fit->GetParameter(2);
 hintpt->SetBinContent( i, fit->Integral( 0, 10 ) );
 }
 
-Draw->hintpt();
+hintpt->Draw();
 
 }
