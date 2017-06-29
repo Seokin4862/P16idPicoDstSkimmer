@@ -104,8 +104,8 @@ temph->Draw();
 getslice<< ".png";
 // c->Print( getslice.str().c_str() );
 hinvbpt->SetBinContent( i+28, fit->Integral( 1, 10 )/.05 );
-hinvbptm->SetBinContent( i, fit->GetParameter(1) )
-hinvbpts->SetBinContent( i, fit->GetParameter(2) )
+hinvbptm->SetBinContent( i+28, fit->GetParameter(1) );
+hinvbpts->SetBinContent( i+28, fit->GetParameter(2) );
 }
 
 hinvbpt->Draw();
