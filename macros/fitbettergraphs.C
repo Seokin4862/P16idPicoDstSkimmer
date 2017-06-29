@@ -71,7 +71,7 @@ c->Print( "alndEdx3.png" );
 double beg = 1.3;
 double end = 1.45;
 
-for( int i = 16; i < 36; i++ ){
+for( int i = 11; i < 36; i++ ){
 stringstream getslice;
 getslice << "aInvBetaK" << i;
 TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
