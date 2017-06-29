@@ -52,8 +52,8 @@ hadedxptm->SetBinContent( i, fit->GetParameter(1) );
 hadedxpts->SetBinContent( i, fit->GetParameter(2) );
 }
 
-double beg = .7;
-double end = 1.3;
+// double beg = .7;
+// double end = 1.3;
 
 for( int i = 8; i < 41; i++ ){
 stringstream getslice;
@@ -102,8 +102,8 @@ hainvbptm->SetBinContent( i, fit->GetParameter(1) );
 hainvbpts->SetBinContent( i, fit->GetParameter(2) );
 }
 
-double beg = 1.04;
-double end = 1.13;
+// double beg = 1.04;
+// double end = 1.13;
 
 for( int i = 8; i < 41; i++ ){
 stringstream getslice;
@@ -154,8 +154,8 @@ hpdedxptm->SetBinContent( i, fit->GetParameter(1) );
 hpdedxpts->SetBinContent( i, fit->GetParameter(2) );
 }
 
-double beg = .7;
-double end = 1.3;
+// double beg = .7;
+// double end = 1.3;
 
 for( int i = 8; i < 41; i++ ){
 stringstream getslice;
@@ -203,8 +203,8 @@ hpinvbptm->SetBinContent( i, fit->GetParameter(1) );
 hpinvbpts->SetBinContent( i, fit->GetParameter(2) );
 }
 
-double beg = 1.04;
-double end = 1.13;
+// double beg = 1.04;
+// double end = 1.13;
 
 for( int i = 8; i < 41; i++ ){
 stringstream getslice;
@@ -254,8 +254,8 @@ hndedxptm->SetBinContent( i, fit->GetParameter(1) );
 hndedxpts->SetBinContent( i, fit->GetParameter(2) );
 }
 
-double beg = .7;
-double end = 1.3;
+// double beg = .7;
+// double end = 1.3;
 
 for( int i = 8; i < 41; i++ ){
 stringstream getslice;
@@ -303,8 +303,8 @@ hninvbptm->SetBinContent( i, fit->GetParameter(1) );
 hninvbpts->SetBinContent( i, fit->GetParameter(2) );
 }
 
-double beg = 1.04;
-double end = 1.13;
+// double beg = 1.04;
+// double end = 1.13;
 
 for( int i = 8; i < 41; i++ ){
 stringstream getslice;
