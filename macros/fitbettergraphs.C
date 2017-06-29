@@ -67,9 +67,9 @@ end = fit->GetParameter(1) + 2*fit->GetParameter(2);
 temph->Draw();
 getslice<< ".png";
 // c->Print( getslice.str().c_str() );
-hadedxpt->SetBinContent( i+28, fit->Integral( 0, 10 )/.05 );
-hadedxptm->SetBinContent( i+28, fit->GetParameter(1) );
-hadedxpts->SetBinContent( i+28, fit->GetParameter(2) );
+hadedxpt->SetBinContent( i+29, fit->Integral( 0, 10 )/.05 );
+hadedxptm->SetBinContent( i+29, fit->GetParameter(1) );
+hadedxpts->SetBinContent( i+29, fit->GetParameter(2) );
 }
 
 hadedxpt->Draw();
@@ -117,9 +117,9 @@ end = fit->GetParameter(1) + 2*fit->GetParameter(2);
 temph->Draw();
 getslice<< ".png";
 // c->Print( getslice.str().c_str() );
-hainvbpt->SetBinContent( i+28, fit->Integral( 1, 10 )/.05 );
-hainvbptm->SetBinContent( i+28, fit->GetParameter(1) );
-hainvbpts->SetBinContent( i+28, fit->GetParameter(2) );
+hainvbpt->SetBinContent( i+29, fit->Integral( 1, 10 )/.05 );
+hainvbptm->SetBinContent( i+29, fit->GetParameter(1) );
+hainvbpts->SetBinContent( i+29, fit->GetParameter(2) );
 }
 
 hainvbpt->Draw();
@@ -169,9 +169,9 @@ end = fit->GetParameter(1) + 2*fit->GetParameter(2);
 temph->Draw();
 getslice<< ".png";
 // c->Print( getslice.str().c_str() );
-hpdedxpt->SetBinContent( i+28, fit->Integral( 0, 10 )/.05 );
-hpdedxptm->SetBinContent( i+28, fit->GetParameter(1) );
-hpdedxpts->SetBinContent( i+28, fit->GetParameter(2) );
+hpdedxpt->SetBinContent( i+29, fit->Integral( 0, 10 )/.05 );
+hpdedxptm->SetBinContent( i+29, fit->GetParameter(1) );
+hpdedxpts->SetBinContent( i+29, fit->GetParameter(2) );
 }
 
 hpdedxpt->Draw();
@@ -218,9 +218,9 @@ end = fit->GetParameter(1) + 2*fit->GetParameter(2);
 temph->Draw();
 getslice<< ".png";
 // c->Print( getslice.str().c_str() );
-hpinvbpt->SetBinContent( i+28, fit->Integral( 1, 10 )/.05 );
-hpinvbptm->SetBinContent( i+28, fit->GetParameter(1) );
-hpinvbpts->SetBinContent( i+28, fit->GetParameter(2) );
+hpinvbpt->SetBinContent( i+29, fit->Integral( 1, 10 )/.05 );
+hpinvbptm->SetBinContent( i+29, fit->GetParameter(1) );
+hpinvbpts->SetBinContent( i+29, fit->GetParameter(2) );
 }
 
 hpinvbpt->Draw();
@@ -269,9 +269,9 @@ end = fit->GetParameter(1) + 2*fit->GetParameter(2);
 temph->Draw();
 getslice<< ".png";
 // c->Print( getslice.str().c_str() );
-hndedxpt->SetBinContent( i+28, fit->Integral( 0, 10 )/.05 );
-hndedxptm->SetBinContent( i+28, fit->GetParameter(1) );
-hndedxpts->SetBinContent( i+28, fit->GetParameter(2) );
+hndedxpt->SetBinContent( i+29, fit->Integral( 0, 10 )/.05 );
+hndedxptm->SetBinContent( i+29, fit->GetParameter(1) );
+hndedxpts->SetBinContent( i+29, fit->GetParameter(2) );
 }
 
 hndedxpt->Draw();
