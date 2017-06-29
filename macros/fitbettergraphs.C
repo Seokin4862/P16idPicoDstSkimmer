@@ -175,13 +175,13 @@ hpdedxpts->SetBinContent( i+28, fit->GetParameter(2) );
 }
 
 hpdedxpt->Draw();
-c->Print( "alndEdx1.png" );
+c->Print( "plndEdx1.png" );
 
 hpdedxptm->Draw();
-c->Print( "alndEdx2.png" );
+c->Print( "plndEdx2.png" );
 
 hpdedxpts->Draw();
-c->Print( "alndEdx3.png" );
+c->Print( "plndEdx3.png" );
 
 double beg = 1.3;
 double end = 1.45;
@@ -224,13 +224,13 @@ hpinvbpts->SetBinContent( i+28, fit->GetParameter(2) );
 }
 
 hpinvbpt->Draw();
-c->Print( "aInvBeta1.png" );
+c->Print( "pInvBeta1.png" );
 
 hpinvbptm->Draw();
-c->Print( "aInvBeta2.png" );
+c->Print( "pInvBeta2.png" );
 
 hpinvbpts->Draw();
-c->Print( "aInvBeta3.png" );
+c->Print( "pInvBeta3.png" );
 
 
 
@@ -275,13 +275,13 @@ hndedxpts->SetBinContent( i+28, fit->GetParameter(2) );
 }
 
 hndedxpt->Draw();
-c->Print( "alndEdx1.png" );
+c->Print( "nlndEdx1.png" );
 
 hndedxptm->Draw();
-c->Print( "alndEdx2.png" );
+c->Print( "nlndEdx2.png" );
 
 hndedxpts->Draw();
-c->Print( "alndEdx3.png" );
+c->Print( "nlndEdx3.png" );
 
 double beg = 1.3;
 double end = 1.45;
@@ -324,12 +324,12 @@ hninvbpts->SetBinContent( i+28, fit->GetParameter(2) );
 }
 
 hninvbpt->Draw();
-c->Print( "aInvBeta1.png" );
+c->Print( "nInvBeta1.png" );
 
 hninvbptm->Draw();
-c->Print( "aInvBeta2.png" );
+c->Print( "nInvBeta2.png" );
 
 hninvbpts->Draw();
-c->Print( "aInvBeta3.png" );
+c->Print( "nInvBeta3.png" );
 
 }
