@@ -30,7 +30,7 @@ end = fit->GetParameter(1) + 2*fit->GetParameter(2);
 temph->Draw();
 getslice<< ".png";
 c->Print( getslice.str().c_str() );
-hintpt->SetBinContent( i, fit->Integral( 0, 10 )/temph->GetBinWidth() );
+hintpt->SetBinContent( i, fit->Integral( 0, 10 )/temph->GetBinWidth(3) );
 }
 
 double beg = .7;
@@ -48,7 +48,7 @@ end = fit->GetParameter(1) + 2*fit->GetParameter(2);
 temph->Draw();
 getslice<< ".png";
 c->Print( getslice.str().c_str() );
-hintpt->SetBinContent( i+28, fit->Integral( 0, 10 )/temph->GetBinWidth() );
+hintpt->SetBinContent( i+28, fit->Integral( 0, 10 )/temph->GetBinWidth(3) );
 }
 
 hintpt->Draw();
@@ -69,7 +69,7 @@ end = fit->GetParameter(1) + 2*fit->GetParameter(2);
 temph->Draw();
 getslice<< ".png";
 c->Print( getslice.str().c_str() );
-hinvbpt->SetBinContent( i, fit->Integral( 1, 10 )/temph->GetBinWidth() );
+hinvbpt->SetBinContent( i, fit->Integral( 1, 10 )/temph->GetBinWidth(3) );
 }
 
 double beg = 1.04;
@@ -87,7 +87,7 @@ end = fit->GetParameter(1) + 2*fit->GetParameter(2);
 temph->Draw();
 getslice<< ".png";
 c->Print( getslice.str().c_str() );
-hinvbpt->SetBinContent( i+28, fit->Integral( 1, 10 )/temph->GetBinWidth() );
+hinvbpt->SetBinContent( i+28, fit->Integral( 1, 10 )/temph->GetBinWidth(3) );
 }
 
 hinvbpt->Draw();
