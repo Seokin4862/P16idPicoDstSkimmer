@@ -131,4 +131,205 @@ c->Print( "aInvBeta2.png" );
 hainvbpts->Draw();
 c->Print( "aInvBeta3.png" );
 
+
+
+
+double beg = 1.5;
+double end = 2;
+
+for( int i = 11; i < 36; i++ ){
+stringstream getslice;
+getslice << "plndEdxK" << i;
+TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
+temph->Draw();
+c->SetLogy();
+temph->Fit( fit, "R" , "" , beg, end );
+beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
+end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+temph->Draw();
+getslice<< ".png";
+// c->Print( getslice.str().c_str() );
+hpdedxpt->SetBinContent( i, fit->Integral( 0, 10 )/.01 );
+hpdedxptm->SetBinContent( i, fit->GetParameter(1) );
+hpdedxpts->SetBinContent( i, fit->GetParameter(2) );
+}
+
+double beg = .7;
+double end = 1.3;
+
+for( int i = 8; i < 41; i++ ){
+stringstream getslice;
+getslice << "plndEdxL" << i;
+TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
+temph->Draw();
+c->SetLogy();
+temph->Fit( fit, "R" , "" , beg, end );
+beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
+end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+temph->Draw();
+getslice<< ".png";
+// c->Print( getslice.str().c_str() );
+hpdedxpt->SetBinContent( i+28, fit->Integral( 0, 10 )/.05 );
+hpdedxptm->SetBinContent( i+28, fit->GetParameter(1) );
+hpdedxpts->SetBinContent( i+28, fit->GetParameter(2) );
+}
+
+hpdedxpt->Draw();
+c->Print( "alndEdx1.png" );
+
+hpdedxptm->Draw();
+c->Print( "alndEdx2.png" );
+
+hpdedxpts->Draw();
+c->Print( "alndEdx3.png" );
+
+double beg = 1.3;
+double end = 1.45;
+
+for( int i = 16; i < 36; i++ ){
+stringstream getslice;
+getslice << "pInvBetaK" << i;
+TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
+temph->Draw();
+c->SetLogy();
+temph->Fit( fit, "R" , "" , beg, end );
+beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
+end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+temph->Draw();
+getslice<< ".png";
+// c->Print( getslice.str().c_str() );
+hpinvbpt->SetBinContent( i, fit->Integral( 1, 10 )/.01 );
+hpinvbptm->SetBinContent( i, fit->GetParameter(1) );
+hpinvbpts->SetBinContent( i, fit->GetParameter(2) );
+}
+
+double beg = 1.04;
+double end = 1.13;
+
+for( int i = 8; i < 41; i++ ){
+stringstream getslice;
+getslice << "pInvBetaL" << i;
+TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
+temph->Draw();
+c->SetLogy();
+temph->Fit( fit, "R" , "" , beg, end );
+beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
+end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+temph->Draw();
+getslice<< ".png";
+// c->Print( getslice.str().c_str() );
+hpinvbpt->SetBinContent( i+28, fit->Integral( 1, 10 )/.05 );
+hpinvbptm->SetBinContent( i+28, fit->GetParameter(1) );
+hpinvbpts->SetBinContent( i+28, fit->GetParameter(2) );
+}
+
+hpinvbpt->Draw();
+c->Print( "aInvBeta1.png" );
+
+hpinvbptm->Draw();
+c->Print( "aInvBeta2.png" );
+
+hpinvbpts->Draw();
+c->Print( "aInvBeta3.png" );
+
+
+
+double beg = 1.5;
+double end = 2;
+
+for( int i = 11; i < 36; i++ ){
+stringstream getslice;
+getslice << "nlndEdxK" << i;
+TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
+temph->Draw();
+c->SetLogy();
+temph->Fit( fit, "R" , "" , beg, end );
+beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
+end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+temph->Draw();
+getslice<< ".png";
+// c->Print( getslice.str().c_str() );
+hndedxpt->SetBinContent( i, fit->Integral( 0, 10 )/.01 );
+hndedxptm->SetBinContent( i, fit->GetParameter(1) );
+hndedxpts->SetBinContent( i, fit->GetParameter(2) );
+}
+
+double beg = .7;
+double end = 1.3;
+
+for( int i = 8; i < 41; i++ ){
+stringstream getslice;
+getslice << "nlndEdxL" << i;
+TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
+temph->Draw();
+c->SetLogy();
+temph->Fit( fit, "R" , "" , beg, end );
+beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
+end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+temph->Draw();
+getslice<< ".png";
+// c->Print( getslice.str().c_str() );
+hndedxpt->SetBinContent( i+28, fit->Integral( 0, 10 )/.05 );
+hndedxptm->SetBinContent( i+28, fit->GetParameter(1) );
+hndedxpts->SetBinContent( i+28, fit->GetParameter(2) );
+}
+
+hndedxpt->Draw();
+c->Print( "alndEdx1.png" );
+
+hndedxptm->Draw();
+c->Print( "alndEdx2.png" );
+
+hndedxpts->Draw();
+c->Print( "alndEdx3.png" );
+
+double beg = 1.3;
+double end = 1.45;
+
+for( int i = 16; i < 36; i++ ){
+stringstream getslice;
+getslice << "nInvBetaK" << i;
+TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
+temph->Draw();
+c->SetLogy();
+temph->Fit( fit, "R" , "" , beg, end );
+beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
+end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+temph->Draw();
+getslice<< ".png";
+// c->Print( getslice.str().c_str() );
+hninvbpt->SetBinContent( i, fit->Integral( 1, 10 )/.01 );
+hninvbptm->SetBinContent( i, fit->GetParameter(1) );
+hninvbpts->SetBinContent( i, fit->GetParameter(2) );
+}
+
+double beg = 1.04;
+double end = 1.13;
+
+for( int i = 8; i < 41; i++ ){
+stringstream getslice;
+getslice << "nInvBetaL" << i;
+TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
+temph->Draw();
+c->SetLogy();
+temph->Fit( fit, "R" , "" , beg, end );
+beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
+end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+temph->Draw();
+getslice<< ".png";
+// c->Print( getslice.str().c_str() );
+hninvbpt->SetBinContent( i+28, fit->Integral( 1, 10 )/.05 );
+hninvbptm->SetBinContent( i+28, fit->GetParameter(1) );
+hninvbpts->SetBinContent( i+28, fit->GetParameter(2) );
+}
+
+hninvbpt->Draw();
+c->Print( "aInvBeta1.png" );
+
+hninvbptm->Draw();
+c->Print( "aInvBeta2.png" );
+
+hninvbpts->Draw();
+c->Print( "aInvBeta3.png" );
+
 }
