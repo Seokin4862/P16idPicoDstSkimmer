@@ -52,7 +52,7 @@ getslice<< ".png";
 hdedxpt->SetBinContent( i+28, fit->Integral( 0, 10 )/.05 );
 }
 
-hintpt->Draw();
+hdedxpt->Draw();
 c->Print( "alndEdx.png" );
 
 double beg = 1.3;
