@@ -27,6 +27,7 @@ c->SetLogy();
 temph->Fit( fit, "R" , "" , beg, end );
 beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+temph->Draw();
 hintpt->SetBinContent( i, fit->Integral( 0, 10 )/.01 );
 }
 
@@ -42,6 +43,7 @@ c->SetLogy();
 temph->Fit( fit, "R" , "" , beg, end );
 beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+temph->Draw();
 hintpt->SetBinContent( i+28, fit->Integral( 0, 10 )/.05 );
 }
 
@@ -60,6 +62,7 @@ c->SetLogy();
 temph->Fit( fit, "R" , "" , beg, end );
 beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+temph->Draw();
 hinvbpt->SetBinContent( i, fit->Integral( -10, 10 )/.01 );
 }
 
@@ -75,6 +78,7 @@ c->SetLogy();
 temph->Fit( fit, "R" , "" , beg, end );
 beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
 end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+temph->Draw();
 hinvbpt->SetBinContent( i+28, fit->Integral( -10, 10 )/.05 );
 }
 
