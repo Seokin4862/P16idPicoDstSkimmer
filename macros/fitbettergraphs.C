@@ -12,8 +12,10 @@ int nBins = 67;
 
 TH1D * hdedxpt = new TH1D( "dedxpt", "Integral of the Pion Fit Ln(dEdx) vs Total Momentum", nBins, binEdges );
 TH1D * hdedxptm = new TH1D( "dedxptm", "Mean of the Pion Fit Ln(dEdx) vs Total Momentum", nBins, binEdges );
+TH1D * hdedxpts = new TH1D( "dedxpts", "Sigma of the Pion Fit Ln(dEdx) vs Total Momentum", nBins, binEdges );
 TH1D * hinvbpt = new TH1D( "invbpt", "Integral of the Pion Fit 1/Beta vs Total Momentum", nBins, binEdges );
-TH1D * hinvbtm = new TH1D( "invbptm", "Mean of the Pion Fit Ln(dEdx) vs Total Momentum", nBins, binEdges );
+TH1D * hinvbtm = new TH1D( "invbptm", "Mean of the Pion Fit 1/Beta vs Total Momentum", nBins, binEdges );
+TH1D * hinvbts = new TH1D( "invbpts", "Sigma of the Pion Fit 1/Beta vs Total Momentum", nBins, binEdges );
 
 
 double beg = 1.5;
@@ -32,6 +34,8 @@ temph->Draw();
 getslice<< ".png";
 // c->Print( getslice.str().c_str() );
 hdedxpt->SetBinContent( i, fit->Integral( 0, 10 )/.01 );
+hdedxptm->SetBinContent( i, fit->GetParameter(1) );
+hdedxpts->SetBinContent( i, fit->GetParameter(2) );
 }
 
 double beg = .7;
@@ -50,10 +54,19 @@ temph->Draw();
 getslice<< ".png";
 // c->Print( getslice.str().c_str() );
 hdedxpt->SetBinContent( i+28, fit->Integral( 0, 10 )/.05 );
+hdedxptm->SetBinContent( i+28, fit->GetParameter(1) );
+hdedxpts->SetBinContent( i+28, fit->GetParameter(2) );
 }
 
 hdedxpt->Draw();
-c->Print( "alndEdx.png" );
+c->Print( "alndEdx1.png" );
+
+hdedxptm->Draw();
+c->Print( "alndEdx2.png" );
+
+hdedxpts->Draw();
+c->Print( "alndEdx3.png" );
+
 
 double beg = 1.3;
 double end = 1.45;
@@ -71,6 +84,8 @@ temph->Draw();
 getslice<< ".png";
 // c->Print( getslice.str().c_str() );
 hinvbpt->SetBinContent( i, fit->Integral( 1, 10 )/.01 );
+hinvbptm->SetBinContent( i, fit->GetParameter(1) );
+hinvbpts->SetBinContent( i, fit->GetParameter(2) );
 }
 
 double beg = 1.04;
@@ -89,10 +104,17 @@ temph->Draw();
 getslice<< ".png";
 // c->Print( getslice.str().c_str() );
 hinvbpt->SetBinContent( i+28, fit->Integral( 1, 10 )/.05 );
+hinvbptm->SetBinContent( i, fit->GetParameter(1) )
+hinvbpts->SetBinContent( i, fit->GetParameter(2) )
 }
 
 hinvbpt->Draw();
-c->Print( "aInvBeta.png" );
+c->Print( "aInvBeta1.png" );
 
+hinvbptm->Draw();
+c->Print( "aInvBeta2.png" );
+
+hinvbpts->Draw();
+c->Print( "aInvBeta3.png" );
 
 }
