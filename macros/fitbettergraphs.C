@@ -14,8 +14,8 @@ TH1D * hdedxpt = new TH1D( "dedxpt", "Integral of the Pion Fit Ln(dEdx) vs Total
 TH1D * hdedxptm = new TH1D( "dedxptm", "Mean of the Pion Fit Ln(dEdx) vs Total Momentum", nBins, binEdges );
 TH1D * hdedxpts = new TH1D( "dedxpts", "Sigma of the Pion Fit Ln(dEdx) vs Total Momentum", nBins, binEdges );
 TH1D * hinvbpt = new TH1D( "invbpt", "Integral of the Pion Fit 1/Beta vs Total Momentum", nBins, binEdges );
-TH1D * hinvbtm = new TH1D( "invbptm", "Mean of the Pion Fit 1/Beta vs Total Momentum", nBins, binEdges );
-TH1D * hinvbts = new TH1D( "invbpts", "Sigma of the Pion Fit 1/Beta vs Total Momentum", nBins, binEdges );
+TH1D * hinvbptm = new TH1D( "invbptm", "Mean of the Pion Fit 1/Beta vs Total Momentum", nBins, binEdges );
+TH1D * hinvbpts = new TH1D( "invbpts", "Sigma of the Pion Fit 1/Beta vs Total Momentum", nBins, binEdges );
 
 
 double beg = 1.5;
