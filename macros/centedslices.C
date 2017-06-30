@@ -8,7 +8,7 @@ TFile * rootfile = new TFile("centedslicesgraphs.root", "RECREATE" );
 
 TCanvas * c = new TCanvas("c","c");
 
-TH2 *hInvBeta = (TH2*)f->Get( "hInvBetavsMomPion_a" );
+TH2 *hInvBeta = (TH2*)f->Get( "InvBetavsMomPion_a" );
 
 for( int i = 11; i < 36; i++ ){
   stringstream name;
