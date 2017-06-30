@@ -64,13 +64,20 @@ protected:
 	TH1D *hcorrDedx = 0;
 
 	TH2D *hLnDedxvsMom1 = 0;
-	TH2D *hInvBetavsMom1 = 0;
-
 	TH2D *hLnDedxvsMom2 = 0;
-	TH2D *hInvBetavsMom2 = 0;
-
 	TH2D *hLnDedxvsMom3 = 0;
-	TH2D *hInvBetavsMom3 = 0;
+
+	TH2D *hInvBetavsMomPion_a = 0;
+	TH2D *hInvBetavsMomPion_p = 0;
+	TH2D *hInvBetavsMomPion_n = 0;
+
+	TH2D *hInvBetavsMomKaon_a = 0;
+	TH2D *hInvBetavsMomKaon_p = 0;
+	TH2D *hInvBetavsMomKaon_n = 0;
+
+	TH2D *hInvBetavsMomProton_a = 0;
+	TH2D *hInvBetavsMomProton_p = 0;
+	TH2D *hInvBetavsMomProton_n = 0;
 
 	void makeHistograms(){
 
