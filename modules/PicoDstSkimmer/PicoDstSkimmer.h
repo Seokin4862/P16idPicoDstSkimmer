@@ -107,7 +107,7 @@ protected:
 			};
 
 				if ( nullptr != btofPidTraits ){
-					hInvBetavsMom1->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() );
+					hInvBetavsMom1->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() - sqrt( pow( .139570, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()) );
 				}
 
 				if( track->charge() > 0 ){
