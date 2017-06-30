@@ -78,13 +78,22 @@ protected:
 		hcorrDedx = new TH1D( "corrDedx", "corrected dEdx; corrected dEdx; number of tracks", 100, 0, 10 );
 
 		hLnDedxvsMom1 = new TH2D( "LnDedxvsMom1", "Ln(dEdx) vs Momentum, all charge; Total Momentum; Ln(dEdx)", 300, 0, 3, 1000, 0, 10 );
-		hInvBetavsMom1 = new TH2D( "InvBetavsMom1", "1/Beta vs Momentum, all charge; Total Momentum; 1/Beta", 300, 0, 3, 1000, -.6, .6);
-
 		hLnDedxvsMom2 = new TH2D( "LnDedxvsMom2", "Ln(dEdx) vs Momentum, + charge; Total Momentum; Ln(dEdx)", 300, 0, 3, 1000, 0, 10 );
-		hInvBetavsMom2 = new TH2D( "InvBetavsMom2", "1/Beta vs Momentum, + charge; Total Momentum; 1/Beta", 300, 0, 3, 1000, -.6, .6);
-
 		hLnDedxvsMom3 = new TH2D( "LnDedxvsMom3", "Ln(dEdx) vs Momentum, - charge; Total Momentum; Ln(dEdx)", 300, 0, 3, 1000, 0, 10 );
-		hInvBetavsMom3 = new TH2D( "InvBetavsMom3", "1/Beta vs Momentum, - charge; Total Momentum; 1/Beta", 300, 0, 3, 1000, -.6, .6);
+
+
+		hInvBetavsMomPion_a = new TH2D( "InvBetavsMomPion_a", "1/Beta vs Momentum, all charge, Pion Centered; Total Momentum; 1/Beta - 1/ExpectedBeta(Pion)", 300, 0, 3, 1000, -.6, .6 );
+		hInvBetavsMomPion_p = new TH2D( "InvBetavsMomPion_p", "1/Beta vs Momentum, + charge, Pion Centered; Total Momentum; 1/Beta - 1/ExpectedBeta(Pion)", 300, 0, 3, 1000, -.6, .6 );
+		hInvBetavsMomPion_n = new TH2D( "InvBetavsMomPion_n", "1/Beta vs Momentum, - charge, Pion Centered; Total Momentum; 1/Beta - 1/ExpectedBeta(Pion)", 300, 0, 3, 1000, -.6, .6 );
+
+		hInvBetavsMomKaon_a = new TH2D( "InvBetavsMomKaon_a", "1/Beta vs Momentum, all charge, Kaon Centered; Total Momentum; 1/Beta - 1/ExpectedBeta(Kaon)", 300, 0, 3, 1000, -.6, .6 );
+		hInvBetavsMomKaon_p = new TH2D( "InvBetavsMomKaon_p", "1/Beta vs Momentum, + charge, Kaon Centered; Total Momentum; 1/Beta - 1/ExpectedBeta(Kaon)", 300, 0, 3, 1000, -.6, .6 );
+		hInvBetavsMomKaon_n = new TH2D( "InvBetavsMomKaon_n", "1/Beta vs Momentum, - charge, Kaon Centered; Total Momentum; 1/Beta - 1/ExpectedBeta(Kaon)", 300, 0, 3, 1000, -.6, .6 );
+
+		hInvBetavsMomProton_a = new TH2D( "InvBetavsMomProton_a", "1/Beta vs Momentum, all charge, Proton Centered; Total Momentum; 1/Beta - 1/ExpectedBeta(Proton)", 300, 0, 3, 1000, -.6, .6 );
+		hInvBetavsMomProton_p = new TH2D( "InvBetavsMomProton_p", "1/Beta vs Momentum, + charge, Proton Centered; Total Momentum; 1/Beta - 1/ExpectedBeta(Proton)", 300, 0, 3, 1000, -.6, .6 );
+		hInvBetavsMomProton_n = new TH2D( "InvBetavsMomProton_n", "1/Beta vs Momentum, - charge, Proton Centered; Total Momentum; 1/Beta - 1/ExpectedBeta(Proton)", 300, 0, 3, 1000, -.6, .6 );
+
 
 	}
 
@@ -107,7 +116,9 @@ protected:
 			};
 
 				if ( nullptr != btofPidTraits ){
-					hInvBetavsMom1->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() - sqrt( pow( .139570, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()) );
+					hInvBetavsMomPion_a->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() - sqrt( pow( .139570, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()) );
+					hInvBetavsMomKaon_a->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() - sqrt( pow( .493677, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()) );
+					hInvBetavsMomProton_a->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() - sqrt( pow( .938272, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()) );
 				}
 
 				if( track->charge() > 0 ){
@@ -119,7 +130,9 @@ protected:
 					};
 
 						if ( nullptr != btofPidTraits ){
-							hInvBetavsMom2->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() - sqrt( pow( .139570, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()) );
+							hInvBetavsMomPion_p->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() - sqrt( pow( .139570, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()) );
+							hInvBetavsMomKaon_p->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() - sqrt( pow( .493677, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()) );
+							hInvBetavsMomProton_p->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() - sqrt( pow( .938272, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()) );
 						}
 				};
 
@@ -132,7 +145,9 @@ protected:
 					};
 
 						if ( nullptr != btofPidTraits ){
-							hInvBetavsMom3->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() - sqrt( pow( .139570, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()) );
+							hInvBetavsMomPion_n->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() - sqrt( pow( .139570, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()) );
+							hInvBetavsMomKaon_n->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() - sqrt( pow( .493677, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()) );
+							hInvBetavsMomProton_n->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() - sqrt( pow( .938272, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()) );
 						}
 				};
 
