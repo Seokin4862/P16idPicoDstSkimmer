@@ -1,6 +1,6 @@
 
 
-void slices() {
+void centedslices() {
 
 TFile * f = new TFile( "/home/sy34/workspace/safe/cented/centedInvBeta.root" );
 
