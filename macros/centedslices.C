@@ -11,7 +11,7 @@ TCanvas * c = new TCanvas("c","c");
 TH2 *hInvBeta = (TH2*)f->Get( "hInvBetavsMomPion_a" );
 
 for( int i = 11; i < 36; i++ ){
-  strinstream name;
+  stringstream name;
   name << "InvbptPia" << i;
   int n1 = hInvBeta->GetXaxis()->FindBin( .01*(i-1) );
   int n2 = hInvBeta->GetXaxis()->FindBin( .01*(i) );
