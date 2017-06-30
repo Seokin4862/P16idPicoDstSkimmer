@@ -83,8 +83,8 @@ protected:
 		hLnDedxvsMom2 = new TH2D( "LnDedxvsMom2", "Ln(dEdx) vs Momentum, + charge; Total Momentum; Ln(dEdx)", 300, 0, 3, 1000, 0, 10 );
 		hInvBetavsMom2 = new TH2D( "InvBetavsMom2", "1/Beta vs Momentum, + charge; Total Momentum; 1/Beta", 300, 0, 3, 1000, -.6, .6);
 
-		hLnDedxvsMom3 = new TH2D( "LnDedxvsMom3", "Ln(dEdx) vs Momentum; Total Momentum, - charge; Ln(dEdx)", 300, 0, 3, 1000, 0, 10 );
-		hInvBetavsMom3 = new TH2D( "InvBetavsMom3", "1/Beta vs Momentum; Total Momentum, - charge; 1/Beta", 300, 0, 3, 1000, -.6, .6);
+		hLnDedxvsMom3 = new TH2D( "LnDedxvsMom3", "Ln(dEdx) vs Momentum, - charge; Total Momentum; Ln(dEdx)", 300, 0, 3, 1000, 0, 10 );
+		hInvBetavsMom3 = new TH2D( "InvBetavsMom3", "1/Beta vs Momentum, - charge; Total Momentum; 1/Beta", 300, 0, 3, 1000, -.6, .6);
 
 	}
 
