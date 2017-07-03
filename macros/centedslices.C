@@ -43,7 +43,7 @@ for( int i = 11; i < 36; i++ ){
   hist->Draw();
   c->SetLogy();
   name << ".png";
-  c->Print( name.str(),c_str() );
+  c->Print( name.str().c_str() );
 }
 
 TH2 *hInvBeta = (TH2*)f->Get( "InvBetavsMomPion_n" );
@@ -62,7 +62,7 @@ for( int i = 11; i < 36; i++ ){
   hist->Draw();
   c->SetLogy();
   name << ".png";
-  c->Print( name.str(),c_str() );
+  c->Print( name.str().c_str() );
 }
 
 }
