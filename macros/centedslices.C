@@ -29,7 +29,7 @@ for( int i = 11; i < 36; i++ ){
 
 for( int i = 8; i < 41; i++ ){
   stringstream name;
-  name << "InvbptPip" << i+28;
+  name << "InvbptPia" << i+28;
   int n1 = hInvBeta->GetXaxis()->FindBin( .05*(i-1) );
   int n2 = hInvBeta->GetXaxis()->FindBin( .05*(i) );
   TH1 *hist = hInvBeta->ProjectionY( name.str().c_str() , n1 , n2 );
@@ -103,7 +103,7 @@ for( int i = 11; i < 36; i++ ){
 
 for( int i = 8; i < 41; i++ ){
   stringstream name;
-  name << "InvbptPip" << i+28;
+  name << "InvbptPin" << i+28;
   int n1 = hInvBeta->GetXaxis()->FindBin( .05*(i-1) );
   int n2 = hInvBeta->GetXaxis()->FindBin( .05*(i) );
   TH1 *hist = hInvBeta->ProjectionY( name.str().c_str() , n1 , n2 );
