@@ -65,6 +65,9 @@ void fitcented(){
     hinvbpias->SetBinContent( i, fit->GetParameter(2) );
   };
 
+  double beg = -.1;
+  double end = .1;
+
   for( int  i = 11; i < 69; i++ ){
     stringstream getslice;
     getslice << "InvbptPip" << i;
@@ -80,6 +83,9 @@ void fitcented(){
     hinvbpipm->SetBinContent( i, fit->GetParameter(1) );
     hinvbpips->SetBinContent( i, fit->GetParameter(2) );
   };
+
+  double beg = -.1;
+  double end = .1;
 
   for( int  i = 11; i < 69; i++ ){
     stringstream getslice;
@@ -97,6 +103,8 @@ void fitcented(){
     hinvbpins->SetBinContent( i, fit->GetParameter(2) );
   };
 
+  double beg = -.1;
+  double end = .1;
 
   for( int  i = 11; i < 69; i++ ){
     stringstream getslice;
@@ -114,6 +122,9 @@ void fitcented(){
     hinvbkias->SetBinContent( i, fit->GetParameter(2) );
   };
 
+  double beg = -.1;
+  double end = .1;
+
   for( int  i = 11; i < 69; i++ ){
     stringstream getslice;
     getslice << "InvbptKip" << i;
@@ -129,6 +140,9 @@ void fitcented(){
     hinvbkipm->SetBinContent( i, fit->GetParameter(1) );
     hinvbkips->SetBinContent( i, fit->GetParameter(2) );
   };
+
+  double beg = -.1;
+  double end = .1;
 
   for( int  i = 11; i < 69; i++ ){
     stringstream getslice;
