@@ -49,7 +49,7 @@ void fitcented(){
   double beg = -.1;
   double end = .1;
 
-  for( int  i = 11; i < 69; i++ ){
+  for( int  i = 15; i < 69; i++ ){
     stringstream getslice;
     getslice << "InvbptPia" << i;
     TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
@@ -68,7 +68,7 @@ void fitcented(){
   double beg = -.1;
   double end = .1;
 
-  for( int  i = 11; i < 69; i++ ){
+  for( int  i = 15; i < 69; i++ ){
     stringstream getslice;
     getslice << "InvbptPip" << i;
     TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
@@ -87,7 +87,7 @@ void fitcented(){
   double beg = -.1;
   double end = .1;
 
-  for( int  i = 11; i < 69; i++ ){
+  for( int  i = 15; i < 69; i++ ){
     stringstream getslice;
     getslice << "InvbptPin" << i;
     TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
@@ -106,7 +106,7 @@ void fitcented(){
   double beg = -.1;
   double end = .1;
 
-  for( int  i = 11; i < 69; i++ ){
+  for( int  i = 15; i < 69; i++ ){
     stringstream getslice;
     getslice << "InvbptKia" << i;
     TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
@@ -125,7 +125,7 @@ void fitcented(){
   double beg = -.1;
   double end = .1;
 
-  for( int  i = 11; i < 69; i++ ){
+  for( int  i = 15; i < 69; i++ ){
     stringstream getslice;
     getslice << "InvbptKip" << i;
     TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
@@ -144,7 +144,7 @@ void fitcented(){
   double beg = -.1;
   double end = .1;
 
-  for( int  i = 11; i < 69; i++ ){
+  for( int  i = 15; i < 69; i++ ){
     stringstream getslice;
     getslice << "InvbptKin" << i;
     TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
