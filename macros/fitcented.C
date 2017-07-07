@@ -49,116 +49,30 @@ void fitcented(){
   double beg = -.1;
   double end = .1;
 
-  for( int  i = 15; i < 69; i++ ){
+  for( int i = 11; i < 36; i++ ){
     stringstream getslice;
     getslice << "InvbptPia" << i;
     TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
     temph->Draw();
     c->SetLogy();
-    temph->Fit( fit, "R" , "" , beg, end );
-    beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
-    end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+    temph->Fit( fit, "R", "", beg, end );
     temph->Draw();
-    getslice<< ".png";
-    hinvbpia->SetBinContent( i, fit->Integral( -1, 1 )/.01 );
+    hinvbpia->SetBinContent( i, fit->Integral( -1, 1 ) );
     hinvbpiam->SetBinContent( i, fit->GetParameter(1) );
     hinvbpias->SetBinContent( i, fit->GetParameter(2) );
-  };
+  }
 
-  double beg = -.1;
-  double end = .1;
-
-  for( int  i = 15; i < 69; i++ ){
+  for( int i = 8; i < 41; i++ ){
     stringstream getslice;
-    getslice << "InvbptPip" << i;
+    getslice << "InvbptPia" << i+28;
     TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
     temph->Draw();
     c->SetLogy();
-    temph->Fit( fit, "R" , "" , beg, end );
-    beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
-    end = fit->GetParameter(1) + 2*fit->GetParameter(2);
+    temph->Fit( fit, "R", "", beg, end );
     temph->Draw();
-    getslice<< ".png";
-    hinvbpip->SetBinContent( i, fit->Integral( -1, 1 )/.01 );
-    hinvbpipm->SetBinContent( i, fit->GetParameter(1) );
-    hinvbpips->SetBinContent( i, fit->GetParameter(2) );
-  };
-
-  double beg = -.1;
-  double end = .1;
-
-  for( int  i = 15; i < 69; i++ ){
-    stringstream getslice;
-    getslice << "InvbptPin" << i;
-    TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
-    temph->Draw();
-    c->SetLogy();
-    temph->Fit( fit, "R" , "" , beg, end );
-    beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
-    end = fit->GetParameter(1) + 2*fit->GetParameter(2);
-    temph->Draw();
-    getslice<< ".png";
-    hinvbpin->SetBinContent( i, fit->Integral( -1, 1 )/.01 );
-    hinvbpinm->SetBinContent( i, fit->GetParameter(1) );
-    hinvbpins->SetBinContent( i, fit->GetParameter(2) );
-  };
-
-  double beg = -.1;
-  double end = .1;
-
-  for( int  i = 15; i < 69; i++ ){
-    stringstream getslice;
-    getslice << "InvbptKia" << i;
-    TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
-    temph->Draw();
-    c->SetLogy();
-    temph->Fit( fit, "R" , "" , beg, end );
-    beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
-    end = fit->GetParameter(1) + 2*fit->GetParameter(2);
-    temph->Draw();
-    getslice<< ".png";
-    hinvbkia->SetBinContent( i, fit->Integral( -1, 1 )/.01 );
-    hinvbkiam->SetBinContent( i, fit->GetParameter(1) );
-    hinvbkias->SetBinContent( i, fit->GetParameter(2) );
-  };
-
-  double beg = -.1;
-  double end = .1;
-
-  for( int  i = 15; i < 69; i++ ){
-    stringstream getslice;
-    getslice << "InvbptKip" << i;
-    TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
-    temph->Draw();
-    c->SetLogy();
-    temph->Fit( fit, "R" , "" , beg, end );
-    beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
-    end = fit->GetParameter(1) + 2*fit->GetParameter(2);
-    temph->Draw();
-    getslice<< ".png";
-    hinvbkip->SetBinContent( i, fit->Integral( -1, 1 )/.01 );
-    hinvbkipm->SetBinContent( i, fit->GetParameter(1) );
-    hinvbkips->SetBinContent( i, fit->GetParameter(2) );
-  };
-
-  double beg = -.1;
-  double end = .1;
-
-  for( int  i = 15; i < 69; i++ ){
-    stringstream getslice;
-    getslice << "InvbptKin" << i;
-    TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
-    temph->Draw();
-    c->SetLogy();
-    temph->Fit( fit, "R" , "" , beg, end );
-    beg = fit->GetParameter(1) - 2*fit->GetParameter(2);
-    end = fit->GetParameter(1) + 2*fit->GetParameter(2);
-    temph->Draw();
-    getslice<< ".png";
-    hinvbkin->SetBinContent( i, fit->Integral( -1, 1 )/.01 );
-    hinvbkinm->SetBinContent( i, fit->GetParameter(1) );
-    hinvbkins->SetBinContent( i, fit->GetParameter(2) );
-  };
-
+    hinvbpia->SetBinContent( i, fit->Integral( -1, 1 ) );
+    hinvbpiam->SetBinContent( i, fit->GetParameter(1) );
+    hinvbpias->SetBinContent( i, fit->GetParameter(2) );
+  }
 
 }
