@@ -57,9 +57,11 @@ void fitcented(){
     c->SetLogy();
     temph->Fit( fit, "R", "", beg, end );
     temph->Draw();
-    hinvbpia->SetBinContent( i, fit->Integral( -1, 1 ) );
-    hinvbpiam->SetBinContent( i, fit->GetParameter(1) );
-    hinvbpias->SetBinContent( i, fit->GetParameter(2) );
+    getslice << ".png";
+    c->Print( getslice.str().c_str() );
+    // hinvbpia->SetBinContent( i, fit->Integral( -1, 1 ) );
+    // hinvbpiam->SetBinContent( i, fit->GetParameter(1) );
+    // hinvbpias->SetBinContent( i, fit->GetParameter(2) );
   }
 
   for( int i = 8; i < 41; i++ ){
@@ -70,9 +72,11 @@ void fitcented(){
     c->SetLogy();
     temph->Fit( fit, "R", "", beg, end );
     temph->Draw();
-    hinvbpia->SetBinContent( i, fit->Integral( -1, 1 ) );
-    hinvbpiam->SetBinContent( i, fit->GetParameter(1) );
-    hinvbpias->SetBinContent( i, fit->GetParameter(2) );
+    getslice << ".png";
+    c->Print( getslice.str().c_str() );
+    // hinvbpia->SetBinContent( i, fit->Integral( -1, 1 ) );
+    // hinvbpiam->SetBinContent( i, fit->GetParameter(1) );
+    // hinvbpias->SetBinContent( i, fit->GetParameter(2) );
   }
 
 }
