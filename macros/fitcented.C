@@ -61,7 +61,7 @@ void fitcented(){
     temph->Draw();
     getslice << ".png";
     c->Print( getslice.str().c_str() );
-    hinvbpia->SetBinContent( i, fit->Integral( -.05, .05 )/.01 );
+    hinvbpia->SetBinContent( i, fit->Integral( -.03, .03 )/.01 );
     hinvbpiam->SetBinContent( i, fit->GetParameter(1) );
     hinvbpias->SetBinContent( i, fit->GetParameter(2) );
   }
@@ -76,7 +76,7 @@ void fitcented(){
     temph->Draw();
     getslice << ".png";
     c->Print( getslice.str().c_str() );
-    hinvbpia->SetBinContent( i+28, fit->Integral( -.05, .05 )/.05 );
+    hinvbpia->SetBinContent( i+28, fit->Integral( -.03, .03 )/.05 );
     hinvbpiam->SetBinContent( i+28, fit->GetParameter(1) );
     hinvbpias->SetBinContent( i+28, fit->GetParameter(2) );
   }
@@ -99,7 +99,7 @@ void fitcented(){
     temph->Draw();
     getslice << ".png";
     c->Print( getslice.str().c_str() );
-    hinvbpin->SetBinContent( i, fit->Integral( -.05, .05 )/.01 );
+    hinvbpin->SetBinContent( i, fit->Integral( -.03, .03 )/.01 );
     hinvbpinm->SetBinContent( i, fit->GetParameter(1) );
     hinvbpins->SetBinContent( i, fit->GetParameter(2) );
   }
@@ -114,7 +114,7 @@ void fitcented(){
     temph->Draw();
     getslice << ".png";
     c->Print( getslice.str().c_str() );
-    hinvbpin->SetBinContent( i+28, fit->Integral( -.05, .05 )/.05 );
+    hinvbpin->SetBinContent( i+28, fit->Integral( -.03, .03 )/.05 );
     hinvbpinm->SetBinContent( i+28, fit->GetParameter(1) );
     hinvbpins->SetBinContent( i+28, fit->GetParameter(2) );
   }
@@ -137,7 +137,7 @@ void fitcented(){
     temph->Draw();
     getslice << ".png";
     c->Print( getslice.str().c_str() );
-    hinvbpip->SetBinContent( i, fit->Integral( -.05, .05 )/.01 );
+    hinvbpip->SetBinContent( i, fit->Integral( -.03, .03 )/.01 );
     hinvbpipm->SetBinContent( i, fit->GetParameter(1) );
     hinvbpips->SetBinContent( i, fit->GetParameter(2) );
   }
@@ -152,7 +152,7 @@ void fitcented(){
     temph->Draw();
     getslice << ".png";
     c->Print( getslice.str().c_str() );
-    hinvbpip->SetBinContent( i+28, fit->Integral( -.05, .05 )/.05 );
+    hinvbpip->SetBinContent( i+28, fit->Integral( -.03, .03 )/.05 );
     hinvbpipm->SetBinContent( i+28, fit->GetParameter(1) );
     hinvbpips->SetBinContent( i+28, fit->GetParameter(2) );
   }
