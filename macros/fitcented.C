@@ -66,7 +66,7 @@ void fitcented(){
 
   for( int i = 8; i < 41; i++ ){
     stringstream getslice;
-    getslice << "InvbptPia" << i+29;
+    getslice << "InvbptPia" << i+28;
     TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
     temph->Draw();
     c->SetLogy();
