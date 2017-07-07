@@ -46,8 +46,8 @@ void fitcented(){
   TH1D * hinvbprins = new TH1D( "hinvbprins", "Sigma of the Pion Fit vs Total Momentum", nBins, binEdges );
 
 
-  double beg = -.1;
-  double end = .1;
+  double beg = -.05;
+  double end = .05;
 
   for( int i = 11; i < 36; i++ ){
     stringstream getslice;
