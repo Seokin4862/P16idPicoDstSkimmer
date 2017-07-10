@@ -21,41 +21,41 @@ void fittestslices(){
 
   TFile *rootfile = new TFile( "fittestslices.root", "RECREATE" );
 
-  TH1D * hinvbpia = new TH1D( "hinvbpia", "Integral of the Pion Fit vs Total Momentum", nBins, binEdges );
-  TH1D * hinvbpiam = new TH1D( "hinvbpiam", "Mean of the Pion Fit vs Total Momentum", nBins, binEdges );
-  TH1D * hinvbpias = new TH1D( "hinvbpias", "Sigma of the Pion Fit vs Total Momentum", nBins, binEdges );
+  TH1D * hinvbpia = new TH1D( "hinvbpia", "Integral of the Pion Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbpiam = new TH1D( "hinvbpiam", "Mean of the Pion Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbpias = new TH1D( "hinvbpias", "Sigma of the Pion Fit vs Total Momentum", 200, 0, 2 );
 
-  TH1D * hinvbpip = new TH1D( "hinvbpip", "Integral of the Pion Fit vs Total Momentum", nBins, binEdges );
-  TH1D * hinvbpipm = new TH1D( "hinvbpipm", "Mean of the Pion Fit vs Total Momentum", nBins, binEdges );
-  TH1D * hinvbpips = new TH1D( "hinvbpips", "Sigma of the Pion Fit vs Total Momentum", nBins, binEdges );
+  TH1D * hinvbpip = new TH1D( "hinvbpip", "Integral of the Pion Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbpipm = new TH1D( "hinvbpipm", "Mean of the Pion Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbpips = new TH1D( "hinvbpips", "Sigma of the Pion Fit vs Total Momentum", 200, 0, 2 );
 
-  TH1D * hinvbpin = new TH1D( "hinvbpin", "Integral of the Pion Fit vs Total Momentum", nBins, binEdges );
-  TH1D * hinvbpinm = new TH1D( "hinvbpinm", "Mean of the Pion Fit vs Total Momentum", nBins, binEdges );
-  TH1D * hinvbpins = new TH1D( "hinvbpins", "Sigma of the Pion Fit vs Total Momentum", nBins, binEdges );
+  TH1D * hinvbpin = new TH1D( "hinvbpin", "Integral of the Pion Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbpinm = new TH1D( "hinvbpinm", "Mean of the Pion Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbpins = new TH1D( "hinvbpins", "Sigma of the Pion Fit vs Total Momentum", 200, 0, 2 );
 
-  TH1D * hinvbkia = new TH1D( "hinvbkia", "Integral of the Pion Fit vs Total Momentum", nBins, binEdges );
-  TH1D * hinvbkiam = new TH1D( "hinvbkiam", "Mean of the Pion Fit vs Total Momentum", nBins, binEdges );
-  TH1D * hinvbkias = new TH1D( "hinvbkias", "Sigma of the Pion Fit vs Total Momentum", nBins, binEdges );
+  TH1D * hinvbkia = new TH1D( "hinvbkia", "Integral of the Pion Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbkiam = new TH1D( "hinvbkiam", "Mean of the Pion Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbkias = new TH1D( "hinvbkias", "Sigma of the Pion Fit vs Total Momentum", 200, 0, 2 );
 
-  TH1D * hinvbkip = new TH1D( "hinvbkip", "Integral of the Pion Fit vs Total Momentum", nBins, binEdges );
-  TH1D * hinvbkipm = new TH1D( "hinvbkipm", "Mean of the Pion Fit vs Total Momentum", nBins, binEdges );
-  TH1D * hinvbkips = new TH1D( "hinvbkips", "Sigma of the Pion Fit vs Total Momentum", nBins, binEdges );
+  TH1D * hinvbkip = new TH1D( "hinvbkip", "Integral of the Pion Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbkipm = new TH1D( "hinvbkipm", "Mean of the Pion Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbkips = new TH1D( "hinvbkips", "Sigma of the Pion Fit vs Total Momentum", 200, 0, 2 );
 
-  TH1D * hinvbkin = new TH1D( "hinvbkin", "Integral of the Pion Fit vs Total Momentum", nBins, binEdges );
-  TH1D * hinvbkinm = new TH1D( "hinvbkinm", "Mean of the Pion Fit vs Total Momentum", nBins, binEdges );
-  TH1D * hinvbkins = new TH1D( "hinvbkins", "Sigma of the Pion Fit vs Total Momentum", nBins, binEdges );
+  TH1D * hinvbkin = new TH1D( "hinvbkin", "Integral of the Pion Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbkinm = new TH1D( "hinvbkinm", "Mean of the Pion Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbkins = new TH1D( "hinvbkins", "Sigma of the Pion Fit vs Total Momentum", 200, 0, 2 );
 
-  TH1D * hinvbpria = new TH1D( "hinvbpria", "Integral of the Pion Fit vs Total Momentum", nBins, binEdges );
-  TH1D * hinvbpriam = new TH1D( "hinvbpriam", "Mean of the Pion Fit vs Total Momentum", nBins, binEdges );
-  TH1D * hinvbprias = new TH1D( "hinvbprias", "Sigma of the Pion Fit vs Total Momentum", nBins, binEdges );
+  TH1D * hinvbpria = new TH1D( "hinvbpria", "Integral of the Pion Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbpriam = new TH1D( "hinvbpriam", "Mean of the Pion Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbprias = new TH1D( "hinvbprias", "Sigma of the Pion Fit vs Total Momentum", 200, 0, 2 );
 
-  TH1D * hinvbprip = new TH1D( "hinvbprip", "Integral of the Pion Fit vs Total Momentum", nBins, binEdges );
-  TH1D * hinvbpripm = new TH1D( "hinvbpripm", "Mean of the Pion Fit vs Total Momentum", nBins, binEdges );
-  TH1D * hinvbprips = new TH1D( "hinvbprips", "Sigma of the Pion Fit vs Total Momentum", nBins, binEdges );
+  TH1D * hinvbprip = new TH1D( "hinvbprip", "Integral of the Pion Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbpripm = new TH1D( "hinvbpripm", "Mean of the Pion Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbprips = new TH1D( "hinvbprips", "Sigma of the Pion Fit vs Total Momentum", 200, 0, 2 );
 
-  TH1D * hinvbprin = new TH1D( "hinvbprin", "Integral of the Pion Fit vs Total Momentum", nBins, binEdges );
-  TH1D * hinvbprinm = new TH1D( "hinvbprinm", "Mean of the Pion Fit vs Total Momentum", nBins, binEdges );
-  TH1D * hinvbprins = new TH1D( "hinvbprins", "Sigma of the Pion Fit vs Total Momentum", nBins, binEdges );
+  TH1D * hinvbprin = new TH1D( "hinvbprin", "Integral of the Pion Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbprinm = new TH1D( "hinvbprinm", "Mean of the Pion Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbprins = new TH1D( "hinvbprins", "Sigma of the Pion Fit vs Total Momentum", 200, 0, 2 );
 
 
 
