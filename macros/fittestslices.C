@@ -8,7 +8,7 @@ Double_t eval( Double_t *x, Double_t *bw ){
 		return a * b;
 	}
 
-void myfunc()
+void eval()
 {
   TF1 *f1 = new TF1( "eval", eval, 0, 10, 2 );
   f1->SetParameters( 2, 1 );
