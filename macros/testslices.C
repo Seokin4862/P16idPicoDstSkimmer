@@ -1,6 +1,6 @@
 void testslices(){
 
-  TFile *f = new TFile( "/home/sy34/workspace/safe/centedslices/centedslicesgraphs.root" );
+  TFile *f = new TFile( "/home/sy34/workspace/safe/cented/centedInvBeta.root" );
 
   TCanvas *c = new TCanvas( "c","c" );
 
