@@ -33,29 +33,29 @@ void fittestslices(){
   TH1D * hinvbpinm = new TH1D( "hinvbpinm", "Mean of the Pion Fit vs Total Momentum", 200, 0, 2 );
   TH1D * hinvbpins = new TH1D( "hinvbpins", "Sigma of the Pion Fit vs Total Momentum", 200, 0, 2 );
 
-  TH1D * hinvbkia = new TH1D( "hinvbkia", "Integral of the Pion Fit vs Total Momentum", 200, 0, 2 );
-  TH1D * hinvbkiam = new TH1D( "hinvbkiam", "Mean of the Pion Fit vs Total Momentum", 200, 0, 2 );
-  TH1D * hinvbkias = new TH1D( "hinvbkias", "Sigma of the Pion Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbkia = new TH1D( "hinvbkia", "Integral of the Kaon Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbkiam = new TH1D( "hinvbkiam", "Mean of the Kaon Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbkias = new TH1D( "hinvbkias", "Sigma of the Kaon Fit vs Total Momentum", 200, 0, 2 );
 
-  TH1D * hinvbkip = new TH1D( "hinvbkip", "Integral of the Pion Fit vs Total Momentum", 200, 0, 2 );
-  TH1D * hinvbkipm = new TH1D( "hinvbkipm", "Mean of the Pion Fit vs Total Momentum", 200, 0, 2 );
-  TH1D * hinvbkips = new TH1D( "hinvbkips", "Sigma of the Pion Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbkip = new TH1D( "hinvbkip", "Integral of the Kaon Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbkipm = new TH1D( "hinvbkipm", "Mean of the Kaon Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbkips = new TH1D( "hinvbkips", "Sigma of the Kaon Fit vs Total Momentum", 200, 0, 2 );
 
-  TH1D * hinvbkin = new TH1D( "hinvbkin", "Integral of the Pion Fit vs Total Momentum", 200, 0, 2 );
-  TH1D * hinvbkinm = new TH1D( "hinvbkinm", "Mean of the Pion Fit vs Total Momentum", 200, 0, 2 );
-  TH1D * hinvbkins = new TH1D( "hinvbkins", "Sigma of the Pion Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbkin = new TH1D( "hinvbkin", "Integral of the Kaon Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbkinm = new TH1D( "hinvbkinm", "Mean of the Kaon Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbkins = new TH1D( "hinvbkins", "Sigma of the Kaon Fit vs Total Momentum", 200, 0, 2 );
 
-  TH1D * hinvbpria = new TH1D( "hinvbpria", "Integral of the Pion Fit vs Total Momentum", 200, 0, 2 );
-  TH1D * hinvbpriam = new TH1D( "hinvbpriam", "Mean of the Pion Fit vs Total Momentum", 200, 0, 2 );
-  TH1D * hinvbprias = new TH1D( "hinvbprias", "Sigma of the Pion Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbpria = new TH1D( "hinvbpria", "Integral of the Proton Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbpriam = new TH1D( "hinvbpriam", "Mean of the Proton Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbprias = new TH1D( "hinvbprias", "Sigma of the Proton Fit vs Total Momentum", 200, 0, 2 );
 
-  TH1D * hinvbprip = new TH1D( "hinvbprip", "Integral of the Pion Fit vs Total Momentum", 200, 0, 2 );
-  TH1D * hinvbpripm = new TH1D( "hinvbpripm", "Mean of the Pion Fit vs Total Momentum", 200, 0, 2 );
-  TH1D * hinvbprips = new TH1D( "hinvbprips", "Sigma of the Pion Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbprip = new TH1D( "hinvbprip", "Integral of the Proton Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbpripm = new TH1D( "hinvbpripm", "Mean of the Proton Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbprips = new TH1D( "hinvbprips", "Sigma of the Proton Fit vs Total Momentum", 200, 0, 2 );
 
-  TH1D * hinvbprin = new TH1D( "hinvbprin", "Integral of the Pion Fit vs Total Momentum", 200, 0, 2 );
-  TH1D * hinvbprinm = new TH1D( "hinvbprinm", "Mean of the Pion Fit vs Total Momentum", 200, 0, 2 );
-  TH1D * hinvbprins = new TH1D( "hinvbprins", "Sigma of the Pion Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbprin = new TH1D( "hinvbprin", "Integral of the Proton Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbprinm = new TH1D( "hinvbprinm", "Mean of the Proton Fit vs Total Momentum", 200, 0, 2 );
+  TH1D * hinvbprins = new TH1D( "hinvbprins", "Sigma of the Proton Fit vs Total Momentum", 200, 0, 2 );
 
 
 
