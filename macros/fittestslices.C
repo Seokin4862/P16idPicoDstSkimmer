@@ -1,4 +1,4 @@
-double eval( double x, double bw = 1.0 ){
+Double_t eval( Double_t *x, Double_t *bw ){
 
 		// e is an efficiency param
 		double a1 = s * TMath::Sqrt( 2 * m - 3 );
