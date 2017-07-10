@@ -11,7 +11,7 @@
 
 void fittestslices(){
 
-  TFile *f = new TFile( "/home/sy34/workspace/safe/" );
+  TFile *f = new TFile( "/home/sy34/workspace/safe/testslices/testslices.root" );
 
   TCanvas *c = new TCanvas( "c","c" );
 
