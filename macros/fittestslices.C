@@ -71,7 +71,7 @@ void fittestslices(){
     temph->Fit( fit, "R", "", beg, end );
     temph->Draw();
     getslice << ".png";
-    c->Print( getslice.str().c_str() );
+    // c->Print( getslice.str().c_str() );
     hinvbpia->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
     hinvbpiam->SetBinContent( i, fit->GetParameter(1) );
     hinvbpias->SetBinContent( i, fit->GetParameter(2) );
@@ -94,7 +94,7 @@ void fittestslices(){
     temph->Fit( fit, "R", "", beg, end );
     temph->Draw();
     getslice << ".png";
-    c->Print( getslice.str().c_str() );
+    // c->Print( getslice.str().c_str() );
     hinvbpip->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
     hinvbpipm->SetBinContent( i, fit->GetParameter(1) );
     hinvbpips->SetBinContent( i, fit->GetParameter(2) );
@@ -117,7 +117,7 @@ void fittestslices(){
     temph->Fit( fit, "R", "", beg, end );
     temph->Draw();
     getslice << ".png";
-    c->Print( getslice.str().c_str() );
+    // c->Print( getslice.str().c_str() );
     hinvbpin->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
     hinvbpinm->SetBinContent( i, fit->GetParameter(1) );
     hinvbpins->SetBinContent( i, fit->GetParameter(2) );
@@ -140,7 +140,7 @@ void fittestslices(){
     temph->Fit( fit, "R", "", beg, end );
     temph->Draw();
     getslice << ".png";
-    c->Print( getslice.str().c_str() );
+    // c->Print( getslice.str().c_str() );
     hinvbkia->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
     hinvbkiam->SetBinContent( i, fit->GetParameter(1) );
     hinvbkias->SetBinContent( i, fit->GetParameter(2) );
@@ -163,7 +163,7 @@ void fittestslices(){
     temph->Fit( fit, "R", "", beg, end );
     temph->Draw();
     getslice << ".png";
-    c->Print( getslice.str().c_str() );
+    // c->Print( getslice.str().c_str() );
     hinvbkip->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
     hinvbkipm->SetBinContent( i, fit->GetParameter(1) );
     hinvbkips->SetBinContent( i, fit->GetParameter(2) );
@@ -186,7 +186,7 @@ void fittestslices(){
     temph->Fit( fit, "R", "", beg, end );
     temph->Draw();
     getslice << ".png";
-    c->Print( getslice.str().c_str() );
+    // c->Print( getslice.str().c_str() );
     hinvbkin->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
     hinvbkinm->SetBinContent( i, fit->GetParameter(1) );
     hinvbkins->SetBinContent( i, fit->GetParameter(2) );
@@ -209,7 +209,7 @@ void fittestslices(){
     temph->Fit( fit, "R", "", beg, end );
     temph->Draw();
     getslice << ".png";
-    c->Print( getslice.str().c_str() );
+    // c->Print( getslice.str().c_str() );
     hinvbpria->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
     hinvbpriam->SetBinContent( i, fit->GetParameter(1) );
     hinvbprias->SetBinContent( i, fit->GetParameter(2) );
@@ -232,7 +232,7 @@ void fittestslices(){
     temph->Fit( fit, "R", "", beg, end );
     temph->Draw();
     getslice << ".png";
-    c->Print( getslice.str().c_str() );
+    // c->Print( getslice.str().c_str() );
     hinvbprip->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
     hinvbpripm->SetBinContent( i, fit->GetParameter(1) );
     hinvbprips->SetBinContent( i, fit->GetParameter(2) );
@@ -256,7 +256,7 @@ void fittestslices(){
     temph->Fit( fit, "R", "", beg, end );
     temph->Draw();
     getslice << ".png";
-    c->Print( getslice.str().c_str() );
+    // c->Print( getslice.str().c_str() );
     hinvbprin->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
     hinvbprinm->SetBinContent( i, fit->GetParameter(1) );
     hinvbprins->SetBinContent( i, fit->GetParameter(2) );
