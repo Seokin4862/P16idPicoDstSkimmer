@@ -103,7 +103,7 @@ void testslices(){
 
   TH2 *hInvBeta = (TH2*)f->Get( "InvBetavsMomProton_a" );
 
-  for( int i = 16; i < 36; i++ ){
+  for( int i = 16; i < 200; i++ ){
     stringstream name;
     name << "InvbptPria" << i;
     int n1 = hInvBeta->GetXaxis()->FindBin( .01*(i-1) );
@@ -118,7 +118,7 @@ void testslices(){
 
   TH2 *hInvBeta = (TH2*)f->Get( "InvBetavsMomProton_p" );
 
-  for( int i = 16; i < 36; i++ ){
+  for( int i = 16; i < 200; i++ ){
     stringstream name;
     name << "InvbptPrip" << i;
     int n1 = hInvBeta->GetXaxis()->FindBin( .01*(i-1) );
@@ -133,7 +133,7 @@ void testslices(){
 
   TH2 *hInvBeta = (TH2*)f->Get( "InvBetavsMomProton_n" );
 
-  for( int i = 16; i < 36; i++ ){
+  for( int i = 16; i < 200; i++ ){
     stringstream name;
     name << "InvbptPrin" << i;
     int n1 = hInvBeta->GetXaxis()->FindBin( .01*(i-1) );
