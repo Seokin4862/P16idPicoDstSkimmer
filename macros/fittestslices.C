@@ -1,20 +1,20 @@
-// Double_t eval( Double_t *x, Double_t *bw ){
+Double_t eval( Double_t *x, Double_t *bw ){
+
+		// e is an efficiency param
+		double a1 = s * TMath::Sqrt( 2 * m - 3 );
+		double a =  (y * bw) / ( a1 * TMath::Beta( m-0.5, 0.5 ) );
+		double b = pow( 1 + pow( ( x - l ) / a1, 2 ), -m );
+
+		return a * b;
+	}
 //
-// 		// e is an efficiency param
-// 		double a1 = s * TMath::Sqrt( 2 * m - 3 );
-// 		double a =  (y * bw) / ( a1 * TMath::Beta( m-0.5, 0.5 ) );
-// 		double b = pow( 1 + pow( ( x - l ) / a1, 2 ), -m );
-//
-// 		return a * b;
-// 	}
-//
-// void eval()
-// {
-//   TF1 *f1 = new TF1( "eval", eval, 0, 10, 2 );
-//   f1->SetParameters( 2, 1 );
-//   f1->SetParNames( "constant", "coefficient" );
-//   f1->Draw();
-// }
+void eval()
+{
+  TF1 *f1 = new TF1( "eval", eval, 0, 10, 2 );
+  f1->SetParameters( 2, 1 );
+  f1->SetParNames( "constant", "coefficient" );
+  f1->Draw();
+}
 
 void fittestslices(){
 
@@ -23,6 +23,8 @@ void fittestslices(){
   TCanvas *c = new TCanvas( "c","c" );
 
   TF1 *fit = new TF1( "fit", "gaus" );
+
+  TF1 *eval = new TF1( "eval", "eval" );
 
   TFile *rootfile = new TFile( "fittestslices.root", "RECREATE" );
 
@@ -75,6 +77,7 @@ void fittestslices(){
     c->SetLogy();
     temph->Fit( fit, "R", "", beg, end );
     temph->Draw();
+    temph->Fit( eval, "" )
     getslice << ".png";
     // c->Print( getslice.str().c_str() );
     hinvbpia->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
