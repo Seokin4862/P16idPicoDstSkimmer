@@ -77,9 +77,9 @@ void fittestslices(){
     c->SetLogy();
     temph->Fit( fit, "R", "", beg, end );
     temph->Draw();
-    temph->Fit( eval, "" )
+    temph->Fit( eval, "R", "", beg, end );
     getslice << ".png";
-    // c->Print( getslice.str().c_str() );
+    c->Print( getslice.str().c_str() );
     hinvbpia->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
     hinvbpiam->SetBinContent( i, fit->GetParameter(1) );
     hinvbpias->SetBinContent( i, fit->GetParameter(2) );
