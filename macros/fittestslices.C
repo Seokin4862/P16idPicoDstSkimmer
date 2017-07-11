@@ -90,189 +90,189 @@ void fittestslices(){
   hinvbpias->Write();
 
 
-  double beg = -.05;
-  double end = .05;
-
-  for( int i = 16; i < 201; i++ ){
-    stringstream getslice;
-    getslice << "InvbptPip" << i;
-    TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
-    temph->Draw();
-    c->SetLogy();
-    temph->Fit( fit, "R", "", beg, end );
-    temph->Draw();
-    getslice << ".png";
-    // c->Print( getslice.str().c_str() );
-    hinvbpip->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
-    hinvbpipm->SetBinContent( i, fit->GetParameter(1) );
-    hinvbpips->SetBinContent( i, fit->GetParameter(2) );
-  }
-
-  hinvbpip->Write();
-  hinvbpipm->Write();
-  hinvbpips->Write();
-
-
-  double beg = -.05;
-  double end = .05;
-
-  for( int i = 16; i < 201; i++ ){
-    stringstream getslice;
-    getslice << "InvbptPin" << i;
-    TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
-    temph->Draw();
-    c->SetLogy();
-    temph->Fit( fit, "R", "", beg, end );
-    temph->Draw();
-    getslice << ".png";
-    // c->Print( getslice.str().c_str() );
-    hinvbpin->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
-    hinvbpinm->SetBinContent( i, fit->GetParameter(1) );
-    hinvbpins->SetBinContent( i, fit->GetParameter(2) );
-  }
-
-  hinvbpin->Write();
-  hinvbpinm->Write();
-  hinvbpins->Write();
-
-
-  double beg = -.03;
-  double end = .03;
-
-  for( int i = 16; i < 201; i++ ){
-    stringstream getslice;
-    getslice << "InvbptKia" << i;
-    TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
-    temph->Draw();
-    c->SetLogy();
-    temph->Fit( fit, "R", "", beg, end );
-    temph->Draw();
-    getslice << ".png";
-    c->Print( getslice.str().c_str() );
-    hinvbkia->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
-    hinvbkiam->SetBinContent( i, fit->GetParameter(1) );
-    hinvbkias->SetBinContent( i, fit->GetParameter(2) );
-  }
-
-  hinvbkia->Write();
-  hinvbkiam->Write();
-  hinvbkias->Write();
-
-
-  double beg = -.03;
-  double end = .03;
-
-  for( int i = 16; i < 201; i++ ){
-    stringstream getslice;
-    getslice << "InvbptKip" << i;
-    TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
-    temph->Draw();
-    c->SetLogy();
-    temph->Fit( fit, "R", "", beg, end );
-    temph->Draw();
-    getslice << ".png";
-    c->Print( getslice.str().c_str() );
-    hinvbkip->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
-    hinvbkipm->SetBinContent( i, fit->GetParameter(1) );
-    hinvbkips->SetBinContent( i, fit->GetParameter(2) );
-  }
-
-  hinvbkip->Write();
-  hinvbkipm->Write();
-  hinvbkips->Write();
-
-
-  double beg = -.03;
-  double end = .03;
-
-  for( int i = 16; i < 201; i++ ){
-    stringstream getslice;
-    getslice << "InvbptKin" << i;
-    TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
-    temph->Draw();
-    c->SetLogy();
-    temph->Fit( fit, "R", "", beg, end );
-    temph->Draw();
-    getslice << ".png";
-    c->Print( getslice.str().c_str() );
-    hinvbkin->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
-    hinvbkinm->SetBinContent( i, fit->GetParameter(1) );
-    hinvbkins->SetBinContent( i, fit->GetParameter(2) );
-  }
-
-  hinvbkin->Write();
-  hinvbkinm->Write();
-  hinvbkins->Write();
-
-
-  double beg = -.05;
-  double end = .05;
-
-  for( int i = 16; i < 201; i++ ){
-    stringstream getslice;
-    getslice << "InvbptPria" << i;
-    TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
-    temph->Draw();
-    c->SetLogy();
-    temph->Fit( fit, "R", "", beg, end );
-    temph->Draw();
-    getslice << ".png";
-    // c->Print( getslice.str().c_str() );
-    hinvbpria->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
-    hinvbpriam->SetBinContent( i, fit->GetParameter(1) );
-    hinvbprias->SetBinContent( i, fit->GetParameter(2) );
-  }
-
-  hinvbpria->Write();
-  hinvbpriam->Write();
-  hinvbprias->Write();
-
-
-  double beg = -.05;
-  double end = .05;
-
-  for( int i = 16; i < 201; i++ ){
-    stringstream getslice;
-    getslice << "InvbptPrip" << i;
-    TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
-    temph->Draw();
-    c->SetLogy();
-    temph->Fit( fit, "R", "", beg, end );
-    temph->Draw();
-    getslice << ".png";
-    // c->Print( getslice.str().c_str() );
-    hinvbprip->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
-    hinvbpripm->SetBinContent( i, fit->GetParameter(1) );
-    hinvbprips->SetBinContent( i, fit->GetParameter(2) );
-  }
-
-  hinvbprip->Write();
-  hinvbpripm->Write();
-  hinvbprips->Write();
-
-
-
-  double beg = -.05;
-  double end = .05;
-
-  for( int i = 16; i < 201; i++ ){
-    stringstream getslice;
-    getslice << "InvbptPrin" << i;
-    TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
-    temph->Draw();
-    c->SetLogy();
-    temph->Fit( fit, "R", "", beg, end );
-    temph->Draw();
-    getslice << ".png";
-    // c->Print( getslice.str().c_str() );
-    hinvbprin->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
-    hinvbprinm->SetBinContent( i, fit->GetParameter(1) );
-    hinvbprins->SetBinContent( i, fit->GetParameter(2) );
-  }
-
-  hinvbprin->Write();
-  hinvbprinm->Write();
-  hinvbprins->Write();
+  // double beg = -.05;
+  // double end = .05;
+  //
+  // for( int i = 16; i < 201; i++ ){
+  //   stringstream getslice;
+  //   getslice << "InvbptPip" << i;
+  //   TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
+  //   temph->Draw();
+  //   c->SetLogy();
+  //   temph->Fit( fit, "R", "", beg, end );
+  //   temph->Draw();
+  //   getslice << ".png";
+  //   // c->Print( getslice.str().c_str() );
+  //   hinvbpip->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
+  //   hinvbpipm->SetBinContent( i, fit->GetParameter(1) );
+  //   hinvbpips->SetBinContent( i, fit->GetParameter(2) );
+  // }
+  //
+  // hinvbpip->Write();
+  // hinvbpipm->Write();
+  // hinvbpips->Write();
+  //
+  //
+  // double beg = -.05;
+  // double end = .05;
+  //
+  // for( int i = 16; i < 201; i++ ){
+  //   stringstream getslice;
+  //   getslice << "InvbptPin" << i;
+  //   TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
+  //   temph->Draw();
+  //   c->SetLogy();
+  //   temph->Fit( fit, "R", "", beg, end );
+  //   temph->Draw();
+  //   getslice << ".png";
+  //   // c->Print( getslice.str().c_str() );
+  //   hinvbpin->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
+  //   hinvbpinm->SetBinContent( i, fit->GetParameter(1) );
+  //   hinvbpins->SetBinContent( i, fit->GetParameter(2) );
+  // }
+  //
+  // hinvbpin->Write();
+  // hinvbpinm->Write();
+  // hinvbpins->Write();
+  //
+  //
+  // double beg = -.03;
+  // double end = .03;
+  //
+  // for( int i = 16; i < 201; i++ ){
+  //   stringstream getslice;
+  //   getslice << "InvbptKia" << i;
+  //   TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
+  //   temph->Draw();
+  //   c->SetLogy();
+  //   temph->Fit( fit, "R", "", beg, end );
+  //   temph->Draw();
+  //   getslice << ".png";
+  //   // c->Print( getslice.str().c_str() );
+  //   hinvbkia->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
+  //   hinvbkiam->SetBinContent( i, fit->GetParameter(1) );
+  //   hinvbkias->SetBinContent( i, fit->GetParameter(2) );
+  // }
+  //
+  // hinvbkia->Write();
+  // hinvbkiam->Write();
+  // hinvbkias->Write();
+  //
+  //
+  // double beg = -.03;
+  // double end = .03;
+  //
+  // for( int i = 16; i < 201; i++ ){
+  //   stringstream getslice;
+  //   getslice << "InvbptKip" << i;
+  //   TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
+  //   temph->Draw();
+  //   c->SetLogy();
+  //   temph->Fit( fit, "R", "", beg, end );
+  //   temph->Draw();
+  //   getslice << ".png";
+  //   // c->Print( getslice.str().c_str() );
+  //   hinvbkip->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
+  //   hinvbkipm->SetBinContent( i, fit->GetParameter(1) );
+  //   hinvbkips->SetBinContent( i, fit->GetParameter(2) );
+  // }
+  //
+  // hinvbkip->Write();
+  // hinvbkipm->Write();
+  // hinvbkips->Write();
+  //
+  //
+  // double beg = -.03;
+  // double end = .03;
+  //
+  // for( int i = 16; i < 201; i++ ){
+  //   stringstream getslice;
+  //   getslice << "InvbptKin" << i;
+  //   TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
+  //   temph->Draw();
+  //   c->SetLogy();
+  //   temph->Fit( fit, "R", "", beg, end );
+  //   temph->Draw();
+  //   getslice << ".png";
+  //   // c->Print( getslice.str().c_str() );
+  //   hinvbkin->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
+  //   hinvbkinm->SetBinContent( i, fit->GetParameter(1) );
+  //   hinvbkins->SetBinContent( i, fit->GetParameter(2) );
+  // }
+  //
+  // hinvbkin->Write();
+  // hinvbkinm->Write();
+  // hinvbkins->Write();
+  //
+  //
+  // double beg = -.05;
+  // double end = .05;
+  //
+  // for( int i = 16; i < 201; i++ ){
+  //   stringstream getslice;
+  //   getslice << "InvbptPria" << i;
+  //   TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
+  //   temph->Draw();
+  //   c->SetLogy();
+  //   temph->Fit( fit, "R", "", beg, end );
+  //   temph->Draw();
+  //   getslice << ".png";
+  //   // c->Print( getslice.str().c_str() );
+  //   hinvbpria->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
+  //   hinvbpriam->SetBinContent( i, fit->GetParameter(1) );
+  //   hinvbprias->SetBinContent( i, fit->GetParameter(2) );
+  // }
+  //
+  // hinvbpria->Write();
+  // hinvbpriam->Write();
+  // hinvbprias->Write();
+  //
+  //
+  // double beg = -.05;
+  // double end = .05;
+  //
+  // for( int i = 16; i < 201; i++ ){
+  //   stringstream getslice;
+  //   getslice << "InvbptPrip" << i;
+  //   TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
+  //   temph->Draw();
+  //   c->SetLogy();
+  //   temph->Fit( fit, "R", "", beg, end );
+  //   temph->Draw();
+  //   getslice << ".png";
+  //   // c->Print( getslice.str().c_str() );
+  //   hinvbprip->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
+  //   hinvbpripm->SetBinContent( i, fit->GetParameter(1) );
+  //   hinvbprips->SetBinContent( i, fit->GetParameter(2) );
+  // }
+  //
+  // hinvbprip->Write();
+  // hinvbpripm->Write();
+  // hinvbprips->Write();
+  //
+  //
+  //
+  // double beg = -.05;
+  // double end = .05;
+  //
+  // for( int i = 16; i < 201; i++ ){
+  //   stringstream getslice;
+  //   getslice << "InvbptPrin" << i;
+  //   TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
+  //   temph->Draw();
+  //   c->SetLogy();
+  //   temph->Fit( fit, "R", "", beg, end );
+  //   temph->Draw();
+  //   getslice << ".png";
+  //   // c->Print( getslice.str().c_str() );
+  //   hinvbprin->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
+  //   hinvbprinm->SetBinContent( i, fit->GetParameter(1) );
+  //   hinvbprins->SetBinContent( i, fit->GetParameter(2) );
+  // }
+  //
+  // hinvbprin->Write();
+  // hinvbprinm->Write();
+  // hinvbprins->Write();
 
 
 }
