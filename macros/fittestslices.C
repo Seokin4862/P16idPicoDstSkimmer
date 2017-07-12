@@ -41,8 +41,8 @@ void fittestslices(){
 
   TF1 *fit = new TF1( "fit", "gaus" );
 
-  TF1 *eval = new TF1( "eval", "eval", -100, 100, 4 );
-	eval->SetParameters(0, .1, 100, .1);
+  TF1 *eval = new TF1( "eval", "eval", -1, 1, 4 );
+	eval->SetParameters(0, .1, 1000, 0);
 	eval->SetParNames( "mean", "sigma", "yield", "lambda" );
 
   TFile *rootfile = new TFile( "fittestslices.root", "RECREATE" );
@@ -96,7 +96,7 @@ void fittestslices(){
     c->SetLogy();
     temph->Fit( fit, "R", "", beg, end );
     temph->Draw();
-    temph->Fit( eval, "R");
+    temph->Fit( eval, "R", "", beg, end);
 		temph->Draw();
     getslice << ".png";
     c->Print( getslice.str().c_str() );
