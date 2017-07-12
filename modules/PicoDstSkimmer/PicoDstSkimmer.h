@@ -61,7 +61,7 @@ protected:
 	TClonesArrayReader < StPicoBTofPidTraits > _rBTofPid;
 
 	TH1D *hDedx = 0;
-	TH1D *hcorrDedx = 0;
+	TH1D *hInvBeta = 0;
 
 	TH2D *hLnDedxvsMom1 = 0;
 	TH2D *hLnDedxvsMom2 = 0;
@@ -81,13 +81,9 @@ protected:
 
 	void makeHistograms(){
 
-		hDedx = new TH1D( "dEdx", "dEdx; dEdx; number of tracks", 100, 0, 10 );
-		hcorrDedx = new TH1D( "corrDedx", "corrected dEdx; corrected dEdx; number of tracks", 100, 0, 10 );
-
 		hLnDedxvsMom1 = new TH2D( "LnDedxvsMom1", "Ln(dEdx) vs Momentum, all charge; Total Momentum; Ln(dEdx)", 300, 0, 3, 1000, 0, 10 );
 		hLnDedxvsMom2 = new TH2D( "LnDedxvsMom2", "Ln(dEdx) vs Momentum, + charge; Total Momentum; Ln(dEdx)", 300, 0, 3, 1000, 0, 10 );
 		hLnDedxvsMom3 = new TH2D( "LnDedxvsMom3", "Ln(dEdx) vs Momentum, - charge; Total Momentum; Ln(dEdx)", 300, 0, 3, 1000, 0, 10 );
-
 
 		hInvBetavsMomPion_a = new TH2D( "InvBetavsMomPion_a", "1/Beta vs Momentum, all charge, Pion Centered; Total Momentum; 1/Beta - 1/ExpectedBeta(Pion)", 300, 0, 3, 1000, -.6, .6 );
 		hInvBetavsMomPion_p = new TH2D( "InvBetavsMomPion_p", "1/Beta vs Momentum, + charge, Pion Centered; Total Momentum; 1/Beta - 1/ExpectedBeta(Pion)", 300, 0, 3, 1000, -.6, .6 );
@@ -105,6 +101,9 @@ protected:
 	}
 
 	virtual void analyzeEvent() {
+
+
+
 		StPicoEvent *event = _rEvent.get( 0 );
 
 		if ( nullptr == event ){
