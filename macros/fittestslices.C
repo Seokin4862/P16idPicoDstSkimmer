@@ -97,6 +97,7 @@ void fittestslices(){
     temph->Fit( fit, "R", "", beg, end );
     temph->Draw();
     temph->Fit( eval, "R", "", beg, end );
+		temph->Draw();
     getslice << ".png";
     c->Print( getslice.str().c_str() );
     hinvbpia->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
