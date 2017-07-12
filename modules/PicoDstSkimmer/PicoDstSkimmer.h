@@ -132,6 +132,8 @@ protected:
 			};
 
 				if ( nullptr != btofPidTraits ){
+					if( track->pMom().mag() > .5 ) continue;
+					if( track->pMom().mag() < .4 ) continue;
 					hInvBetavsDedx->Fill( 1.0/btofPidTraits->btofBeta(), track->dEdx() );
 					hInvBetavsDedxPion->Fill( 1.0/btofPidTraits->btofBeta() - sqrt( pow( .139570, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()), track->dEdx() );
 					hInvBetavsDedxKaon->Fill( 1.0/btofPidTraits->btofBeta() - sqrt( pow( .493677, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()), track->dEdx() );
