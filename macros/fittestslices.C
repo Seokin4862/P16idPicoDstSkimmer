@@ -105,7 +105,7 @@ void fittestslices(){
 
 	TF1 *eval = new TF1( "eval", PearsonVII, -1, 1, 4 );
 	eval->SetParameters(5, .1, 1000, 0);
-	eval->SetParNames( "m", "sigma", "yield", "lambda" );
+	eval->SetParNames( "m", "s", "y", "l" );
 
   double beg = -.05;
   double end = .05;
@@ -301,7 +301,7 @@ void fittestslices(){
   }
 
   hinvbprip->Write();
-	hpearsonprip->SetBinContent( i, eval->Integral( -.6, .6 )/.01 );
+	hpearsonprip->Write();
   hinvbpripm->Write();
   hinvbprips->Write();
 
