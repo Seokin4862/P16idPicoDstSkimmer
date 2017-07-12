@@ -67,6 +67,18 @@ protected:
 	TH2D *hLnDedxvsMom2 = 0;
 	TH2D *hLnDedxvsMom3 = 0;
 
+for( int i = 16, i < 36; i++ ){
+	stringstream hname;
+	hname << "hInvBetavsDedx" << i;
+	TH2D *hname.str().c_str() = 0;
+	hname << "Pion";
+	TH2D *hname.str().c_str() = 0;
+	hname << "Kaon";
+	TH2D *hname.str().c_str() = 0;
+	hname << "Proton";
+	TH2D *hname.str().c_str() = 0;
+};
+
 	TH2D *hInvBetavsDedx = 0;
 	TH2D *hInvBetavsDedxPion = 0;
 	TH2D *hInvBetavsDedxKaon = 0;
