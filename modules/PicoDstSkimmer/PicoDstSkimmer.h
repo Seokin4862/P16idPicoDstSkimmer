@@ -67,7 +67,7 @@ protected:
 	TH2D *hLnDedxvsMom2 = 0;
 	TH2D *hLnDedxvsMom3 = 0;
 
-for( int i = 16, i < 36; i++ ){
+for( int i = 16; i < 36; i++ ) {
 	stringstream hname;
 	hname << "hInvBetavsDedx" << i;
 	TH2D *hname.str().c_str() = 0;
