@@ -130,6 +130,7 @@ void fittestslices(){
 
   hinvbpia->Write();
 	hinvbpia->Draw();
+	hpearsonpia->SetLineColor( 2 );
 	hpearsonpia->Draw("same");
 	c->Print( "view.png" );
 	hpearsonpia->Write();
@@ -160,6 +161,10 @@ void fittestslices(){
 
   hinvbpip->Write();
 	hpearsonpip->Write();
+	hinvbpip->Draw();
+	hpearsonpip->SetLineColor( 2 );
+	hpearsonpip->Draw("same");
+	c->Print( "view2.png" );
   hinvbpipm->Write();
   hinvbpips->Write();
 
@@ -187,6 +192,10 @@ void fittestslices(){
 
 		hinvbpin->Write();
 		hpearsonpin->Write();
+		hinvbpin->Draw();
+		hpearsonpin->SetLineColor( 2 );
+		hpearsonpin->Draw("same");
+		c->Print( "view3.png" );
 		hinvbpinm->Write();
 		hinvbpins->Write();
 
