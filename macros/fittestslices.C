@@ -18,7 +18,7 @@
 // eval->SetParameters(1,2, 3, 4); // just example, there are 4 parameters
 // eval->SetParNames("mean","sigma", "yield", "lambda");
 
-Double_t eval( Double_t *x, Double_t *par ){
+Double_t PearsonVII( Double_t *x, Double_t *par ){
 	Double_t x0 = x[0];
 
 	Double_t m = par[0];
@@ -83,7 +83,7 @@ void fittestslices(){
   TH1D * hinvbprins = new TH1D( "hinvbprins", "Sigma of the Proton Fit vs Total Momentum", 200, 0, 2 );
 
 
-	TF1 *eval = new TF1( "eval", "eval", -1, 1, 4 );
+	TF1 *eval = new TF1( "eval", PearsonVII, -1, 1, 4 );
 	eval->SetParameters(0, .1, 1000, 0);
 	eval->SetParNames( "mean", "sigma", "yield", "lambda" );
 
