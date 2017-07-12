@@ -195,7 +195,7 @@ void fittestslices(){
 		temph->Fit( eval, "R", "", beg, end);
 		temph->Draw();
     getslice << ".png";
-    // c->Print( getslice.str().c_str() );
+    c->Print( getslice.str().c_str() );
     hinvbkia->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
 		hpearsonkia->SetBinContent( i, eval->Integral( -.6, .6 )/.01 );
 		hinvbkiam->SetBinContent( i, fit->GetParameter(1) );
@@ -219,7 +219,7 @@ void fittestslices(){
 		temph->Fit( eval, "R", "", beg, end );
 		temph->Draw();
     getslice << ".png";
-    // c->Print( getslice.str().c_str() );
+    c->Print( getslice.str().c_str() );
     hinvbkip->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
 		hpearsonkip->SetBinContent( i, eval->Integral( -.6, .6)/.01 );
     hinvbkipm->SetBinContent( i, fit->GetParameter(1) );
@@ -243,7 +243,7 @@ void fittestslices(){
 		temph->Fit( eval, "R", "", beg, end );
 		temph->Draw();
     getslice << ".png";
-    // c->Print( getslice.str().c_str() );
+    c->Print( getslice.str().c_str() );
     hinvbkin->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
 		hpearsonkin->SetBinContent( i, eval->Integral( -.6, .6 )/.01 );
     hinvbkinm->SetBinContent( i, fit->GetParameter(1) );
@@ -270,7 +270,7 @@ void fittestslices(){
 		temph->Fit( eval, "R", "", beg, end );
 		temph->Draw();
     getslice << ".png";
-    // c->Print( getslice.str().c_str() );
+    c->Print( getslice.str().c_str() );
     hinvbpria->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
 		hpearsonpria->SetBinContent( i, eval->Integral( -.6, .6 )/.01 );
 		hinvbpriam->SetBinContent( i, fit->GetParameter(1) );
@@ -293,7 +293,7 @@ void fittestslices(){
     temph->Draw();
 		temph->Fit( eval, "R", "", beg, end );
     getslice << ".png";
-    // c->Print( getslice.str().c_str() );
+    c->Print( getslice.str().c_str() );
     hinvbprip->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
 		hpearsonprip->SetBinContent( i, eval->Integral( -.6, .6 )/.01 );
     hinvbpripm->SetBinContent( i, fit->GetParameter(1) );
@@ -317,7 +317,7 @@ void fittestslices(){
 		temph->Fit( eval, "R", "", beg, end );
 		temph->Draw();
 	  getslice << ".png";
-    // c->Print( getslice.str().c_str() );
+    c->Print( getslice.str().c_str() );
     hinvbprin->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
 		hpearsonprin->SetBinContent( i, eval->Integral( -.6, .6 )/.01 );
     hinvbprinm->SetBinContent( i, fit->GetParameter(1) );
