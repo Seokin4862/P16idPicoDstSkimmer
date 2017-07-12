@@ -18,6 +18,14 @@
 // eval->SetParameters(1,2, 3, 4); // just example, there are 4 parameters
 // eval->SetParNames("mean","sigma", "yield", "lambda");
 
+
+#include "TMath.h"
+#include "TF1.h"
+#include "TH1D.h"
+#include "TCanvas.h"
+
+
+
 Double_t PearsonVII( Double_t *x, Double_t *par ){
 	Double_t x0 = x[0];
 
