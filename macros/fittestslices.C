@@ -40,7 +40,7 @@ Double_t PearsonVII( Double_t *x, Double_t *par ){
 	double a1 = s * TMath::Sqrt( 2 * m - 3 );
 
 	double a = ( y )	/ ( a1 * TMath::Beta( m - 0.5, -0.5 ) );
-	double b = pow( 1 + pow( ( x - l ) / a1, 2 ), -m );
+	double b = pow( 1 + pow( ( x0 - l ) / a1, 2 ), -m );
 
 	return a * b;
 }
