@@ -20,6 +20,7 @@
 
 Double_t eval( Double_t *x, Double_t *par ){
 	Double_t x0 = x[0];
+
 	Double_t m = par[0];
 	Double_t s = par[1];
 	Double_t y = par[2];
@@ -27,7 +28,7 @@ Double_t eval( Double_t *x, Double_t *par ){
 
 	double a1 = s * TMath::Sqrt( 2 * m - 3 );
 
-	double a = ( y * par )	/ ( a1 * TMath::Beta( m - 0.5, -0.5 ) );
+	double a = ( y )	/ ( a1 * TMath::Beta( m - 0.5, -0.5 ) );
 	double b = pow( 1 + pow( ( x - L ) / a1, 2 ), -m );
 
 	return a * b;
@@ -41,9 +42,7 @@ void fittestslices(){
 
   TF1 *fit = new TF1( "fit", "gaus" );
 
-  TF1 *eval = new TF1( "eval", "eval", -1, 1, 4 );
-	eval->SetParameters(0, .1, 1000, 0);
-	eval->SetParNames( "mean", "sigma", "yield", "lambda" );
+
 
   TFile *rootfile = new TFile( "fittestslices.root", "RECREATE" );
 
@@ -84,6 +83,9 @@ void fittestslices(){
   TH1D * hinvbprins = new TH1D( "hinvbprins", "Sigma of the Proton Fit vs Total Momentum", 200, 0, 2 );
 
 
+	TF1 *eval = new TF1( "eval", "eval", -1, 1, 4 );
+	eval->SetParameters(0, .1, 1000, 0);
+	eval->SetParNames( "mean", "sigma", "yield", "lambda" );
 
   double beg = -.05;
   double end = .05;
