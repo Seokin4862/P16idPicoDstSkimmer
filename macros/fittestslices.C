@@ -107,8 +107,8 @@ void fittestslices(){
     TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
     temph->Draw();
     c->SetLogy();
-    temph->Fit( fit, "R", "", beg, end );
-    temph->Draw();
+    // temph->Fit( fit, "R", "", beg, end );
+    // temph->Draw();
     temph->Fit( eval, "R", "", beg, end);
 		temph->Draw();
     getslice << ".png";
