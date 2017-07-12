@@ -95,8 +95,8 @@ void fittestslices(){
 
 
 	TF1 *eval = new TF1( "eval", PearsonVII, -1, 1, 4 );
-	eval->SetParameters(0, .1, 1000, 0);
-	eval->SetParNames( "mean", "sigma", "yield", "lambda" );
+	// eval->SetParameters(0, .1, 1000, 0);
+	// eval->SetParNames( "mean", "sigma", "yield", "lambda" );
 
   double beg = -.05;
   double end = .05;
