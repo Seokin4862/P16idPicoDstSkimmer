@@ -96,7 +96,7 @@ void fittestslices(){
     c->SetLogy();
     temph->Fit( fit, "R", "", beg, end );
     temph->Draw();
-    temph->Fit( eval, "R", "", beg, end );
+    temph->Fit( eval, "R");
 		temph->Draw();
     getslice << ".png";
     c->Print( getslice.str().c_str() );
