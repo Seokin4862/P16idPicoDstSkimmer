@@ -42,7 +42,7 @@ void fittestslices(){
   TF1 *fit = new TF1( "fit", "gaus" );
 
   TF1 *eval = new TF1( "eval", "eval", -100, 100, 4 );
-	eval->SetParameters(0, 1, 2, 3);
+	// eval->SetParameters(0, 1, 2, 3);
 	eval->SetParNames( "mean", "sigma", "yield", "lambda" );
 
   TFile *rootfile = new TFile( "fittestslices.root", "RECREATE" );
