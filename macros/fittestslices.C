@@ -123,7 +123,7 @@ void fittestslices(){
     getslice << ".png";
     // c->Print( getslice.str().c_str() );
     hinvbpia->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
-		hpearsonpia->SetBinContent( i, eval->Integral( -.6, .6 )/.01 );
+		hpearsonpia->SetBinContent( i, eval->Integral( -1.5, 1.5 )/.01 );
     hinvbpiam->SetBinContent( i, fit->GetParameter(1) );
     hinvbpias->SetBinContent( i, fit->GetParameter(2) );
   }
@@ -154,7 +154,7 @@ void fittestslices(){
     getslice << ".png";
     // c->Print( getslice.str().c_str() );
     hinvbpip->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
-		hpearsonpip->SetBinContent( i, eval->Integral( -.6, .6)/.01 );
+		hpearsonpip->SetBinContent( i, eval->Integral( -1.5, 1.5)/.01 );
     hinvbpipm->SetBinContent( i, fit->GetParameter(1) );
     hinvbpips->SetBinContent( i, fit->GetParameter(2) );
   }
@@ -185,7 +185,7 @@ void fittestslices(){
 		getslice << ".png";
 		// c->Print( getslice.str().c_str() );
 		hinvbpin->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
-		hpearsonpin->SetBinContent( i, eval->Integral( -.6, .6)/.01 );
+		hpearsonpin->SetBinContent( i, eval->Integral( -1.5, 1.5)/.01 );
 		hinvbpinm->SetBinContent( i, fit->GetParameter(1) );
 		hinvbpins->SetBinContent( i, fit->GetParameter(2) );
 		}
