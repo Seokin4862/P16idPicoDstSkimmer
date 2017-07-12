@@ -1,19 +1,36 @@
-Double_t eval( Double_t *x, Double_t *bw ){
-
-		// e is an efficiency param
-		double a1 = s * TMath::Sqrt( 2 * m - 3 );
-		double a =  (y * bw) / ( a1 * TMath::Beta( m-0.5, 0.5 ) );
-		double b = pow( 1 + pow( ( x - l ) / a1, 2 ), -m );
-
-		return a * b;
-	}
+// Double_t eval( Double_t *x, Double_t *bw ){
+//    Double_t x0 = x[0];
+//    Double_t m = bw[0];
+//    Double_t s = bw[1];
+//    Double_t y = bw[2];
+//    Double_t l = bw[3];
 //
-void eval()
-{
-  TF1 *f1 = new TF1( "eval", eval, 0, 10, 2 );
-  f1->SetParameters( 2, 1 );
-  f1->SetParNames( "constant", "coefficient" );
-  f1->Draw();
+//
+//    double a1 = s * TMath::Sqrt( 2 * m - 3 );
+//
+//    double a =  (y * bw) / ( a1 * TMath::Beta( m-0.5, 0.5 ) );
+//    double b = pow( 1 + pow( ( x - l ) / a1, 2 ), -m );
+//
+//    return a * b;
+// }
+
+// TF1 *eval = new TF1( "eval", "eval", -100, 100, 4 );
+// eval->SetParameters(1,2, 3, 4); // just example, there are 4 parameters
+// eval->SetParNames("mean","sigma", "yield", "lambda");
+
+Double_t eval( Double_t *x, Double_t *par ){
+	Double_t x0 = x[0];
+	Double_t m = par[0];
+	Double_t s = par[1];
+	Double_t y = par[2];
+	Double_t l = par[3];
+
+	double a1 = s * TMath::Sqrt( 2 * m - 3 );
+
+	double a = ( y * par )	/ ( a1 * TMath::Beta( m - 0.5, -0.5 ) );
+	double b = pow( 1 + pow( ( x - L ) / a1, 2 ), -m );
+
+	return a * b;
 }
 
 void fittestslices(){
@@ -24,7 +41,9 @@ void fittestslices(){
 
   TF1 *fit = new TF1( "fit", "gaus" );
 
-  TF1 *eval = new TF1( "eval", "eval" );
+  TF1 *eval = new TF1( "eval", "eval", -100, 100, 4 );
+	eval->SetParameters(0, 1, 2, 3);
+	eval->SetParNames( "mean", "sigma", "yield", "lambda" );
 
   TFile *rootfile = new TFile( "fittestslices.root", "RECREATE" );
 
