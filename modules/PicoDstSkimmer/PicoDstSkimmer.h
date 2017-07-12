@@ -67,6 +67,11 @@ protected:
 	TH2D *hLnDedxvsMom2 = 0;
 	TH2D *hLnDedxvsMom3 = 0;
 
+	TH2D *hInvBetavsDedx = 0;
+	TH2D *hInvBetavsDedxPion = 0;
+	TH2D *hInvBetavsDedxKaon = 0;
+	TH2D *hInvBetavsDedxProton = 0;
+
 	TH2D *hInvBetavsMomPion_a = 0;
 	TH2D *hInvBetavsMomPion_p = 0;
 	TH2D *hInvBetavsMomPion_n = 0;
