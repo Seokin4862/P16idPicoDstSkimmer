@@ -7,10 +7,10 @@ void thrDSlices(){
 
   TCanvas * c = new TCanvas( "c","c" );
 
-  TH3 *hInvBetaDedxMom = (TH2*)f->Get( "hInvBetaDedxMom" );
-  TH3 *hInvBetaDedxMomPion = (TH2*)f->Get( "hInvBetaDedxMomPion" );
-  TH3 *hInvBetaDedxMomKaon = (TH2*)f->Get( "hInvBetaDedxMomKaon" );
-  TH3 *hInvBetaDedxMomProton = (TH2*)f->Get( "hInvBetaDedxMomProton" );
+  TH3 *hInvBetaDedxMom = (TH3*)f->Get( "hInvBetaDedxMom" );
+  TH3 *hInvBetaDedxMomPion = (TH3*)f->Get( "hInvBetaDedxMomPion" );
+  TH3 *hInvBetaDedxMomKaon = (TH3*)f->Get( "hInvBetaDedxMomKaon" );
+  TH3 *hInvBetaDedxMomProton = (TH3*)f->Get( "hInvBetaDedxMomProton" );
 
   for( int i = 1; i  < 201; i++ ){
     stringstream slicename;
