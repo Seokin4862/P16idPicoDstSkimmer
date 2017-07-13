@@ -11,6 +11,23 @@ void 3DSlices(){
   TH3 *hInvBetaDedxMomKaon = (TH2*)f->Get( "hInvBetaDedxMomKaon" );
   TH3 *hInvBetaDedxMomProton = (TH2*)f->Get( "hInvBetaDedxMomProton" );
 
-  for(  )
+  for( int i = 1; i  < 201; i++ ){
+    stringstream slicename;
+    slicename << "hInvBetaDedx" << i;
+    int a1 = hInvBetaDedxMom->GetZaxis()->FindBin( .01*(i-1) );
+    int a2 = hInvBetaDedxMom->GetZaxis()->FindBin( .01*(i-1) );
+    TH2 *slice = hInvBetaDedxMom->ProjectionZ( slicename.str().c_str(), a1, a2 );
+    stringstream slicetitle;
+    slicetitle << "" << .01*(i-1) << " to " << .01*(i);
+    slice->SetTitle( slicetitle.str().c_str() );
+    slice->SetXTitle( "dE/dx" );
+    slice->SetYTitle( "1/Beta" );
+    slice->GetXaxis()->SetRange( 0,10 );
+    slice->GetYaxis()->SetRange( -1.5,1.5 );
+    slice->Write();
+    slice->Draw();
+    slicename << ".png";
+    c->Print( slicename.str().c_str() );
+  }
 
 }
