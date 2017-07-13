@@ -1,4 +1,4 @@
-void 3DSlices(){
+void thrDSlices(){
 
   TFile *f = new TFile( "/home/sy34/workspace/safe/3Dgraphs/3Dgraphs.root" );
 
