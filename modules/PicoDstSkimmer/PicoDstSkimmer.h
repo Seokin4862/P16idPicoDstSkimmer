@@ -67,22 +67,10 @@ protected:
 	TH2D *hLnDedxvsMom2 = 0;
 	TH2D *hLnDedxvsMom3 = 0;
 
-for( int i = 16; i < 36; i++ ) {
-	stringstream hname;
-	hname << "hInvBetavsDedx" << i;
-	TH2D *hname.str().c_str() = 0;
-	hname << "Pion";
-	TH2D *hname.str().c_str() = 0;
-	hname << "Kaon";
-	TH2D *hname.str().c_str() = 0;
-	hname << "Proton";
-	TH2D *hname.str().c_str() = 0;
-};
-
-	TH2D *hInvBetavsDedx = 0;
-	TH2D *hInvBetavsDedxPion = 0;
-	TH2D *hInvBetavsDedxKaon = 0;
-	TH2D *hInvBetavsDedxProton = 0;
+	TH3D *hInvBetaDedxMom = 0;
+	TH3D *hInvBetaDedxMomPion = 0;
+	TH3D *hInvBetaDedxMomKaon = 0;
+	TH3D *hInvBetaDedxMomProton = 0;
 
 	TH2D *hInvBetavsMomPion_a = 0;
 	TH2D *hInvBetavsMomPion_p = 0;
@@ -102,10 +90,10 @@ for( int i = 16; i < 36; i++ ) {
 		hLnDedxvsMom2 = new TH2D( "LnDedxvsMom2", "Ln(dEdx) vs Momentum, + charge; Total Momentum; Ln(dEdx)", 300, 0, 3, 1000, 0, 10 );
 		hLnDedxvsMom3 = new TH2D( "LnDedxvsMom3", "Ln(dEdx) vs Momentum, - charge; Total Momentum; Ln(dEdx)", 300, 0, 3, 1000, 0, 10 );
 
-		hInvBetavsDedx = new TH2D( "InvBetavsDedx", "dEdx vs 1/Beta; 1/Beta; dEdx", 1000, 0, 10, 1000, 0, 10 );
-		hInvBetavsDedxPion = new TH2D( "InvBetavsDedxPion", "dEdx vs 1/Beta (Pions Centered); 1/Beta - 1/ExpectedBeta(Pion); dEdx", 1000, -.6, .6, 1000, 0, 10 );
-		hInvBetavsDedxKaon = new TH2D( "InvBetavsDedxKaon", "dEdx vs 1/Beta (Kaons Centered); 1/Beta - 1/ExpectedBeta(Kaon); dEdx", 1000, -.6, .6, 1000, 0, 10 );
-		hInvBetavsDedxProton = new TH2D( "InvBetavsDedxProton", "dEdx vs 1/Beta (Protons Centered); 1/Beta - 1/ExpectedBeta(Proton); dEdx", 1000, -.6, .6, 1000, 0, 10 );
+		hInvBetaDedxMom = new TH3D( "InvBetaDedxMom", "1/Beta vs dE/dx vs Momentum; 1/Beta; dE/dx; Momentum;", 300, 0, 3, 1000, 0, 10, 200, -1, 1 );
+		hInvBetaDedxMomPion = new TH3D( "InvBetaDedxMomPion", "1/Beta vs dE/dx vs Momentum for Pion; 1/Beta; dE/dx; Momentum", 300, 0, 3, 1000, 0, 10, 200, -1, 1 );
+		hInvBetaDedxMomKaon = new TH3D( "InvBetaDedxMomKaon", "1/Beta vs dE/dx vs Momentum for Kaon; 1/Beta; dE/dx; Momentum", 300, 0, 3, 1000, 0, 10, 200, -1, 1 );
+		hInvBetaDedxMomProton = new TH3D( "InvBetaDedxMomProton", "1/Beta vs dE/dx vs Momentum for Proton; 1/Beta; dE/dx; Momentum", 300, 0, 3, 1000, 0, 10, 200, -1, 1 );
 
 		hInvBetavsMomPion_a = new TH2D( "InvBetavsMomPion_a", "1/Beta vs Momentum, all charge, Pion Centered; Total Momentum; 1/Beta - 1/ExpectedBeta(Pion)", 300, 0, 3, 1000, -.6, .6 );
 		hInvBetavsMomPion_p = new TH2D( "InvBetavsMomPion_p", "1/Beta vs Momentum, + charge, Pion Centered; Total Momentum; 1/Beta - 1/ExpectedBeta(Pion)", 300, 0, 3, 1000, -.6, .6 );
@@ -118,7 +106,6 @@ for( int i = 16; i < 36; i++ ) {
 		hInvBetavsMomProton_a = new TH2D( "InvBetavsMomProton_a", "1/Beta vs Momentum, all charge, Proton Centered; Total Momentum; 1/Beta - 1/ExpectedBeta(Proton)", 300, 0, 3, 1000, -.6, .6 );
 		hInvBetavsMomProton_p = new TH2D( "InvBetavsMomProton_p", "1/Beta vs Momentum, + charge, Proton Centered; Total Momentum; 1/Beta - 1/ExpectedBeta(Proton)", 300, 0, 3, 1000, -.6, .6 );
 		hInvBetavsMomProton_n = new TH2D( "InvBetavsMomProton_n", "1/Beta vs Momentum, - charge, Proton Centered; Total Momentum; 1/Beta - 1/ExpectedBeta(Proton)", 300, 0, 3, 1000, -.6, .6 );
-
 
 	}
 
@@ -144,12 +131,16 @@ for( int i = 16; i < 36; i++ ) {
 			};
 
 				if ( nullptr != btofPidTraits ){
-					if( track->pMom().mag() > .5 ) continue;
-					if( track->pMom().mag() < .4 ) continue;
-					hInvBetavsDedx->Fill( 1.0/btofPidTraits->btofBeta(), track->dEdx() );
-					hInvBetavsDedxPion->Fill( 1.0/btofPidTraits->btofBeta() - sqrt( pow( .139570, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()), track->dEdx() );
-					hInvBetavsDedxKaon->Fill( 1.0/btofPidTraits->btofBeta() - sqrt( pow( .493677, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()), track->dEdx() );
-					hInvBetavsDedxProton->Fill( 1.0/btofPidTraits->btofBeta() - sqrt( pow( .938272, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()), track->dEdx() );
+
+					hInvBetaDedxMom->Fill( 1.0/btofPidTraits->btofBeta(), track->dEdx(), track->pMom().mag() );
+
+						// hInvBetavsDedx->Fill( 1.0/btofPidTraits->btofBeta(), track->dEdx() );
+						// hInvBetavsDedxPion->Fill( 1.0/btofPidTraits->btofBeta() - sqrt( pow( .139570, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()), track->dEdx() );
+						// hInvBetavsDedxKaon->Fill( 1.0/btofPidTraits->btofBeta() - sqrt( pow( .493677, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()), track->dEdx() );
+						// hInvBetavsDedxProton->Fill( 1.0/btofPidTraits->btofBeta() - sqrt( pow( .938272, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()), track->dEdx() );
+
+					// if( track->pMom().mag() > .5 ) continue;
+					// if( track->pMom().mag() < .4 ) continue;
 
 					hInvBetavsMomPion_a->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() - sqrt( pow( .139570, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()) );
 					hInvBetavsMomKaon_a->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() - sqrt( pow( .493677, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()) );
