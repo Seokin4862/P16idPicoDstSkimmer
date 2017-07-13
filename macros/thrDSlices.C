@@ -1,6 +1,7 @@
 void thrDSlices(){
 
-  TFile *f = new TFile( "/home/sy34/workspace/safe/3Dgraphs/3Dgraphs.root" );
+  TFile *f = new TFile( "/home/sy34/workspace/P16idPicoDstSkimmer/bin/data_0.root" );
+  // TFile *f = new TFile( "/home/sy34/workspace/safe/3Dgraphs/3Dgraphs.root" );
 
   TFile * rootfile = new TFile( "sliceof3Dgraphs.root", "RECREATE" );
 
