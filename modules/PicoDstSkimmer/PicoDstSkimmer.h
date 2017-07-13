@@ -132,15 +132,10 @@ protected:
 
 				if ( nullptr != btofPidTraits ){
 
-					hInvBetaDedxMom->Fill( 1.0/btofPidTraits->btofBeta(), track->dEdx(), track->pMom().mag() );
-
-						// hInvBetavsDedx->Fill( 1.0/btofPidTraits->btofBeta(), track->dEdx() );
-						// hInvBetavsDedxPion->Fill( 1.0/btofPidTraits->btofBeta() - sqrt( pow( .139570, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()), track->dEdx() );
-						// hInvBetavsDedxKaon->Fill( 1.0/btofPidTraits->btofBeta() - sqrt( pow( .493677, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()), track->dEdx() );
-						// hInvBetavsDedxProton->Fill( 1.0/btofPidTraits->btofBeta() - sqrt( pow( .938272, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()), track->dEdx() );
-
-					// if( track->pMom().mag() > .5 ) continue;
-					// if( track->pMom().mag() < .4 ) continue;
+					hInvBetaDedxMom->Fill( track->dEdx(), 1.0/btofPidTraits->btofBeta(), track->pMom().mag() );
+					hInvBetaDedxMomPion->Fill( track->dEdx(),  1.0/btofPidTraits->btofBeta() - sqrt( pow( .139570, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()), track->pMom().mag() );
+					hInvBetaDedxMomKaon->Fill( track->dEdx(),  1.0/btofPidTraits->btofBeta() - sqrt( pow( .493677, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()), track->pMom().mag() );
+					hInvBetaDedxMomProton->Fill( track->dEdx(),  1.0/btofPidTraits->btofBeta() - sqrt( pow( .938272, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()), track->pMom().mag() );
 
 					hInvBetavsMomPion_a->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() - sqrt( pow( .139570, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()) );
 					hInvBetavsMomKaon_a->Fill( track->pMom().mag(),  1.0/btofPidTraits->btofBeta() - sqrt( pow( .493677, 2 ) + pow( track->pMom().mag(), 2 ) )/(track->pMom().mag()) );
