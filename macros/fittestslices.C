@@ -109,7 +109,7 @@ void fittestslices(){
 
 	TF1 *evalL = new TF1( "evalL", PearsonVII, -1, 1, 4 );
 	evalL->SetParameters( 5, .1, 1000, 0 );
-	eval->SetParNames( "m", "s", "y", "l" );
+	evalL->SetParNames( "mL", "sL", "yL", "lL" );
 
   double beg = -.05;
   double end = .05;
