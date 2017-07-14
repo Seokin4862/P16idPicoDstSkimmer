@@ -129,7 +129,7 @@ void fittestslices(){
 		temph->Fit( fitL, "L" );
 		temph->Fit( evalL, "L" );
     getslice << ".png";
-    // c->Print( getslice.str().c_str() );
+    c->Print( getslice.str().c_str() );
     hinvbpia->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
 		hpearsonpia->SetBinContent( i, eval->Integral( -1.5, 1.5 )/.01 );
 		hinvbpiaL->SetBinContent( i, fitL->Integral( -.1, .1 )/.01 );
