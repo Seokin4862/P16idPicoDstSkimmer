@@ -135,7 +135,7 @@ void fittestslices(){
 		hinvbpiaL->SetBinContent( i, fitL->Integral( -.1, .1 )/.01 );
 		hpearsonpiaL->SetBinContent( i, evalL->Integral( -1.5, 1.5 )/.01 );
 		hratio->SetBinContent( i, fit->Integral( -.1, .1 )/eval->Integral( -1.5, 1.5 ) );
-		hratioL->SetBinContent( i, fit->Integral( -.1, .1 )/eval->Integral( -1.5, 1.5 ) );
+		hratioL->SetBinContent( i, fitL->Integral( -.1, .1 )/evalL->Integral( -1.5, 1.5 ) );
   }
 
   hinvbpia->Write();
