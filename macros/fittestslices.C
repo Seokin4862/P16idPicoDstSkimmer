@@ -152,4 +152,50 @@ void fittestslices(){
 
 
 
+	TF1 *eval = new TF1( "eval", PearsonVII, -1, 1, 4 );
+	eval->SetParameters(5, .1, 1000, 0);
+	eval->SetParNames( "m", "s", "y", "l" );
+
+	TF1 *evalL = new TF1( "evalL", PearsonVII, -1, 1, 4 );
+	evalL->SetParameters( 5, .1, 1000, 0 );
+	evalL->SetParNames( "mL", "sL", "yL", "lL" );
+
+  double beg = -.05;
+  double end = .05;
+
+  for( int i = 16; i < 201; i++ ){
+    stringstream getslice;
+    getslice << "InvbptPria" << i;
+    TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
+    temph->Draw();
+    c->SetLogy();
+    temph->Fit( fit, "R", "", beg, end );
+    temph->Draw();
+    temph->Fit( eval, "R", "", beg, end);
+		temph->Draw();
+		temph->Fit( fitL, "L", "", beg, end );
+		temph->Fit( evalL, "L", "", beg, end );
+    getslice << ".png";
+    // c->Print( getslice.str().c_str() );
+    hinvbpria->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
+		hpearsonpria->SetBinContent( i, eval->Integral( -1.5, 1.5 )/.01 );
+		hinvbpriaL->SetBinContent( i, fitL->Integral( -.1, .1 )/.01 );
+		hpearsonpriaL->SetBinContent( i, evalL->Integral( -1.5, 1.5 )/.01 );
+		hratiopra->SetBinContent( i, fit->Integral( -.1, .1 )/eval->Integral( -1.5, 1.5 ) );
+		hratiopraL->SetBinContent( i, fitL->Integral( -.1, .1 )/evalL->Integral( -1.5, 1.5 ) );
+  }
+
+  hinvbpria->Write();
+	hinvbpria->Draw();
+	hpearsonpria->SetLineColor( 2 );
+	hpearsonpria->Draw("same");
+	c->Print( "view.png" );
+	hpearsonpria->Write();
+	hinvbpriaL->Write();
+	hpearsonpriaL->Write();
+	hratiopra->Write();
+	hratiopraL->SetAxisRange( 0, 3, "Y" );
+	hratiopraL->Write();
+
+
 }
