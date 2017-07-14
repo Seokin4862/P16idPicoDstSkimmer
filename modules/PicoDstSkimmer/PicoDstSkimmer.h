@@ -60,17 +60,17 @@ protected:
 	TClonesArrayReader < StPicoMtdPidTraits > _rMtdPid;
 	TClonesArrayReader < StPicoBTofPidTraits > _rBTofPid;
 
-	TH3D *hInvBetaDedxMom = 0;
-	TH3D *hInvBetaDedxMomPion = 0;
-	TH3D *hInvBetaDedxMomKaon = 0;
-	TH3D *hInvBetaDedxMomProton = 0;
+	THnSparse *hInvBetaDedxMom = 0;
+	THnSparse *hInvBetaDedxMomPion = 0;
+	THnSparse *hInvBetaDedxMomKaon = 0;
+	THnSparse *hInvBetaDedxMomProton = 0;
 
 	void makeHistograms(){
 
-		hInvBetaDedxMom = new TH3D( "InvBetaDedxMom", "1/Beta vs dE/dx vs Momentum; 1/Beta; dE/dx; Momentum;", 300, 0, 3, 1000, 0, 10, 200, 0, 2 );
-		hInvBetaDedxMomPion = new TH3D( "InvBetaDedxMomPion", "1/Beta vs dE/dx vs Momentum for Pion Centered on 1.Beta; 1/Beta - 1/ExpectedBeta(Pion); dE/dx; Momentum", 300, -1.5, 1.5, 1000, 0, 10, 200, 0, 2 );
-		hInvBetaDedxMomKaon = new TH3D( "InvBetaDedxMomKaon", "1/Beta vs dE/dx vs Momentum for Kaon Centered on 1/Beta; 1/Beta - 1/ExpectedBeta(Kaon); dE/dx; Momentum", 300, -1.5, 1.5, 1000, 0, 10, 200, 0, 2 );
-		hInvBetaDedxMomProton = new TH3D( "InvBetaDedxMomProton", "1/Beta vs dE/dx vs Momentum for Proton Centered on 1/Beta; 1/Beta - 1/ExpectedBeta(Proton); dE/dx; Momentum", 300, -1.5, 1.5, 1000, 0, 10, 200, 0, 2 );
+		hInvBetaDedxMom = new THnSparse( "InvBetaDedxMom", "1/Beta vs dE/dx vs Momentum; 1/Beta; dE/dx; Momentum;", 300, 0, 3, 1000, 0, 10, 200, 0, 2 );
+		hInvBetaDedxMomPion = new THnSparse( "InvBetaDedxMomPion", "1/Beta vs dE/dx vs Momentum for Pion Centered on 1.Beta; 1/Beta - 1/ExpectedBeta(Pion); dE/dx; Momentum", 300, -1.5, 1.5, 1000, 0, 10, 200, 0, 2 );
+		hInvBetaDedxMomKaon = new THnSparse( "InvBetaDedxMomKaon", "1/Beta vs dE/dx vs Momentum for Kaon Centered on 1/Beta; 1/Beta - 1/ExpectedBeta(Kaon); dE/dx; Momentum", 300, -1.5, 1.5, 1000, 0, 10, 200, 0, 2 );
+		hInvBetaDedxMomProton = new THnSparse( "InvBetaDedxMomProton", "1/Beta vs dE/dx vs Momentum for Proton Centered on 1/Beta; 1/Beta - 1/ExpectedBeta(Proton); dE/dx; Momentum", 300, -1.5, 1.5, 1000, 0, 10, 200, 0, 2 );
 
 	}
 
