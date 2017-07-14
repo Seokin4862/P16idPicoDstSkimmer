@@ -61,8 +61,8 @@ void fittestslices(){
 	TH1D * hpearsonpia = new TH1D( "hpearsonpia", "Integral of the Pion Fit (PearsonVII) vs Total Momentum", 200, 0, 2 );
 	TH1D * hinvbpiaL = new TH1D( "hinvbpiaL", "Integral of the Pion Fit (Gaussian Log Likelihood) vs Total Momentum", 200, 0, 2 );
 	TH1D * hpearsonpiaL = new TH1D( "hpearsonpiaL", "Integral of the Pion Fit (PearsonVII Log Likelihood) vs Total Momentum", 200, 0, 2 );
-  TH1D * hinvbpiam = new TH1D( "hinvbpiam", "Mean of the Pion Fit (Gaussian) vs Total Momentum", 200, 0, 2 );
-  TH1D * hinvbpias = new TH1D( "hinvbpias", "Sigma of the Pion Fit (Gaussian) vs Total Momentum", 200, 0, 2 );
+	TH1D * hratio = new TH1D( "hratio", "Ratio of the Integral of the Pion Fit (Gaussian and PearsonVII) vs Total Momentum", 200, 0, 2 );
+	TH1D * hratioL = new TH1D( "hratioL", "Ratio of the Integral of the Pion Fit (Gaussian and PearsonVII Log Likelihood) vs Total Momentum", 200, 0, 2 );
 
   // TH1D * hinvbpip = new TH1D( "hinvbpip", "Integral of the Pion Fit (Gaussian) vs Total Momentum", 200, 0, 2 );
 	// TH1D * hpearsonpip = new TH1D( "hpearsonpip", "Integral of the Pion Fit (PearsonVII) vs Total Momentum", 200, 0, 2 );
@@ -134,8 +134,8 @@ void fittestslices(){
 		hpearsonpia->SetBinContent( i, eval->Integral( -1.5, 1.5 )/.01 );
 		hinvbpiaL->SetBinContent( i, fitL->Integral( -.1, .1 )/.01 );
 		hpearsonpiaL->SetBinContent( i, evalL->Integral( -1.5, 1.5 )/.01 );
-    hinvbpiam->SetBinContent( i, fit->GetParameter(1) );
-    hinvbpias->SetBinContent( i, fit->GetParameter(2) );
+		hratio->SetBinContent( i, fit->Integral( -.1, .1 )/eval->Integral( -1.5, 1.5 ) );
+		hratioL->SetBinContent( i, fit->Integral( -.1, .1 )/eval->Integral( -1.5, 1.5 ) );
   }
 
   hinvbpia->Write();
@@ -146,13 +146,15 @@ void fittestslices(){
 	hpearsonpia->Write();
 	hinvbpiaL->Write();
 	hpearsonpiaL->Write();
-  hinvbpiam->Write();
-  hinvbpias->Write();
+	hratio->Write();
+	hratioL->Write();
 
-	TF1 *eval = new TF1( "eval", PearsonVII, -1, 1, 4 );
-	eval->SetParameters(5, .1, 1000, 0);
-	eval->SetParNames( "m", "s", "y", "l" );
 
+
+	// TF1 *eval = new TF1( "eval", PearsonVII, -1, 1, 4 );
+	// eval->SetParameters(5, .1, 1000, 0);
+	// eval->SetParNames( "m", "s", "y", "l" );
+	//
 //   for( int i = 16; i < 201; i++ ){
 //     stringstream getslice;
 //     getslice << "InvbptPip" << i;
