@@ -126,6 +126,7 @@ void fittestslices(){
 	hinvbpiaL->Write();
 	hpearsonpiaL->Write();
 	hratio->Write();
+	hratioL->SetAxisRange( 0, 3, "Y" );
 	hratioL->Write();
 
 
