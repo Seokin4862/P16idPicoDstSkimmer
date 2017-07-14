@@ -126,8 +126,8 @@ void fittestslices(){
     temph->Draw();
     temph->Fit( eval, "R", "", beg, end);
 		temph->Draw();
-		temph->Fit( fitL, "L" );
-		temph->Fit( evalL, "L" );
+		temph->Fit( fitL, "L", "", beg, end );
+		temph->Fit( evalL, "L", "", beg, end );
     getslice << ".png";
     c->Print( getslice.str().c_str() );
     hinvbpia->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
@@ -136,8 +136,6 @@ void fittestslices(){
 		hpearsonpiaL->SetBinContent( i, evalL->Integral( -1.5, 1.5 )/.01 );
     hinvbpiam->SetBinContent( i, fit->GetParameter(1) );
     hinvbpias->SetBinContent( i, fit->GetParameter(2) );
-
-
   }
 
   hinvbpia->Write();
