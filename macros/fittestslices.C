@@ -146,6 +146,8 @@ void fittestslices(){
 	hpearsonpia->Draw("same");
 	c->Print( "view.png" );
 	hpearsonpia->Write();
+	hinvbpiaL->Write();
+	hpearsonpiaL->Write();
   hinvbpiam->Write();
   hinvbpias->Write();
 
