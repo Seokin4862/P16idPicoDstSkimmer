@@ -1,23 +1,3 @@
-// Double_t eval( Double_t *x, Double_t *bw ){
-//    Double_t x0 = x[0];
-//    Double_t m = bw[0];
-//    Double_t s = bw[1];
-//    Double_t y = bw[2];
-//    Double_t l = bw[3];
-//
-//
-//    double a1 = s * TMath::Sqrt( 2 * m - 3 );
-//
-//    double a =  (y * bw) / ( a1 * TMath::Beta( m-0.5, 0.5 ) );
-//    double b = pow( 1 + pow( ( x - l ) / a1, 2 ), -m );
-//
-//    return a * b;
-// }
-
-// TF1 *eval = new TF1( "eval", "eval", -100, 100, 4 );
-// eval->SetParameters(1,2, 3, 4); // just example, there are 4 parameters
-// eval->SetParNames("mean","sigma", "yield", "lambda");
-
 
 #include "TMath.h"
 #include "TF1.h"
@@ -61,8 +41,8 @@ void fittestslices(){
 	TH1D * hpearsonpia = new TH1D( "hpearsonpia", "Integral of the Pion Fit (PearsonVII) vs Total Momentum", 200, 0, 2 );
 	TH1D * hinvbpiaL = new TH1D( "hinvbpiaL", "Integral of the Pion Fit (Gaussian Log Likelihood) vs Total Momentum", 200, 0, 2 );
 	TH1D * hpearsonpiaL = new TH1D( "hpearsonpiaL", "Integral of the Pion Fit (PearsonVII Log Likelihood) vs Total Momentum", 200, 0, 2 );
-	TH1D * hratio = new TH1D( "hratio", "Ratio of the Integral of the Pion Fit (Gaussian and PearsonVII) vs Total Momentum", 200, 0, 2 );
-	TH1D * hratioL = new TH1D( "hratioL", "Ratio of the Integral of the Pion Fit (Gaussian and PearsonVII Log Likelihood) vs Total Momentum", 200, 0, 2 );
+	TH1D * hratio = new TH1D( "hratio", "Ratio of the Integral of the Pion Fit (Gaus/PearsonVII) vs Total Momentum", 200, 0, 2 );
+	TH1D * hratioL = new TH1D( "hratioL", "Ratio of the Integral of the Pion Fit (Gaus/PearsonVII Log Likelihood) vs Total Momentum", 200, 0, 2 );
 
   // TH1D * hinvbpip = new TH1D( "hinvbpip", "Integral of the Pion Fit (Gaussian) vs Total Momentum", 200, 0, 2 );
 	// TH1D * hpearsonpip = new TH1D( "hpearsonpip", "Integral of the Pion Fit (PearsonVII) vs Total Momentum", 200, 0, 2 );
@@ -104,7 +84,6 @@ void fittestslices(){
   // TH1D * hinvbprinm = new TH1D( "hinvbprinm", "Mean of the Proton Fit (Gaussian) vs Total Momentum", 200, 0, 2 );
   // TH1D * hinvbprins = new TH1D( "hinvbprins", "Sigma of the Proton Fit (Gaussian) vs Total Momentum", 200, 0, 2 );
 
-
 	TF1 *eval = new TF1( "eval", PearsonVII, -1, 1, 4 );
 	eval->SetParameters(5, .1, 1000, 0);
 	eval->SetParNames( "m", "s", "y", "l" );
@@ -129,7 +108,7 @@ void fittestslices(){
 		temph->Fit( fitL, "L", "", beg, end );
 		temph->Fit( evalL, "L", "", beg, end );
     getslice << ".png";
-    c->Print( getslice.str().c_str() );
+    // c->Print( getslice.str().c_str() );
     hinvbpia->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
 		hpearsonpia->SetBinContent( i, eval->Integral( -1.5, 1.5 )/.01 );
 		hinvbpiaL->SetBinContent( i, fitL->Integral( -.1, .1 )/.01 );
@@ -148,237 +127,6 @@ void fittestslices(){
 	hpearsonpiaL->Write();
 	hratio->Write();
 	hratioL->Write();
-
-
-
-	// TF1 *eval = new TF1( "eval", PearsonVII, -1, 1, 4 );
-	// eval->SetParameters(5, .1, 1000, 0);
-	// eval->SetParNames( "m", "s", "y", "l" );
-	//
-//   for( int i = 16; i < 201; i++ ){
-//     stringstream getslice;
-//     getslice << "InvbptPip" << i;
-//     TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
-//     temph->Draw();
-//     c->SetLogy();
-//     temph->Fit( fit, "R", "", beg, end );
-//     temph->Draw();
-// 		temph->Fit( eval, "R", "", beg, end);
-// 		temph->Draw();
-//     getslice << ".png";
-//     // c->Print( getslice.str().c_str() );
-//     hinvbpip->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
-// 		hpearsonpip->SetBinContent( i, eval->Integral( -1.5, 1.5)/.01 );
-//     hinvbpipm->SetBinContent( i, fit->GetParameter(1) );
-//     hinvbpips->SetBinContent( i, fit->GetParameter(2) );
-//   }
-//
-//   hinvbpip->Write();
-// 	hpearsonpip->Write();
-// 	hinvbpip->Draw();
-// 	hpearsonpip->SetLineColor( 2 );
-// 	hpearsonpip->Draw("same");
-// 	c->Print( "view2.png" );
-//   hinvbpipm->Write();
-//   hinvbpips->Write();
-//
-// 	TF1 *eval = new TF1( "eval", PearsonVII, -1, 1, 4 );
-// 	eval->SetParameters(5, .1, 1000, 0);
-// 	eval->SetParNames( "m", "s", "y", "l" );
-//
-//   for( int i = 16; i < 201; i++ ){
-//     stringstream getslice;
-//     getslice << "InvbptPin" << i;
-//     TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
-//     temph->Draw();
-//     c->SetLogy();
-//     temph->Fit( fit, "R", "", beg, end );
-//     temph->Draw();
-// 		temph->Fit( eval, "R", "", beg, end);
-// 		temph->Draw();
-// 		getslice << ".png";
-// 		// c->Print( getslice.str().c_str() );
-// 		hinvbpin->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
-// 		hpearsonpin->SetBinContent( i, eval->Integral( -1.5, 1.5)/.01 );
-// 		hinvbpinm->SetBinContent( i, fit->GetParameter(1) );
-// 		hinvbpins->SetBinContent( i, fit->GetParameter(2) );
-// 		}
-//
-// 		hinvbpin->Write();
-// 		hpearsonpin->Write();
-// 		hinvbpin->Draw();
-// 		hpearsonpin->SetLineColor( 2 );
-// 		hpearsonpin->Draw("same");
-// 		c->Print( "view3.png" );
-// 		hinvbpinm->Write();
-// 		hinvbpins->Write();
-//
-// 		TF1 *eval = new TF1( "eval", PearsonVII, -1, 1, 4 );
-// 		eval->SetParameters(5, .1, 1000, 0);
-// 		eval->SetParNames( "m", "s", "y", "l" );
-//
-//   double beg = -.03;
-//   double end = .03;
-//
-//   for( int i = 16; i < 201; i++ ){
-//     stringstream getslice;
-//     getslice << "InvbptKia" << i;
-//     TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
-//     temph->Draw();
-//     c->SetLogy();
-//     temph->Fit( fit, "R", "", beg, end );
-//     temph->Draw();
-// 		temph->Fit( eval, "R", "", beg, end);
-// 		temph->Draw();
-//     getslice << ".png";
-//     // c->Print( getslice.str().c_str() );
-//     hinvbkia->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
-// 		hpearsonkia->SetBinContent( i, eval->Integral( -.6, .6 )/.01 );
-// 		hinvbkiam->SetBinContent( i, fit->GetParameter(1) );
-//     hinvbkias->SetBinContent( i, fit->GetParameter(2) );
-//   }
-//
-//   hinvbkia->Write();
-// 	hpearsonkia->Write();
-//   hinvbkiam->Write();
-//   hinvbkias->Write();
-//
-// 	TF1 *eval = new TF1( "eval", PearsonVII, -1, 1, 4 );
-// 	eval->SetParameters(5, .1, 1000, 0);
-// 	eval->SetParNames( "m", "s", "y", "l" );
-//
-//   for( int i = 16; i < 201; i++ ){
-//     stringstream getslice;
-//     getslice << "InvbptKip" << i;
-//     TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
-//     temph->Draw();
-//     c->SetLogy();
-//     temph->Fit( fit, "R", "", beg, end );
-//     temph->Draw();
-// 		temph->Fit( eval, "R", "", beg, end );
-// 		temph->Draw();
-//     getslice << ".png";
-//     // c->Print( getslice.str().c_str() );
-//     hinvbkip->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
-// 		hpearsonkip->SetBinContent( i, eval->Integral( -.6, .6)/.01 );
-//     hinvbkipm->SetBinContent( i, fit->GetParameter(1) );
-//     hinvbkips->SetBinContent( i, fit->GetParameter(2) );
-//   }
-//
-//   hinvbkip->Write();
-// 	hpearsonkip->Write();
-//   hinvbkipm->Write();
-//   hinvbkips->Write();
-//
-// 	TF1 *eval = new TF1( "eval", PearsonVII, -1, 1, 4 );
-// 	eval->SetParameters(5, .1, 1000, 0);
-// 	eval->SetParNames( "m", "s", "y", "l" );
-//
-//   for( int i = 16; i < 201; i++ ){
-//     stringstream getslice;
-//     getslice << "InvbptKin" << i;
-//     TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
-//     temph->Draw();
-//     c->SetLogy();
-//     temph->Fit( fit, "R", "", beg, end );
-//     temph->Draw();
-// 		temph->Fit( eval, "R", "", beg, end );
-// 		temph->Draw();
-//     getslice << ".png";
-//     // c->Print( getslice.str().c_str() );
-//     hinvbkin->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
-// 		hpearsonkin->SetBinContent( i, eval->Integral( -.6, .6 )/.01 );
-//     hinvbkinm->SetBinContent( i, fit->GetParameter(1) );
-//     hinvbkins->SetBinContent( i, fit->GetParameter(2) );
-//   }
-//
-//   hinvbkin->Write();
-// 	hpearsonkin->Write();
-//   hinvbkinm->Write();
-//   hinvbkins->Write();
-//
-// 	TF1 *eval = new TF1( "eval", PearsonVII, -1, 1, 4 );
-// 	eval->SetParameters(5, .1, 1000, 0);
-// 	eval->SetParNames( "m", "s", "y", "l" );
-//
-//   double beg = -.05;
-//   double end = .05;
-//
-//   for( int i = 16; i < 201; i++ ){
-//     stringstream getslice;
-//     getslice << "InvbptPria" << i;
-//     TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
-//     temph->Draw();
-//     c->SetLogy();
-//     temph->Fit( fit, "R", "", beg, end );
-//     temph->Draw();
-// 		temph->Fit( eval, "R", "", beg, end );
-// 		temph->Draw();
-//     getslice << ".png";
-//     // c->Print( getslice.str().c_str() );
-//     hinvbpria->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
-// 		hpearsonpria->SetBinContent( i, eval->Integral( -.6, .6 )/.01 );
-// 		hinvbpriam->SetBinContent( i, fit->GetParameter(1) );
-//     hinvbprias->SetBinContent( i, fit->GetParameter(2) );
-//   }
-//
-//   hinvbpria->Write();
-// 	hpearsonpria->Write();
-//   hinvbpriam->Write();
-//   hinvbprias->Write();
-//
-// 	TF1 *eval = new TF1( "eval", PearsonVII, -1, 1, 4 );
-// 	eval->SetParameters(5, .1, 1000, 0);
-// 	eval->SetParNames( "m", "s", "y", "l" );
-//
-//   for( int i = 16; i < 201; i++ ){
-//     stringstream getslice;
-//     getslice << "InvbptPrip" << i;
-//     TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
-//     temph->Draw();
-//     c->SetLogy();
-//     temph->Fit( fit, "R", "", beg, end );
-//     temph->Draw();
-// 		temph->Fit( eval, "R", "", beg, end );
-//     getslice << ".png";
-//     // c->Print( getslice.str().c_str() );
-//     hinvbprip->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
-// 		hpearsonprip->SetBinContent( i, eval->Integral( -.6, .6 )/.01 );
-//     hinvbpripm->SetBinContent( i, fit->GetParameter(1) );
-//     hinvbprips->SetBinContent( i, fit->GetParameter(2) );
-//   }
-//
-//   hinvbprip->Write();
-// 	hpearsonprip->Write();
-//   hinvbpripm->Write();
-//   hinvbprips->Write();
-//
-// 	TF1 *eval = new TF1( "eval", PearsonVII, -1, 1, 4 );
-// 	eval->SetParameters(5, .1, 1000, 0);
-// 	eval->SetParNames( "m", "s", "y", "l" );
-//
-//   for( int i = 16; i < 201; i++ ){
-//     stringstream getslice;
-//     getslice << "InvbptPrin" << i;
-//     TH1 *temph = (TH1*)f->Get( getslice.str().c_str() );
-//     temph->Draw();
-//     c->SetLogy();
-//     temph->Fit( fit, "R", "", beg, end );
-//     temph->Draw();
-// 		temph->Fit( eval, "R", "", beg, end );
-// 		temph->Draw();
-// 	  getslice << ".png";
-//     // c->Print( getslice.str().c_str() );
-//     hinvbprin->SetBinContent( i, fit->Integral( -.1, .1 )/.01 );
-// 		hpearsonprin->SetBinContent( i, eval->Integral( -.6, .6 )/.01 );
-//     hinvbprinm->SetBinContent( i, fit->GetParameter(1) );
-//     hinvbprins->SetBinContent( i, fit->GetParameter(2) );
-//   }
-//
-//   hinvbprin->Write();
-// 	hpearsonprin->Write();
-//   hinvbprinm->Write();
-//   hinvbprins->Write();
 
 
 }
