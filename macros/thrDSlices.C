@@ -24,8 +24,6 @@ void thrDSlices(){
     slice->SetTitle( slicetitle.str().c_str() );
     slice->SetXTitle( "dE/dx" );
     slice->SetYTitle( "1/Beta" );
-    slice->GetXaxis()->SetRange( 0,10 );
-    slice->GetYaxis()->SetRange( -1.5,1.5 );
     slice->Write();
     slice->Draw();
     slicename << ".png";
