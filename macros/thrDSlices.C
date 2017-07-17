@@ -23,7 +23,7 @@ void thrDSlices(){
     slice->Write();
     slice->Draw();
     slicename << ".png";
-    // c->Print( slicename.str().c_str() );
+    c->Print( slicename.str().c_str() );
   }
 
   for( int i = 1; i < 201; i++ ){
@@ -42,7 +42,7 @@ void thrDSlices(){
     slice->Write();
     slice->Draw();
     slicename << ".png";
-    // c->Print( slicename.str().c_str() );
+    c->Print( slicename.str().c_str() );
   }
 
   for( int i = 1, i < 201; i++ ){
@@ -61,7 +61,7 @@ void thrDSlices(){
     slice->Write();
     slice->Draw();
     slicename << ".png";
-    // c->Print( slicename.str().c_str() );
+    c->Print( slicename.str().c_str() );
   }
 
   for( int i=1, i < 201; i++ ){
@@ -80,7 +80,7 @@ void thrDSlices(){
     slice->Write();
     slice->Draw();
     slicename << ".png";
-    // c->Print( slicename.str().c_str() );
+    c->Print( slicename.str().c_str() );
   }
 
 }
