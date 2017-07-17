@@ -18,7 +18,7 @@ void thrDSlices(){
     int a1 = hInvBetaDedxMom->GetZaxis()->FindBin( .05*(i-1) );
     int a2 = hInvBetaDedxMom->GetZaxis()->FindBin( .05*(i) );
     hInvBetaDedxMom->GetZaxis()->SetRange( a1, a2 );
-    slice = (TH2*)hInvBetaDedxMom->Project3D( "xy" );
+    TH2 *slice = (TH2*)hInvBetaDedxMom->Project3D( "xy" );
     stringstream slicetitle;
     slicetitle << "" << .05*(i-1) << " to " << .05*(i);
     slice->SetTitle( slicetitle.str().c_str() );
