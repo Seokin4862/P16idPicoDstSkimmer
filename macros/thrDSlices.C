@@ -45,7 +45,7 @@ void thrDSlices(){
     c->Print( slicename.str().c_str() );
   }
 
-  for( int i = 1, i < 201; i++ ){
+  for( int i = 1; i < 201; i++ ){
     TH3 *hInvBetaDedxMomKaon = (TH3*)f->Get( "InvBetaDedxMomKaon" );
     stringstream slicename;
     slicename << "hInvBetaDedxKaon" << i;
@@ -64,7 +64,7 @@ void thrDSlices(){
     c->Print( slicename.str().c_str() );
   }
 
-  for( int i=1, i < 201; i++ ){
+  for( int i = 1; i < 201; i++ ){
     TH3 *hInvBetaDedxMomProton = (TH3*)f->Get( "InvBetaDedxMomProton" );
     stringstream slicename;
     slicename << "hInvBetaDedxProton" << i;
