@@ -11,7 +11,7 @@ void thrDSlices(){
   TH3 *hInvBetaDedxMomKaon = (TH3*)f->Get( "InvBetaDedxMomKaon" );
   TH3 *hInvBetaDedxMomProton = (TH3*)f->Get( "InvBetaDedxMomProton" );
 
-  for( int i = 1; i  < 41; i++ ){
+  for( int i = 5; i  < 41; i++ ){
     TH3 *hInvBetaDedxMom = (TH3*)f->Get( "InvBetaDedxMom" );
     stringstream slicename;
     slicename << "hInvBetaDedx" << i;
