@@ -7,12 +7,12 @@ void thrDSlices(){
 
   TCanvas * c = new TCanvas( "c","c" );
 
-  TH3 *hInvBetaDedxMom = (TH3*)f->Get( "InvBetaDedxMom" );
   TH3 *hInvBetaDedxMomPion = (TH3*)f->Get( "InvBetaDedxMomPion" );
   TH3 *hInvBetaDedxMomKaon = (TH3*)f->Get( "InvBetaDedxMomKaon" );
   TH3 *hInvBetaDedxMomProton = (TH3*)f->Get( "InvBetaDedxMomProton" );
 
   for( int i = 1; i  < 41; i++ ){
+    TH3 *hInvBetaDedxMom = (TH3*)f->Get( "InvBetaDedxMom" );
     stringstream slicename;
     slicename << "hInvBetaDedx" << i;
     int a1 = hInvBetaDedxMom->GetZaxis()->FindBin( .05*(i-1) );
