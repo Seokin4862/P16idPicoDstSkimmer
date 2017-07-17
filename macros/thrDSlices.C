@@ -11,16 +11,16 @@ void thrDSlices(){
   TH3 *hInvBetaDedxMomKaon = (TH3*)f->Get( "InvBetaDedxMomKaon" );
   TH3 *hInvBetaDedxMomProton = (TH3*)f->Get( "InvBetaDedxMomProton" );
 
-  for( int i = 5; i  < 41; i++ ){
+  for( int i = 5; i  < 201; i++ ){
     TH3 *hInvBetaDedxMom = (TH3*)f->Get( "InvBetaDedxMom" );
     stringstream slicename;
     slicename << "hInvBetaDedx" << i;
-    int a1 = hInvBetaDedxMom->GetZaxis()->FindBin( .05*(i-1) );
-    int a2 = hInvBetaDedxMom->GetZaxis()->FindBin( .05*(i) );
+    int a1 = hInvBetaDedxMom->GetZaxis()->FindBin( .01*(i-1) );
+    int a2 = hInvBetaDedxMom->GetZaxis()->FindBin( .01*(i) );
     hInvBetaDedxMom->GetZaxis()->SetRange( a1, a2 );
     TH2 *slice = (TH2*)hInvBetaDedxMom->Project3D( "xy" );
     stringstream slicetitle;
-    slicetitle << "" << .05*(i-1) << " to " << .05*(i);
+    slicetitle << "" << .01*(i-1) << " to " << .01*(i);
     slice->SetTitle( slicetitle.str().c_str() );
     slice->SetXTitle( "dE/dx" );
     slice->SetYTitle( "1/Beta" );
