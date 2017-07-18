@@ -20,6 +20,7 @@ void thrDSlices(){
     slice->SetTitle( slicetitle.str().c_str() );
     slice->SetXTitle( "dE/dx" );
     slice->SetYTitle( "1/Beta" );
+    slice->SetName( slicename.str().c_str() );
     slice->Write();
     slice->Draw();
     slicename << ".png";
@@ -39,6 +40,7 @@ void thrDSlices(){
     slice->SetTitle( slicetitle.str().c_str() );
     slice->SetXTitle( "dE/dx" );
     slice->SetYTitle( "1/Beta" );
+    slice->SetName( slicename.str().c_str() );
     slice->Write();
     slice->Draw();
     slicename << ".png";
@@ -58,6 +60,7 @@ void thrDSlices(){
     slice->SetTitle( slicetitle.str().c_str() );
     slice->SetXTitle( "dE/dx" );
     slice->SetYTitle( "1/Beta" );
+    slice->SetName( slicename.str().c_str() );
     slice->Write();
     slice->Draw();
     slicename << ".png";
@@ -77,6 +80,7 @@ void thrDSlices(){
     slice->SetTitle( slicetitle.str().c_str() );
     slice->SetXTitle( "dE/dx" );
     slice->SetYTitle( "1/Beta" );
+    slice->SetName( slicename.str().c_str() );
     slice->Write();
     slice->Draw();
     slicename << ".png";
