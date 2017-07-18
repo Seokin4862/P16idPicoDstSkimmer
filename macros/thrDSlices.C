@@ -16,14 +16,14 @@ void thrDSlices(){
     hInvBetaDedxMom->GetZaxis()->SetRange( a1, a2 );
     TH2 *slice = (TH2*)hInvBetaDedxMom->Project3D( "xy" );
     stringstream slicetitle;
-    slicetitle << "" << .01*(i-1) << " to " << .01*(i);
+    slicetitle << "1/Beta vs dE/dx for Total Momentum from " << .01*(i-1) << " to " << .01*(i) << " (GeV)";
     slice->SetTitle( slicetitle.str().c_str() );
     slice->SetXTitle( "dE/dx" );
     slice->SetYTitle( "1/Beta" );
     slice->Write();
     slice->Draw();
     slicename << ".png";
-    c->Print( slicename.str().c_str() );
+    // c->Print( slicename.str().c_str() );
   }
 
   for( int i = 1; i < 201; i++ ){
@@ -35,14 +35,14 @@ void thrDSlices(){
     hInvBetaDedxMomPion->GetZaxis()->SetRange( a1, a2 );
     TH2 *slice = (TH2*)hInvBetaDedxMomPion->Project3D( "xy" );
     stringstream slicetitle;
-    slicetitle << "" << .01*(i-1) << " to " << .01*(i);
+    slicetitle << "1/Beta vs dE/dx for Total Momentum from " << .01*(i-1) << " to " << .01*(i) << " (GeV, Pion Centered for 1/Beta)";
     slice->SetTitle( slicetitle.str().c_str() );
     slice->SetXTitle( "dE/dx" );
     slice->SetYTitle( "1/Beta" );
     slice->Write();
     slice->Draw();
     slicename << ".png";
-    c->Print( slicename.str().c_str() );
+    // c->Print( slicename.str().c_str() );
   }
 
   for( int i = 1; i < 201; i++ ){
@@ -54,14 +54,14 @@ void thrDSlices(){
     hInvBetaDedxMomKaon->GetZaxis()->SetRange( a1, a2 );
     TH2 *slice = (TH2*)hInvBetaDedxMomKaon->Project3D( "xy" );
     stringstream slicetitle;
-    slicetitle << "" << .01*(i-1) << " to " << .01*(i);
+    slicetitle << "1/Beta vs dE/dx for Total Momentum from " << .01*(i-1) << " to " << .01*(i) << " (GeV, Kaon Centered for 1/Beta)" ;
     slice->SetTitle( slicetitle.str().c_str() );
     slice->SetXTitle( "dE/dx" );
     slice->SetYTitle( "1/Beta" );
     slice->Write();
     slice->Draw();
     slicename << ".png";
-    c->Print( slicename.str().c_str() );
+    // c->Print( slicename.str().c_str() );
   }
 
   for( int i = 1; i < 201; i++ ){
@@ -73,14 +73,14 @@ void thrDSlices(){
     hInvBetaDedxMomProton->GetZaxis()->SetRange( a1, a2 );
     TH2 *slice = (TH2*)hInvBetaDedxMomProton->Project3D( "xy" );
     stringstream slicetitle;
-    slicetitle << "" << .01*(i-1) << " to " << .01*(i);
+    slicetitle << "1/Beta vs dE/dx for Total Momentum from " << .01*(i-1) << " to " << .01*(i) << " (GeV, Proton Centered for 1/Beta)";
     slice->SetTitle( slicetitle.str().c_str() );
     slice->SetXTitle( "dE/dx" );
     slice->SetYTitle( "1/Beta" );
     slice->Write();
     slice->Draw();
     slicename << ".png";
-    c->Print( slicename.str().c_str() );
+    // c->Print( slicename.str().c_str() );
   }
 
 }
