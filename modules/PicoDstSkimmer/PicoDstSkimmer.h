@@ -11,6 +11,7 @@
 #include "PicoDstP16id/StPicoTrack.h"
 #include "PicoDstP16id/StPicoMtdPidTraits.h"
 #include "PicoDstP16id/StPicoBTofPidTraits.h"
+#include "PicoDstP16id/Bichsel.h"
 
 #include "ProductionUtils/RunMapFactory.h"
 
